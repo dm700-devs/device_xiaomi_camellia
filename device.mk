@@ -309,6 +309,8 @@ PRODUCT_PACKAGES += \
     init.recovery.mt6833.rc
 
 # Runtime Resource (RRO) Overlays
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayCamellia \
     FrameworksResOverlayCamellia \
