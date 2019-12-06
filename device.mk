@@ -13,6 +13,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
+
 # Silence vendor logspam
 include $(LOCAL_PATH)/configs/props/vendor_logtags.mk
 
