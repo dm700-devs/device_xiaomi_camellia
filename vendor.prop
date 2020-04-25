@@ -52,6 +52,9 @@ vendor.connsys.driver.ready=no
 # ConsumerIr
 ro.hardware.consumerir=common
 
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
 debug.mediatek.appgamepq_compress=1
 debug.sf.disable_backpressure=1
