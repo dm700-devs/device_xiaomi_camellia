@@ -61,6 +61,7 @@
         <boolean name="config_wfc_disable_sa" value="false" />
         <boolean name="config_update_service_status" value="false" />
         <boolean name="config_vonr_on_by_defalut_bool" value="false" />
+	<boolean name="hide_lte_plus_data_icon_bool" value="false"/>
     </carrier_config>
     <carrier_config sdk="26">
         <boolean name="vilte_data_is_metered_bool" value="false" />
