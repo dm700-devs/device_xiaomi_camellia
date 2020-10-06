@@ -146,6 +146,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1.vendor:64 \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl \
+    disable_configstore \
     libdrm.vendor
 
 # Fastbootd
