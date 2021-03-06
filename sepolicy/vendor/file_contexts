@@ -11,5 +11,8 @@
 # GPU
 /sys/devices/platform/13000000.mali(/.*)?          u:object_r:sysfs_gpu:s0
 
+# Thermals
+/vendor/bin/mi_thermald                                         u:object_r:mi_thermald_exec:s0
+
 # Vibrator
 /vendor/bin/hw/android\.hardware\.vibrator-service-awinic       u:object_r:hal_vibrator_default_exec:s0
