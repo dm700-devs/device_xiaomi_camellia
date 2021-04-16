@@ -75,6 +75,10 @@ vendor.camera.mdp.dre.enable=1
 vendor.camera.mdp.hfg.enable=1
 vendor.mtk.camera.app.fd.video=1
 
+# Chipset
+ro.soc.manufacturer=Mediatek
+ro.soc.model=DM700
+
 # DRM
 drm.service.enabled=true
 ro.vendor.mtk_config_max_dram_size=0x800000000
