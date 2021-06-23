@@ -68,6 +68,10 @@ vendor.connsys.driver.ready=no
 # ConsumerIr
 ro.hardware.consumerir=common
 
+# Chipset
+ro.soc.manufacturer=Mediatek
+ro.soc.model=MT6833
+
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
 
