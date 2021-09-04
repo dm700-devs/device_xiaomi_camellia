@@ -77,6 +77,9 @@ function blob_fixup {
     vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so)
         grep -q "libcamera_metadata_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcamera_metadata_shim.so" "${2}"
         ;;
+    vendor/bin/mi_thermald)
+        sed -i "s|ug_cpu|ug_uwu|g" "${2}"
+        ;;
     esac
 }
 
