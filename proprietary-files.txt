@@ -1,8 +1,6 @@
 # All blobs from camellia-user 12 SP1A.210812.016 V13.0.5.0.SKSMIXM release-keys, unless pinned
 
 # Audio
-vendor/lib/soundfx/libaudiopreprocessing.so
-vendor/lib/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib/soundfx/libmisoundfx.so
 vendor/lib/libaudio_param_parser-vnd.so
 vendor/lib/libaudioclient_aidl_conversion.so
@@ -17,8 +15,6 @@ vendor/lib/libaudiofoundation.so
 vendor/lib/libaudioloudc.so
 vendor/lib/libaudioprimarydevicehalifclient.so
 vendor/lib/libaudiotoolkit_vendor.so
-vendor/lib64/soundfx/libaudiopreprocessing.so
-vendor/lib64/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudioclient_aidl_conversion.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
