@@ -889,4 +889,7 @@
         <item>nfc</item>
     </string-array>
 
+    <!-- Remove MTK IMS app from privacy (location) indicators -->
+    <string name="config_systemAudioIntelligence" translatable="false">com.mediatek.ims</string>
+
 </resources>
