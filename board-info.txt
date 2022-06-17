@@ -1,0 +1,1 @@
+require board=evergo|evergreen|everpal|opal
