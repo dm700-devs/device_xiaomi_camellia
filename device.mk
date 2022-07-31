@@ -43,8 +43,12 @@ PRODUCT_PACKAGES += \
 
 # Boot Control
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-mtkimpl \
-    android.hardware.boot@1.1-mtkimpl.recovery
+    android.hardware.boot@1.2-mtkimpl \
+    android.hardware.boot@1.2-mtkimpl.recovery
+
+PRODUCT_PACKAGES += \
+    libmtk_bsg \
+    libmtk_bsg.recovery
 
 # Screen Resolution
 TARGET_SCREEN_HEIGHT := 2400
