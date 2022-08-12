@@ -33,6 +33,8 @@
         </path>
        <!-- 2-in-1 speaker output-->
         <path name="two_in_one_speaker_output" value="turnon">
+            <kctl name="Handset_PGA_GAIN" value="-1Db" />
+            <kctl name="Lineout_PGAL_GAIN" value="-1Db" />
         </path>
         <path name="two_in_one_speaker_output" value="turnoff">
         </path>
@@ -40,16 +42,20 @@
         <path name="speaker_output" value="turnon">
             <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="LOL Mux" value="Playback_L_DAC" />
+            <kctl name="Handset_PGA_GAIN" value="-1Db" />
+            <kctl name="Lineout_PGAL_GAIN" value="-1Db" />
         </path>
         <path name="speaker_output" value="turnoff">
             <kctl name="LOL Mux" value="Open" />
         </path>
         <!--headhpone_speaker output-->
         <path name="headphoneSpeaker_output" value="turnon">
-            <kctl name="DAC In Mux" value="Normal Path" />
+	    <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="HPL Mux" value="LoudSPK Playback" />
             <kctl name="HPR Mux" value="Audio Playback" />
-        </path>
+            <kctl name="Handset_PGA_GAIN" value="-1Db" />
+            <kctl name="Lineout_PGAL_GAIN" value="-1Db" />
+	</path>
         <path name="headphoneSpeaker_output" value="turnoff">
             <kctl name="HPL Mux" value="Open" />
             <kctl name="HPR Mux" value="Open" />
