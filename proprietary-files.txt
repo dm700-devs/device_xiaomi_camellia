@@ -1641,7 +1641,7 @@ vendor/lib64/libnotifyaudiohal.so
 vendor/lib64/libsensor_custom.so
 
 # Soter
--vendor/app/SoterService/SoterService.apk
+-vendor/app/SoterService/SoterService.apk:system_ext/app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.microtrust.hardware.soter@1.0-service
 vendor/bin/SoterProvisioningTool
 vendor/etc/init/vendor.microtrust.hardware.soter@1.0-service.rc
