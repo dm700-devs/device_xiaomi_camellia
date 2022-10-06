@@ -996,6 +996,9 @@ on property:sys.boot_completed=1
     # switch to sched-dvfs
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedplus"
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "schedplus"
+    
+    # Initialize power HAL when boot is completed
+    setprop vendor.mediatek.powerhal.init 1
 
     # stop bootprof
     write /proc/bootprof 0
