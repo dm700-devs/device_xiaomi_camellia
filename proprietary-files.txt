@@ -1115,7 +1115,6 @@ system/etc/init/init.vtservice.rc
 -system/framework/mediatek-telephony-common.jar
 -system/framework/mediatek-wfo-legacy.jar
 system/lib/libmtk_vt_wrapper.so
-system/lib/libmtkperf_client.so
 system/lib/libsysenv_system.so
 system/lib/libvcodec_cap.so
 system/lib/libvcodec_capenc.so
@@ -1126,7 +1125,6 @@ system/lib64/libimsma_rtp.so
 system/lib64/libimsma_socketwrapper.so
 system/lib64/libmtk_vt_service.so
 system/lib64/libmtk_vt_wrapper.so
-system/lib64/libmtkperf_client.so
 system/lib64/libsignal.so
 system/lib64/libsink.so
 system/lib64/libsource.so
@@ -1168,7 +1166,6 @@ vendor/lib/libmtkcutils.so
 vendor/lib/libmtkhardware_legacy.so
 vendor/lib/libmtklimiter_vendor.so
 vendor/lib/libmtknetutils.so
-vendor/lib/libmtkperf_client_vendor.so
 vendor/lib/libmtkproperty.so
 vendor/lib/libmtkrillog.so
 vendor/lib/libmtkshifter_vendor.so
@@ -1226,7 +1223,6 @@ vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtkmipc-ril.so
 vendor/lib64/libmtknetcap.so
 vendor/lib64/libmtknetutils.so
-vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libmtkproperty.so
 vendor/lib64/libmtkrillog.so
 vendor/lib64/libmtkrilutils.so
