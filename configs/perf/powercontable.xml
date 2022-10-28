@@ -291,7 +291,7 @@
         <Entry path="/proc/perfmgr/tchbst/user/usrtch"></Entry>
         <Compare>more</Compare>
         <MaxValue>2000000000</MaxValue>
-        <MinValue>10000000</MinValue>
+        <MinValue>100000</MinValue>
         <DefaultValue>200000000</DefaultValue>
         <Prefix>duration^</Prefix>
     </CMD>
