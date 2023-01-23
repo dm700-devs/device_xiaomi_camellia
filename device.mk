@@ -50,6 +50,11 @@ PRODUCT_PACKAGES += \
     libmtk_bsg \
     libmtk_bsg.recovery
 
+# MediaTek Preloader Utils
+PRODUCT_PACKAGES += \
+    mtk_plpath_utils \
+    mtk_plpath_utils.recovery
+
 # Screen Resolution
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
