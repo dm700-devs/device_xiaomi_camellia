@@ -50,6 +50,11 @@ PRODUCT_PACKAGES += \
     libmtk_bsg \
     libmtk_bsg.recovery
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.1-impl-mock \
+    fastbootd
+
 # MediaTek Preloader Utils
 PRODUCT_PACKAGES += \
     mtk_plpath_utils \
