@@ -39,9 +39,11 @@ static std::string HAPTIC_NODE;
 static std::string HAPTIC_PROP_PREFIX = "vendor.vibrator.hal.";
 static std::string HAPTIC_PROP_DURATION = "duration.";
 static std::string HAPTIC_PROP_INDEX = "index.";
+static std::string HAPTIC_PROP_MODE="mode.";
 
 // Common haptic nodes
 static std::string ACTIVATE_NODE = "activate";
+static std::string ACTIVATE_MODE_NODE = "activate_mode";
 static std::string INDEX_NODE = "index";
 static std::string DURATION_NODE = "duration";
 
@@ -78,6 +80,8 @@ ndk::ScopedAStatus Vibrator::off() {
     LOG(VERBOSE) << "Vibrator off";
     /* Reset index before triggering another set of haptics */
     write_haptic_node(HAPTIC_NODE + INDEX_NODE, 0);
+    /* Reset mode before triggering another set of haptics */
+    write_haptic_node(HAPTIC_NODE + ACTIVATE_MODE_NODE, 1);
     write_haptic_node(HAPTIC_NODE + ACTIVATE_NODE, 0);
     return ndk::ScopedAStatus::ok();
 }
@@ -104,6 +108,7 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
     ndk::ScopedAStatus status;
     uint32_t index = 0;
     uint32_t timeMs = 0;
+    uint32_t activate_mode = 1;
     std::ofstream stream;
 
     for (auto& i: haptic_nodes) {
@@ -120,42 +125,52 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
     switch (effect) {
         case Effect::TICK:
             LOG(INFO) << "Vibrator effect set to TICK";
+            activate_mode = getProperty(HAPTIC_PROP_MODE + "tick", 0);
             index = getProperty(HAPTIC_PROP_INDEX + "tick", NULL);
             timeMs = getProperty(HAPTIC_PROP_DURATION + "tick", 30);
             break;
         case Effect::TEXTURE_TICK:
             LOG(INFO) << "Vibrator effect set to TEXTURE_TICK";
+            activate_mode = getProperty(HAPTIC_PROP_MODE + "texure_tick", 0);
             index = getProperty(HAPTIC_PROP_INDEX + "texure_tick", NULL);
             timeMs = getProperty(HAPTIC_PROP_DURATION + "texture_tick", 30);
             break;
         case Effect::CLICK:
             LOG(INFO) << "Vibrator effect set to CLICK";
+            activate_mode = getProperty(HAPTIC_PROP_MODE + "click", 0);
             index = getProperty(HAPTIC_PROP_INDEX + "click", NULL);
             timeMs = getProperty(HAPTIC_PROP_DURATION + "click", 50);
             break;
         case Effect::HEAVY_CLICK:
             LOG(INFO) << "Vibrator effect set to HEAVY_CLICK";
+            activate_mode = getProperty(HAPTIC_PROP_MODE + "heavy_click", 0);
             index = getProperty(HAPTIC_PROP_INDEX + "heavy_click", NULL);
             timeMs = getProperty(HAPTIC_PROP_DURATION + "heavy_click", 70);
             break;
         case Effect::DOUBLE_CLICK:
             LOG(INFO) << "Vibrator effect set to DOUBLE_CLICK";
+            activate_mode = getProperty(HAPTIC_PROP_MODE + "double_click", 0);
             index = getProperty(HAPTIC_PROP_INDEX + "double_click", NULL);
             timeMs = getProperty(HAPTIC_PROP_DURATION + "double_click", 50);
             break;
         case Effect::THUD:
             LOG(INFO) << "Vibrator effect set to THUD";
+            activate_mode = getProperty(HAPTIC_PROP_MODE + "thud", 0);
             index = getProperty(HAPTIC_PROP_INDEX + "thud", NULL);
             timeMs = getProperty(HAPTIC_PROP_DURATION + "thud", 70);
             break;
         case Effect::POP:
             LOG(INFO) << "Vibrator effect set to POP";
+            activate_mode = getProperty(HAPTIC_PROP_MODE + "pop", 0);
             index = getProperty(HAPTIC_PROP_INDEX + "pop", NULL);
             timeMs = getProperty(HAPTIC_PROP_DURATION + "pop", 30);
             break;
         default:
             return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
     }
+
+    /* Setup mode */
+    write_haptic_node(HAPTIC_NODE + ACTIVATE_MODE_NODE, activate_mode);
 
     /* Setup effect index */
     write_haptic_node(HAPTIC_NODE + INDEX_NODE, index);
