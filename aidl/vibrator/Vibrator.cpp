@@ -156,8 +156,24 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
             break;
         case Effect::DOUBLE_CLICK:
             LOG(INFO) << "Vibrator effect set to DOUBLE_CLICK";
+            /* double click isn't mapped as an effect_id in most awinic drivers, so
+             * run the effect twice to get the effect.
+             */
             activate_mode = getProperty(HAPTIC_PROP_MODE + "double_click", 0);
             effect_id = getProperty(HAPTIC_PROP_EFFECT_ID + "double_click", 1);
+            index = getProperty(HAPTIC_PROP_INDEX + "double_click", NULL);
+            timeMs = getProperty(HAPTIC_PROP_DURATION + "double_click", 50);
+            write_haptic_node(HAPTIC_NODE + ACTIVATE_MODE_NODE, activate_mode);
+            write_haptic_node(HAPTIC_NODE + EFFECT_ID_NODE, effect_id);
+            write_haptic_node(HAPTIC_NODE + INDEX_NODE, index);
+            on(timeMs, nullptr);
+            usleep(timeMs * 1000);
+            /* set values again, as Vibrator::on() may trigger Vibrator::off() after playing the first
+             * set of haptics, leading to reset of index, effect_id and activate_mode.
+             */
+            activate_mode = getProperty(HAPTIC_PROP_MODE + "double_click", 0);
+            // change to tick for better differentiated haptic
+            effect_id = getProperty(HAPTIC_PROP_EFFECT_ID + "tick", 2);
             index = getProperty(HAPTIC_PROP_INDEX + "double_click", NULL);
             timeMs = getProperty(HAPTIC_PROP_DURATION + "double_click", 50);
             break;
