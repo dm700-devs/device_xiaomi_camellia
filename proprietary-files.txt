@@ -1766,7 +1766,6 @@ vendor/bin/batterysecret
 vendor/bin/bp_kmsetkey_ca
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
-vendor/bin/charge_logger
 vendor/bin/chipinfo
 vendor/bin/dconfig
 vendor/bin/dexecutor
@@ -1902,7 +1901,6 @@ vendor/etc/init/init.batterysecret.rc
 vendor/etc/init/init.bt_drv.rc
 vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.cccirpcd.rc
-vendor/etc/init/init.charge_logger.rc
 vendor/etc/init/init.connfem.rc
 vendor/etc/init/init.fmradio_drv.rc
 vendor/etc/init/init.fpsgo.rc
