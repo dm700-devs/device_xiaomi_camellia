@@ -1399,7 +1399,6 @@ vendor/lib/libmtkshifter_vendor.so
 vendor/lib/libMtkSpeechEnh.so
 vendor/lib/libmtkspparser.so
 vendor/lib/libmtksysutils.so
-vendor/lib/libmtk_bsg.so
 vendor/lib/mt6833/libmtk_drvb.so
 vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib/vendor.mediatek.hardware.charge@1.0.so
@@ -1530,7 +1529,6 @@ vendor/lib64/libmtkspparser.so
 vendor/lib64/libmtksysutils.so
 vendor/lib64/libmtktinyxml.so
 vendor/lib64/libmtkutils.so
-vendor/lib64/libmtk_bsg.so
 vendor/lib64/mt6833/libmtk_drvb.so
 vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
 vendor/lib64/vendor.mediatek.hardware.aee@1.0.so
