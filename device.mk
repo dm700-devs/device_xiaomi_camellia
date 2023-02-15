@@ -311,10 +311,10 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
+    hostapd \
     wpa_supplicant
 
 PRODUCT_PACKAGES += \
-    android.hardware.wifi.hostapd@1.3.vendor:64 \
     android.hardware.wifi@1.5.vendor:64 \
     android.hardware.tetheroffload.control@1.1.vendor:64
 
