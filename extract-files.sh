@@ -89,6 +89,9 @@ function blob_fixup {
     vendor/bin/hw/android.hardware.lights-service.mediatek)
         "$PATCHELF" --replace-needed "android.hardware.light-V1-ndk_platform.so" "android.hardware.light-V1-ndk.so" "${2}"
         ;;
+    vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
+        "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+        ;;
     esac
 }
 
