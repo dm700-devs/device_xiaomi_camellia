@@ -94,7 +94,6 @@ debug.mtk_tflite.target_nnapi=29
 debug.svi.logs=1
 
 # Display
-debug.sf.disable_backpressure=1
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_gl_backpressure=1
 debug.sf.enable_hwc_vds=0
