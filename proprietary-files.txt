@@ -1598,9 +1598,6 @@ vendor/lib64/libnxp_extamp_intf.so
 
 # Power (Hardware)
 vendor/lib/hw/power.default.so
-vendor/lib64/android.hardware.power@1.0.so
-vendor/lib64/android.hardware.power@1.1.so
-vendor/lib64/android.hardware.power@1.2.so
 vendor/lib64/hw/power.default.so
 
 # Radio
