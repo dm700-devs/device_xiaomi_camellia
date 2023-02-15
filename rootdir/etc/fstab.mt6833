@@ -14,7 +14,7 @@ vendor /vendor ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
-
+odm /odm ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 
 
