@@ -1412,11 +1412,9 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service.rc
 vendor/lib/android.hardware.gatekeeper@1.0.so
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
 vendor/lib/hw/gatekeeper.beanpod.so
-vendor/lib/hw/gatekeeper.default.so
 vendor/lib64/android.hardware.gatekeeper@1.0.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
 vendor/lib64/hw/gatekeeper.beanpod.so
-vendor/lib64/hw/gatekeeper.default.so
 
 # Graphics
 vendor/lib/egl/egl.cfg
