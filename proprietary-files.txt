@@ -1356,7 +1356,6 @@ vendor/lib64/libstagefrighthw.so
 # Mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
-vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
 vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
 vendor/bin/hw/android.hardware.vibrator-service.mediatek
 vendor/bin/hw/vendor.mediatek.hardware.charge@1.0-service
@@ -1367,7 +1366,6 @@ vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
 vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
-vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
 vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
 vendor/etc/init/vendor.mediatek.hardware.charge@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
