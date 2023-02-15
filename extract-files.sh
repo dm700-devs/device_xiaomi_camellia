@@ -84,6 +84,9 @@ function blob_fixup {
     vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service)
         "$PATCHELF" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "$2"
         ;;
+    vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
+        "$PATCHELF" --replace-needed "android.hardware.power-V2-ndk_platform.so" "android.hardware.power-V2-ndk.so" "${2}"
+        ;;
     esac
 }
 
