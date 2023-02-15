@@ -3150,8 +3150,6 @@ vendor/etc/voicecommand/training/ubmfile/keyword08/hhaa/supplement/nl.use_pcm
 vendor/etc/voicecommand/training/ubmfile/keyword08/hhaa/supplement/nl.use_xor
 vendor/etc/voicecommand/training/ubmfile/keyword08/keyphrase.xml
 vendor/etc/wfd_source_capability.csv
-vendor/lib/android.hidl.allocator@1.0.so
-vendor/lib/android.hidl.memory.block@1.0.so
 vendor/lib/arm.graphics-V1-ndk_platform.so
 vendor/lib/audioclient-types-aidl-cpp.so
 vendor/lib/audio_common-aidl-cpp.so
@@ -3226,8 +3224,6 @@ vendor/lib/libh264enc_sa.ca7.so
 vendor/lib/libhdrvideo.so
 vendor/lib/libHEVCdec_sa.ca7.android.so
 vendor/lib/libhevce_sb.ca7.android.so
-vendor/lib/libhidltransport.so
-vendor/lib/libhwbinder.so
 vendor/lib/libicd_decoder.so
 vendor/lib/libimgsensorca.so
 vendor/lib/libimsg_log.so
@@ -3357,8 +3353,6 @@ vendor/lib/s5kjn1sunny_mipi_raw_tuning.so
 vendor/lib/shared-file-region-aidl-cpp.so
 vendor/lib/soundfx/libhapticgenerator.so
 vendor/lib/VP9SecureVdecCA.so
-vendor/lib64/android.hidl.allocator@1.0.so
-vendor/lib64/android.hidl.memory.block@1.0.so
 vendor/lib64/arm.graphics-V1-ndk_platform.so
 vendor/lib64/audioclient-types-aidl-cpp.so
 vendor/lib64/audio_common-aidl-cpp.so
@@ -3496,8 +3490,6 @@ vendor/lib64/libheichal.so
 vendor/lib64/libhevce_sb.ca7.android.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
-vendor/lib64/libhidltransport.so
-vendor/lib64/libhwbinder.so
 vendor/lib64/libhwm.so
 vendor/lib64/libicd_decoder.so
 vendor/lib64/libifcutils_mtk.so
