@@ -177,7 +177,8 @@ PRODUCT_PACKAGES += \
 
 # IR
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0.vendor
+    android.hardware.ir@1.0-service \
+    android.hardware.ir@1.0-impl
 
 # Keymaster
 PRODUCT_PACKAGES += \
