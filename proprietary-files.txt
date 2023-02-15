@@ -814,19 +814,15 @@ vendor/lib64/libmfido.so
 vendor/lib64/vendor.xiaomi.hardware.mfidoca@1.0.so
 
 # Fingerprint
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/etc/permissions/com.fingerprints.extension.xml
 vendor/etc/permissions/com.fingerprints.fpmmi.xml
--vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml
 vendor/firmware/168_fingerprintRecord_RTP.bin
 vendor/firmware/fingerprint_record_rtp.bin
 -vendor/framework/com.fingerprints.extension.jar
 -vendor/framework/com.fingerprints.fpmmi.jar
-vendor/lib64/android.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/com.fingerprints.extension@1.0.so
-vendor/lib64/hw/fingerprint.fpc.so
-vendor/lib64/hw/fingerprint.goodix.so
+-vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.default.so
+-vendor/lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.default.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
