@@ -70,9 +70,40 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    factory_init.connectivity.common.rc \
+    factory_init.connectivity.rc \
+    factory_init.project.rc \
+    factory_init.rc
+
+PRODUCT_PACKAGES += \
     fstab.emmc \
     fstab.enableswap \
     fstab.mt6833
+
+PRODUCT_PACKAGES += \
+    init.aee.rc \
+    init.ago.rc \
+    init.connectivity.common.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6833.rc \
+    init.mt6833.usb.rc \
+    init.project.rc \
+    init.sensor_2_0.rc \
+    init_connectivity.rc
+
+PRODUCT_PACKAGES += \
+    meta_init.connectivity.common.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc
+
+PRODUCT_PACKAGES += \
+    multi_init.rc
+
+PRODUCT_PACKAGES += \
+    init.insmod.sh
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.emmc \
