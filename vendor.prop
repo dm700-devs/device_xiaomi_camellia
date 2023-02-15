@@ -348,7 +348,6 @@ ro.vendor.fm.platform=mt6631_6635
 ro.vendor.fps.switch.default=true
 ro.vendor.gps.chrdev=gps_drv
 ro.vendor.have_aeev_feature=1
-ro.vendor.init.sensor.rc=init.sensor_2_0.rc
 ro.vendor.jpeg_decode_sw_opt=1
 ro.vendor.md_auto_setup_ims=1
 ro.vendor.md_log_memdump_wait=15
