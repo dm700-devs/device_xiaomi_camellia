@@ -1692,10 +1692,8 @@ vendor/lib64/vendor.xiaomi.hardware.vibratorfeature@1.0.so
 # WiFi
 bin/iwpriv
 vendor/bin/hw/android.hardware.wifi@1.0-service-lazy
-vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 vendor/etc/init/android.hardware.wifi@1.0-service-lazy.rc
 -vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
--vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
 -vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
 
 # Xiaomi
