@@ -826,6 +826,16 @@ on boot
     chmod 0220 /sys/power/tuxonice/do_hibernate
 
 
+# Fingerprint
+    chown system system /sys/bus/spi/devices/spi5.0/clk_enable
+    chown system system /sys/bus/spi/devices/spi5.0/wakeup_enable
+    chown system system /sys/bus/spi/devices/spi5.0/fingerdown_wait
+    chown system system /sys/bus/spi/devices/spi5.0/irq
+    chmod 0200 /sys/bus/spi/devices/spi5.0/clk_enable
+    chmod 0200 /sys/bus/spi/devices/spi5.0/wakeup_enable
+    chmod 0600 /sys/bus/spi/devices/spi5.0/irq
+    chmod 0200 /sys/bus/spi/devices/spi5.0/fingerdown_wait
+
 # Smartbook Handler Framework
     chown system system /sys/power/sb_state
     chmod 0660 /sys/power/sb_state
@@ -965,6 +975,10 @@ on boot
     chown system radio /dev/ttyGS1
 #Power Manager
     write /sys/power/pm_freeze_timeout 2000
+
+# Fingerprint
+on property:vendor.fps_hal.restartimes=max
+    stop vendor.fps_hal
 
 on property:vold.decrypt=trigger_reset_main
     write /proc/bootprof "INIT:vold.decrypt=trigger_reset_main"
