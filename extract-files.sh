@@ -92,6 +92,9 @@ function blob_fixup {
     vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so)
        "$PATCHELF" --replace-needed "android.hardware.gnss-V1-ndk_platform.so" "android.hardware.gnss-V1-ndk.so" "${2}"
         ;;
+    vendor/bin/hw/android.hardware.lights-service.mediatek)
+        "$PATCHELF" --replace-needed "android.hardware.light-V1-ndk_platform.so" "android.hardware.light-V1-ndk.so" "${2}"
+        ;;
     esac
 }
 
