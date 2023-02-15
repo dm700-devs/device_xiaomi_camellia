@@ -304,6 +304,11 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@2.0.vendor
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb.gadget@1.1.vendor:64 \
+    android.hardware.usb@1.3.vendor:64
+
 # WiFi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
