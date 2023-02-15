@@ -1,5 +1,6 @@
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
+bluetooth.device.class_of_device=90,2,12
 camera.disable_zsl_mode=1
 dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt
 debug.als.logs=1
