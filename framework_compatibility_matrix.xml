@@ -1,47 +1,5 @@
 <compatibility-matrix version="4.0" type="framework">
     <hal format="hidl" optional="true">
-        <name>android.hardware.audio</name>
-        <version>7.0</version>
-        <interface>
-            <name>IDevicesFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.audio.effect</name>
-        <version>7.0</version>
-        <interface>
-            <name>IEffectsFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.drm</name>
-        <version>1.0-4</version>
-        <interface>
-            <name>ICryptoFactory</name>
-            <instance>widevine</instance>
-        </interface>
-        <interface>
-            <name>IDrmFactory</name>
-            <instance>widevine</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.gnss</name>
-        <interface>
-            <name>IGnss</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.power</name>
-        <interface>
-            <name>IPower</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>android.hardware.radio</name>
         <version>1.0-6</version>
         <interface>
@@ -52,67 +10,10 @@
             <instance>imsAospSlot2</instance>
             <instance>se1</instance>
             <instance>se2</instance>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
         </interface>
         <interface>
             <name>ISap</name>
             <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.radio.config</name>
-        <version>1.0-3</version>
-        <interface>
-            <name>IRadioConfig</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.tetheroffload.control</name>
-        <version>1.0-1</version>
-        <interface>
-            <name>IOffloadControl</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.usb</name>
-        <version>1.0-3</version>
-        <interface>
-            <name>IUsb</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.vibrator</name>
-        <interface>
-            <name>IVibrator</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.wifi</name>
-        <version>1.0-5</version>
-        <interface>
-            <name>IWifi</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.wifi.hostapd</name>
-        <version>1.0-3</version>
-        <interface>
-            <name>IHostapd</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.wifi.supplicant</name>
-        <version>1.0-4</version>
-        <interface>
-            <name>ISupplicant</name>
-            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -387,6 +288,14 @@
         <version>1.0</version>
         <interface>
             <name>ISoter</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.nxp.nxpnfc</name>
+        <version>1.0</version>
+        <interface>
+            <name>INxpNfc</name>
             <instance>default</instance>
         </interface>
     </hal>
