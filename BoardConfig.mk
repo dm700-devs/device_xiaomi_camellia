@@ -57,6 +57,9 @@ TARGET_OTA_ASSERT_DEVICE := evergo,evergreen,everpal,opal
 TARGET_BOOTLOADER_BOARD_NAME := everpal
 TARGET_NO_BOOTLOADER := true
 
+# Build
+BUILD_BROKEN_DUP_RULES := true
+
 # Display
 TARGET_SCREEN_DENSITY := 440
 
