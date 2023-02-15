@@ -327,6 +327,9 @@
     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
      <integer name="config_shutdownBatteryTemperature">600</integer>
 
+    <!-- Delay that allows some content to arrive at the display before switching from DOZE to ON, in millis. -->
+     <integer name="config_wakeUpDelayDoze">32</integer>
+
     <!-- See AmbientSensor.AmbientColorTemperatureSensor.
          The ambient color temperature sensor name. -->
      <string name="config_displayWhiteBalanceColorTemperatureSensorName">com.google.sensor.color</string>
