@@ -24,9 +24,6 @@ vendor/lib/libaudioprimarydevicehalifclient.so
 vendor/lib/libaudiotoolkit_vendor.so
 vendor/lib/libaudio_param_parser-vnd.so
 
-# Audio (SoundFX)
-vendor/lib/soundfx/libaudiopreprocessing_mtk.so
-
 # Audio (Hardware)
 vendor/lib/hw/audio.primary.mt6833.so
 vendor/lib/hw/audio.r_submix.mt6833.so
