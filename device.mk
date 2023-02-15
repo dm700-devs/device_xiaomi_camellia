@@ -353,7 +353,8 @@ PRODUCT_COPY_FILES += \
 # Runtime Resource (RRO) Overlays
 PRODUCT_PACKAGES += \
     FrameworksResOverlayEverpal \
-    SettingsOverlayEverpal
+    SettingsOverlayEverpal \
+    SystemUIOverlayEverpal
 
 # Screen Resolution
 TARGET_SCREEN_HEIGHT := 2400
