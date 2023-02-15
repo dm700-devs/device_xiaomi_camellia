@@ -132,6 +132,9 @@ TARGET_COPY_OUT_PRODUCT := product
 # Vendor Security Patch
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
+# Vintf
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+
 # VNDK
 BOARD_VNDK_VERSION := current
 
