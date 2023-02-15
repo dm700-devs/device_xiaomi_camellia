@@ -394,7 +394,8 @@ PRODUCT_PACKAGES += \
     FrameworksResOverlayEverpal \
     SettingsOverlayEverpal \
     SystemUIOverlayEverpal \
-    TelephonyOverlayEverpal
+    TelephonyOverlayEverpal \
+    WifiOverlayEverpal
 
 # Screen Resolution
 TARGET_SCREEN_HEIGHT := 2400
