@@ -27,10 +27,11 @@ std::map<int, std::string> haptic_nodes = {
     {7, "/sys/bus/i2c/drivers/awinic_haptic/1-005a/"},
     {8, "/sys/bus/i2c/drivers/awinic_haptic/2-005a/"},
     {9, "/sys/bus/i2c/drivers/awinic_haptic/3-005a/"},
-    {10, "/sys/bus/i2c/drivers/aw86927_haptic/0-005a/"},
-    {11, "/sys/bus/i2c/drivers/aw86927_haptic/1-005a/"},
-    {12, "/sys/bus/i2c/drivers/aw86927_haptic/2-005a/"},
-    {13, "/sys/bus/i2c/drivers/aw86927_haptic/3-005a/"},
+    {10, "/sys/bus/i2c/drivers/awinic_haptic/9-005a/"},
+    {11, "/sys/bus/i2c/drivers/aw86927_haptic/0-005a/"},
+    {12, "/sys/bus/i2c/drivers/aw86927_haptic/1-005a/"},
+    {13, "/sys/bus/i2c/drivers/aw86927_haptic/2-005a/"},
+    {14, "/sys/bus/i2c/drivers/aw86927_haptic/3-005a/"},
 };
 
 static std::string HAPTIC_NODE;

@@ -33,6 +33,12 @@ on fs
     chown system system /sys/bus/i2c/drivers/awinic_haptic/3-005a/activate
     chown system system /sys/bus/i2c/drivers/awinic_haptic/3-005a/duration
     chown system system /sys/bus/i2c/drivers/awinic_haptic/3-005a/index
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/9-005a/activate
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/9-005a/duration
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/9-005a/index
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/9-005a/activate
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/9-005a/duration
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/9-005a/index
     chown system system /sys/bus/i2c/drivers/aw86927_haptic/0-005a/activate
     chown system system /sys/bus/i2c/drivers/aw86927_haptic/0-005a/duration
     chown system system /sys/bus/i2c/drivers/aw86927_haptic/0-005a/index
