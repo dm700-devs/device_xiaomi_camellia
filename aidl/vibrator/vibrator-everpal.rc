@@ -2,3 +2,46 @@ service vendor.vibrator-everpal /vendor/bin/hw/android.hardware.vibrator-service
     class hal
     user nobody
     group nobody
+    user system
+    group system input
+
+on fs
+    chown system system /sys/class/leds/vibrator/activate
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/index
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/0-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/0-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/0-005a/index
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/1-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/1-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/1-005a/index
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/index
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/3-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/3-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/3-005a/index
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/0-005a/activate
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/0-005a/duration
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/0-005a/index
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/1-005a/activate
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/1-005a/duration
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/1-005a/index
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/2-005a/activate
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/2-005a/duration
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/2-005a/index
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/3-005a/activate
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/3-005a/duration
+    chown system system /sys/bus/i2c/drivers/awinic_haptic/3-005a/index
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/0-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/0-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/0-005a/index
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/1-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/1-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/1-005a/index
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/2-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/2-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/2-005a/index
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/3-005a/activate
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/3-005a/duration
+    chown system system /sys/bus/i2c/drivers/aw86927_haptic/3-005a/index
