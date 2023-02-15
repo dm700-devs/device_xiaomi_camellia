@@ -96,4 +96,5 @@ wifi.tethering.interface=ap0
 persist.vendor.wfc.sys_wfc_support=1
 
 # Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
 ro.zygote.preload.enable=0
