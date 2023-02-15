@@ -103,6 +103,9 @@ PRODUCT_PACKAGES += \
     multi_init.rc
 
 PRODUCT_PACKAGES += \
+    ueventd.mt6833.rc
+
+PRODUCT_PACKAGES += \
     init.insmod.sh
 
 PRODUCT_COPY_FILES += \

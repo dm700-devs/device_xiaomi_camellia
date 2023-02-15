@@ -2616,7 +2616,6 @@ vendor/etc/special_pws_channel.xml
 vendor/etc/SVIConfig.xml
 vendor/etc/task_profiles.json
 vendor/etc/throttle.sh
-vendor/etc/ueventd.rc
 vendor/etc/ultrasound.wav
 vendor/etc/usb_audio_accessory_only_policy_configuration.xml
 vendor/etc/vendor-apns-conf.xml
