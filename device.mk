@@ -13,6 +13,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/everpal/everpal-vendor.mk)
 
+# Silence vendor logspam
+include $(LOCAL_PATH)/configs/props/vendor_logtags.mk
+
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
