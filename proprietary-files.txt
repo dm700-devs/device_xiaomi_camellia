@@ -26,7 +26,6 @@ vendor/lib/libaudio_param_parser-vnd.so
 
 # Audio (SoundFX)
 vendor/lib/soundfx/libaudiopreprocessing_mtk.so
-vendor/lib/soundfx/libmisoundfx.so
 
 # Audio (Hardware)
 vendor/lib/hw/audio.primary.mt6833.so
@@ -2323,9 +2322,6 @@ vendor/etc/mdota/MTK_OTA_CT.mcfota
 vendor/etc/mdota/MTK_OTA_CU.mcfota
 vendor/etc/mdota/MTK_OTA_REL10.mcfota
 vendor/etc/mdota/MTK_OTA_REL11.mcfota
-vendor/etc/misound_res.bin
-vendor/etc/misound_res_headphone.bin
-vendor/etc/misound_res_spk.bin
 vendor/etc/mmigroup/CommonConf.json
 vendor/etc/mmigroup/CommonParam.json
 vendor/etc/mmigroup/customerAta.json
@@ -3446,8 +3442,6 @@ vendor/lib/libladder.so
 vendor/lib/liblogwrap_vendor.so
 vendor/lib/libmifpext.so
 vendor/lib/libminiui.so
-vendor/lib/libmisound.so
-vendor/lib/libmisoundcrossfade.so
 vendor/lib/libmml.so
 vendor/lib/libmmprofile.so
 vendor/lib/libmnetlink_v104.so
@@ -3747,8 +3741,6 @@ vendor/lib64/libmfllcore.so
 vendor/lib64/libmifpext.so
 vendor/lib64/libminiui.so
 vendor/lib64/libmipc.so
-vendor/lib64/libmisound.so
-vendor/lib64/libmisoundcrossfade.so
 vendor/lib64/libmiStereoFactoryRemapBasicLib.so
 vendor/lib64/libmiStereoFactoryRemapLib.so
 vendor/lib64/libmmagent.so
@@ -3855,7 +3847,6 @@ vendor/lib64/s5kjn1sunny_mipi_raw_IdxMgr.so
 vendor/lib64/s5kjn1sunny_mipi_raw_tuning.so
 vendor/lib64/shared-file-region-aidl-cpp.so
 vendor/lib64/soundfx/libhapticgenerator.so
-vendor/lib64/soundfx/libmisoundfx.so
 vendor/lib64/VP9SecureVdecCA.so
 vendor/lib64/wechat.beanpod.so
 vendor/odm_dlkm/etc/build.prop
