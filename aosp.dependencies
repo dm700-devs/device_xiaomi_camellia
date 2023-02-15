@@ -1,0 +1,16 @@
+[
+	{
+		"repository":	"kernel_xiaomi_everpal",
+		"target_path":	"kernel/xiaomi/everpal"
+	},
+	{
+		"repository":	"vendor_xiaomi_everpal",
+		"target_path":	"vendor/xiaomi/everpal"
+	},
+	{
+		"remote":	"github",
+		"repository":	"LineageOS/android_device_mediatek_sepolicy_vndr",
+		"target_path":	"device/mediatek/sepolicy_vndr",
+		"branch":	"lineage-20"
+	}
+]
