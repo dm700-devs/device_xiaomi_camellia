@@ -65,6 +65,11 @@ function blob_fixup {
     vendor/lib64/libwifi-hal-mtk.so)
         "$PATCHELF" --set-soname libwifi-hal-mtk.so "$2"
         ;;
+    vendor/bin/hw/android.hardware.media.c2@1.2-mediatek)
+        ;&
+    vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
+       "$PATCHELF" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "$2"
+        ;;
     esac
 }
 
