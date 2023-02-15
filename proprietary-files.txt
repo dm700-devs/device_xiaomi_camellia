@@ -3424,8 +3424,6 @@ vendor/lib/s5kjn1sunny_mipi_raw_tuning.so
 vendor/lib/shared-file-region-aidl-cpp.so
 vendor/lib/soundfx/libhapticgenerator.so
 vendor/lib/VP9SecureVdecCA.so
-vendor/lib64/android.hardware.dumpstate@1.0.so
-vendor/lib64/android.hardware.dumpstate@1.1.so
 vendor/lib64/android.hardware.media.c2@1.0.so
 vendor/lib64/android.hardware.media.c2@1.1.so
 vendor/lib64/android.hardware.media.c2@1.2.so
