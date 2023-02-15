@@ -396,8 +396,11 @@
     -->
     <string name="config_mainBuiltInDisplayCutout">M 0,0 H -37 V 96 H 37 V 0 H 0 Z</string>
 
-    <!-- The default peak refresh rate for a given device. Change this value if you want to allow
-         for higher refresh rates to be automatically used out of the box -->
+    <!-- The default refresh rate. sweet manages this using the peak refresh rate setting, so set
+         this value to 0 so it has no effect. -->
+    <integer name="config_defaultRefreshRate">0</integer>
+
+    <!-- The default peak refresh rate. -->
     <integer name="config_defaultPeakRefreshRate">90</integer>
 
     <!-- Array of ConnectivityManager.TYPE_xxxx values allowable for tethering -->
