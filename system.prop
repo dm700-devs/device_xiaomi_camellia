@@ -6,6 +6,19 @@ ro.audio.usb.period_us=16000
 # Brand
 Build.BRAND=MTK
 
+# Dalvik
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=verify
+pm.dexopt.ab-ota=speed-profile
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
+dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.boot-dex2oat-threads=6
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.image-dex2oat-threads=6
+
 # Display
 debug.sf.use_phase_offsets_as_durations=1
 debug.sf.late.sf.duration=27600000
