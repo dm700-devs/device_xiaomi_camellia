@@ -284,7 +284,6 @@ PRODUCT_PACKAGES += \
     factory_init.rc
 
 PRODUCT_PACKAGES += \
-    fstab.emmc \
     fstab.enableswap \
     fstab.mt6833
 
@@ -316,7 +315,6 @@ PRODUCT_PACKAGES += \
     init.insmod.sh
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.emmc \
     $(LOCAL_PATH)/rootdir/etc/fstab.mt6833:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6833
 
 # Screen Resolution
