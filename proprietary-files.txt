@@ -327,9 +327,6 @@ vendor/etc/aurisys_param/sixth_param_voip.txt
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
-vendor/etc/audio_policy_configuration_bluetooth_legacy_hal.xml
-vendor/etc/bluetooth_audio_policy_configuration.xml
-vendor/etc/bluetooth_offload_audio_policy_configuration.xml
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
 vendor/lib/android.hardware.bluetooth.audio@2.0.so
 vendor/lib/android.hardware.bluetooth.audio@2.1.so
@@ -2120,7 +2117,6 @@ vendor/etc/125_Tango.png
 vendor/etc/126_Fantasy.png
 vendor/etc/127_Slumber.png
 vendor/etc/128_Carmen.png
-vendor/etc/a2dp_in_audio_policy_configuration.xml
 vendor/etc/AbnormalDisplayLog_dynamic.xml
 vendor/etc/aee-commit
 vendor/etc/aee-config
@@ -2617,7 +2613,6 @@ vendor/etc/SVIConfig.xml
 vendor/etc/task_profiles.json
 vendor/etc/throttle.sh
 vendor/etc/ultrasound.wav
-vendor/etc/usb_audio_accessory_only_policy_configuration.xml
 vendor/etc/vendor-apns-conf.xml
 vendor/etc/VideoLog_dynamic.xml
 vendor/etc/virtual-spn-conf-by-efgid1.xml
