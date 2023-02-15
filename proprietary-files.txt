@@ -1601,20 +1601,7 @@ vendor/lib/hw/power.default.so
 vendor/lib64/hw/power.default.so
 
 # Radio
-vendor/lib/android.hardware.radio@1.0.so
-vendor/lib/android.hardware.radio@1.1.so
 vendor/lib/libvsim.so
-vendor/lib64/android.hardware.radio.config@1.0.so
-vendor/lib64/android.hardware.radio.config@1.1.so
-vendor/lib64/android.hardware.radio.config@1.2.so
-vendor/lib64/android.hardware.radio.config@1.3.so
-vendor/lib64/android.hardware.radio@1.0.so
-vendor/lib64/android.hardware.radio@1.1.so
-vendor/lib64/android.hardware.radio@1.2.so
-vendor/lib64/android.hardware.radio@1.3.so
-vendor/lib64/android.hardware.radio@1.4.so
-vendor/lib64/android.hardware.radio@1.5.so
-vendor/lib64/android.hardware.radio@1.6.so
 
 # Sensors
 vendor/etc/elliptic_sensor.xml

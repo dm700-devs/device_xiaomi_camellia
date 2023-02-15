@@ -198,6 +198,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# Radio
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config@1.3.vendor:64 \
+    android.hardware.radio@1.1.vendor \
+    android.hardware.radio@1.6.vendor:64
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     factory_init.connectivity.common.rc \
