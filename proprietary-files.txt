@@ -3205,9 +3205,6 @@ vendor/etc/voicecommand/training/ubmfile/keyword08/hhaa/supplement/nl.use_pcm
 vendor/etc/voicecommand/training/ubmfile/keyword08/hhaa/supplement/nl.use_xor
 vendor/etc/voicecommand/training/ubmfile/keyword08/keyphrase.xml
 vendor/etc/wfd_source_capability.csv
-vendor/lib/android.hardware.media.c2@1.0.so
-vendor/lib/android.hardware.media.c2@1.1.so
-vendor/lib/android.hardware.media.c2@1.2.so
 vendor/lib/android.hidl.allocator@1.0.so
 vendor/lib/android.hidl.memory.block@1.0.so
 vendor/lib/arm.graphics-V1-ndk_platform.so
@@ -3416,9 +3413,6 @@ vendor/lib/s5kjn1sunny_mipi_raw_tuning.so
 vendor/lib/shared-file-region-aidl-cpp.so
 vendor/lib/soundfx/libhapticgenerator.so
 vendor/lib/VP9SecureVdecCA.so
-vendor/lib64/android.hardware.media.c2@1.0.so
-vendor/lib64/android.hardware.media.c2@1.1.so
-vendor/lib64/android.hardware.media.c2@1.2.so
 vendor/lib64/android.hardware.tetheroffload.config@1.0.so
 vendor/lib64/android.hardware.tetheroffload.control@1.0.so
 vendor/lib64/android.hardware.tetheroffload.control@1.1.so
