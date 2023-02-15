@@ -1425,7 +1425,6 @@ vendor/lib/egl/libMEOW_gift.so
 vendor/lib/egl/libMEOW_qt.so
 vendor/lib/egl/libMEOW_trace.so
 vendor/lib/hw/vulkan.mali.so
-vendor/lib/hw/vulkan.mt6833.so
 vendor/lib/libOpenCL.so
 vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/egl/libGLES_meow.so
@@ -1434,7 +1433,6 @@ vendor/lib64/egl/libMEOW_gift.so
 vendor/lib64/egl/libMEOW_qt.so
 vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/hw/vulkan.mali.so
-vendor/lib64/hw/vulkan.mt6833.so
 vendor/lib64/libOpenCL.so
 
 # Health
