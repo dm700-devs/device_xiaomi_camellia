@@ -355,6 +355,10 @@ PRODUCT_PACKAGES += \
     android.hardware.usb.gadget@1.1.vendor:64 \
     android.hardware.usb@1.3.vendor:64
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-V1-ndk_platform.vendor:64
+
 # VNDK
 PRODUCT_PACKAGES += \
     libcrypto-v32 \

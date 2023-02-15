@@ -1679,19 +1679,10 @@ vendor/thh/ta/fc32e4da17d342449b01c992d56d71bf.ta
 
 # Vibrator
 vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
-vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature@1.0-service
 vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
 vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature@1.0-service.rc
-vendor/etc/init/vibrator-mtk-default.rc
 -vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
--vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature@1.0-service.xml
-vendor/lib/hw/vibrator.default.so
-vendor/lib/libvibrator.so
-vendor/lib64/android.hardware.vibrator-V1-ndk_platform.so
-vendor/lib64/hw/vibrator.default.so
-vendor/lib64/libvibrator.so
 vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
-vendor/lib64/vendor.xiaomi.hardware.vibratorfeature@1.0.so
 
 # WiFi
 bin/iwpriv

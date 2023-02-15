@@ -104,7 +104,7 @@
         <name>android.hardware.vibrator</name>
         <interface>
             <name>IVibrator</name>
-            <instance>vibratorfeature</instance>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">

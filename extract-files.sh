@@ -56,6 +56,12 @@ fi
 # Patch/fix blobs
 function blob_fixup {
     case "$1" in
+    vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service)
+        sed -i "s/\x00\x2F\x76\x69\x62\x72\x61\x74\x6F\x72\x66\x65\x61\x74\x75\x72\x65\x00/\x00\x2F\x64\x65\x66\x61\x75\x6C\x74\x00\x00\x00\x00\x00\x00\x00\x00\x00/g" "${2}"
+        ;;
+    vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml)
+        sed -i "s/vibratorfeature/default/g" "${2}"
+        ;;
     vendor/lib64/libwifi-hal-mtk.so)
         "$PATCHELF" --set-soname libwifi-hal-mtk.so "$2"
         ;;
