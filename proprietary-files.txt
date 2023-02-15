@@ -3425,9 +3425,6 @@ vendor/etc/voicecommand/training/ubmfile/keyword08/hhaa/supplement/nl.use_xor
 vendor/etc/voicecommand/training/ubmfile/keyword08/keyphrase.xml
 vendor/etc/wfd_source_capability.csv
 vendor/lib/android.frameworks.sensorservice@1.0.so
-vendor/lib/android.hardware.boot@1.0.so
-vendor/lib/android.hardware.boot@1.1.so
-vendor/lib/android.hardware.boot@1.2.so
 vendor/lib/android.hardware.cas.native@1.0.so
 vendor/lib/android.hardware.cas@1.0.so
 vendor/lib/android.hardware.cas@1.1.so
@@ -3650,9 +3647,6 @@ vendor/lib/shared-file-region-aidl-cpp.so
 vendor/lib/soundfx/libhapticgenerator.so
 vendor/lib/VP9SecureVdecCA.so
 vendor/lib64/android.frameworks.sensorservice@1.0.so
-vendor/lib64/android.hardware.boot@1.0.so
-vendor/lib64/android.hardware.boot@1.1.so
-vendor/lib64/android.hardware.boot@1.2.so
 vendor/lib64/android.hardware.dumpstate@1.0.so
 vendor/lib64/android.hardware.dumpstate@1.1.so
 vendor/lib64/android.hardware.ir@1.0.so
