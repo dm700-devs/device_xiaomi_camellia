@@ -1605,22 +1605,12 @@ vendor/lib/libvsim.so
 
 # Sensors
 vendor/etc/elliptic_sensor.xml
-vendor/lib/android.hardware.sensors@1.0.so
-vendor/lib/android.hardware.sensors@2.0-ScopedWakelock.so
-vendor/lib/android.hardware.sensors@2.0.so
-vendor/lib/android.hardware.sensors@2.1.so
 vendor/lib/hw/sensors.elliptic.so
 vendor/lib/hw/sensors.touch.detect.so
-vendor/lib/libsensorndkbridge.so
-vendor/lib64/android.hardware.sensors@1.0.so
-vendor/lib64/android.hardware.sensors@2.0-ScopedWakelock.so
-vendor/lib64/android.hardware.sensors@2.0.so
-vendor/lib64/android.hardware.sensors@2.1.so
 vendor/lib64/hw/sensors.elliptic.so
 vendor/lib64/hw/sensors.mt6833.so
 vendor/lib64/hw/sensors.touch.detect.so
 vendor/lib64/libnotifyaudiohal.so
-vendor/lib64/libsensorndkbridge.so
 vendor/lib64/libsensor_custom.so
 
 # Soter
@@ -3229,7 +3219,6 @@ vendor/etc/voicecommand/training/ubmfile/keyword08/hhaa/supplement/nl.use_pcm
 vendor/etc/voicecommand/training/ubmfile/keyword08/hhaa/supplement/nl.use_xor
 vendor/etc/voicecommand/training/ubmfile/keyword08/keyphrase.xml
 vendor/etc/wfd_source_capability.csv
-vendor/lib/android.frameworks.sensorservice@1.0.so
 vendor/lib/android.hardware.ir@1.0.so
 vendor/lib/android.hardware.media.c2@1.0.so
 vendor/lib/android.hardware.media.c2@1.1.so
@@ -3442,7 +3431,6 @@ vendor/lib/s5kjn1sunny_mipi_raw_tuning.so
 vendor/lib/shared-file-region-aidl-cpp.so
 vendor/lib/soundfx/libhapticgenerator.so
 vendor/lib/VP9SecureVdecCA.so
-vendor/lib64/android.frameworks.sensorservice@1.0.so
 vendor/lib64/android.hardware.dumpstate@1.0.so
 vendor/lib64/android.hardware.dumpstate@1.1.so
 vendor/lib64/android.hardware.ir@1.0.so
