@@ -3173,7 +3173,6 @@ vendor/lib/libasn1c_mapi.so
 vendor/lib/libasn1c_mdmi.so
 vendor/lib/libaurisysdemo.so
 vendor/lib/libAVCSecureVencCA.so
-vendor/lib/libavservices_minijail.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libblisrc32_vendor.so
 vendor/lib/libbwc.so
@@ -3426,7 +3425,6 @@ vendor/lib64/libasn1c_mapi.so
 vendor/lib64/libasn1c_mdmi.so
 vendor/lib64/libaurisysdemo.so
 vendor/lib64/libAVCSecureVencCA.so
-vendor/lib64/libavservices_minijail_vendor.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libbinderdebug.so
 vendor/lib64/libblisrc32_vendor.so
