@@ -130,6 +130,15 @@ PRODUCT_PACKAGES += \
     libdrmclearkeyplugin \
     libmockdrmcryptoplugin
 
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.composer@2.1-resources.vendor:64 \
+    android.hardware.graphics.composer@2.1.vendor:64 \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl \
+    libdrm.vendor
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
