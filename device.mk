@@ -280,7 +280,6 @@ PRODUCT_PACKAGES += \
     fstab.mt6833
 
 PRODUCT_PACKAGES += \
-    init.aee.rc \
     init.ago.rc \
     init.connectivity.common.rc \
     init.connectivity.rc \
