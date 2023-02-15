@@ -1304,9 +1304,6 @@ vendor/lib64/libOpenCL.so
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 -system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
-# IFAA
--vendor/app/IFAAService/IFAAService.apk
-
 # Kernel-Modules
 vendor/lib/modules/bt_drv_connac1x.ko
 vendor/lib/modules/connfem.ko

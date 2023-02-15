@@ -176,6 +176,10 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# IFAA
+PRODUCT_PACKAGES += \
+    IFAAService
+
 # IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service \
