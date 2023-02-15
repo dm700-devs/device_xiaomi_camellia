@@ -1,4 +1,0 @@
-service vendor.vibrator-default /apex/com.android.hardware.vibrator/bin/hw/android.hardware.vibrator-service.example
-    class hal
-    user nobody
-    group nobody
