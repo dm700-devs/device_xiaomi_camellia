@@ -92,6 +92,9 @@ function blob_fixup {
     vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc)
         echo "$(cat ${2}) input" > "${2}"
         ;;
+    lib64/libsink.so)
+        "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
+        ;;
     esac
 }
 
