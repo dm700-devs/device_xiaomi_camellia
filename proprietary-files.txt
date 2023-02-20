@@ -1297,7 +1297,6 @@ vendor/lib64/libOpenCL.so
 # HotwordEnrollment
 -product/priv-app/HotwordEnrollmentOKGoogleRISCV/HotwordEnrollmentOKGoogleRISCV.apk
 -product/priv-app/HotwordEnrollmentXGoogleRISCV/HotwordEnrollmentXGoogleRISCV.apk
-system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 -system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
 # IMS - from Redmi/light/light:13/TP1A.220624.014/V14.0.1.0.TLSCNXM:user/release-keys
