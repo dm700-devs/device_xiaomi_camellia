@@ -292,14 +292,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.nxp.nxpnfc</name>
-        <version>1.0</version>
-        <interface>
-            <name>INxpNfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.xiaomi.hardware.fingerprintextension</name>
         <version>1.0</version>
         <interface>

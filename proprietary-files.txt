@@ -1606,9 +1606,15 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
-# NFC
-vendor/lib/libnxp_extamp_intf.so
-vendor/lib64/libnxp_extamp_intf.so
+# NFC - from Redmi/opal_eea/opal:12/SP1A.210812.016/V13.0.4.0.SGLEUXM:user/release-keys
+vendor/bin/nfcstackp-vendor|1963713339cc744416cd54c116c8f98844489da2
+vendor/bin/STFlashTool|328b594435278385269c93777036ce4144903522
+vendor/etc/libnfc-hal-st.conf|607ff69b048139c444e7db5b2fb4844fc124db5f
+vendor/etc/libnfc-nci.conf|5032c35bd12a3dc2b5bdb0a8d6811a7e73090e22
+vendor/etc/st21nfc_conf.txt|c254274373db231ed2e31c52db3669d847996fb1
+vendor/firmware/st21nfc_fw7.bin|911906c79d9bdce044e74165036c63dc1295b852
+vendor/lib64/libnxp_extamp_intf.so|8e80561f2f9783294a01c778a376aab2a6554609
+vendor/lib64/nfc_nci.st21nfc.st.so|935b3c9b4038bc4277fd65be08f336a38b02c364
 
 # Power
 -vendor/lib/libpowerhal.so
