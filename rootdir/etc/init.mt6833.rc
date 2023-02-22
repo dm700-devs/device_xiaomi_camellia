@@ -1205,6 +1205,7 @@ service vendor.charger /system/bin/chargeonlymode
 # NFC
 on property:ro.boot.product.hardware.sku=nfc
     start vendor.nfc_hal_service
+    start mtk_secure_element_hal_service
 
 service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     override
@@ -1212,3 +1213,10 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     class hal
     user nfc
     group nfc
+
+service mtk_secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
+    override
+    disabled
+    class hal
+    user secure_element
+    group secure_element

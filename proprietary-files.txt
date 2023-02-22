@@ -1619,6 +1619,11 @@ vendor/lib64/hw/power.default.so
 # Radio
 vendor/lib/libvsim.so
 
+# Secure Element - from Redmi/opal_eea/opal:12/SP1A.210812.016/V13.0.4.0.SGLEUXM:user/release-keys
+vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek|2f551a8e4627c859aff8da0a02f23d62bb8ccc11
+vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc|0c6f07a2b8522a52e23d3a20151c0360a7c441c6
+vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so|9349a2ca04cdcfba5d7c8ad5a6852b912c2ae381
+
 # Sensors
 vendor/etc/elliptic_sensor.xml
 vendor/lib/hw/sensors.elliptic.so
