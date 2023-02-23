@@ -887,7 +887,8 @@
         <item>com.google.android.tag</item>
     </string-array>
     <string-array name="config_disableApkUnlessMatchedSku_skus_list" translatable="false">
-        <item>nfc</item>
+        <item>evergreen</item>
+	<item>opal</item>
     </string-array>
 
     <!-- Remove MTK IMS app from privacy (location) indicators -->
