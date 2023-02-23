@@ -259,6 +259,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.mlipay@1.1.vendor
 
+# Neural Networks
+PRODUCT_PACKAGES += \
+    libruy \
+    android.hardware.neuralnetworks@1.3.vendor:64
+
 # NFC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.xml \

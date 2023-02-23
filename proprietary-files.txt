@@ -1606,6 +1606,24 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
+# Neural Networks - from Redmi/light/light:13/TP1A.220624.014/V14.0.1.0.TLSCNXM:user/release-keys
+vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron|dea350d38c191c5b9a97507dcce825f9f81e6597
+vendor/etc/armnn_app.config|6e2b7c3cd38a6aa12568b28c1c5a5038a7b6018a
+vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc|a2f8c33caa45448e74342f8cf89907cceea51eb6
+-vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-gpu.xml|931e81cc7471e68f410b6813fba24175ea397731
+vendor/lib64/libarmnn.so|2247afcd4833011d402897e1bacce1a3b40e2f88
+vendor/lib64/libarmnn_ndk.mtk.vndk.so|ea68a225d32d2ef36fe826ee5be2c2a21f1838e5
+vendor/lib64/libcmdl.so|ea842e7957d9be37a65dd02a7047ba00eb1b69e7
+vendor/lib64/libcmdl_ndk.mtk.vndk.so|d13ec4dafad1ca241250e987084856848d4784ef
+vendor/lib64/libneuron_adapter.so|050ae242296b9715a62ab72d8f5679ae69a7ef92
+vendor/lib64/libneuron_platform.so|3da796723fd5928d9108dc91c1c3214dc5ed3420
+vendor/lib64/libneuroeara.so|648b18e37f7e621870abf4e809cf355dd6ac7802
+vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so|007ed21bc4be7227aaec84544baae806c2eda5d5
+vendor/lib64/libtextclassifier_hash.so|a96356f324010336729fc804a73870cbe06985a4
+vendor/lib64/libtflite_mtk.so|1079e4d0bb162c464ea1060af62a749fcfd1f2c8
+vendor/lib64/libneuropilot_hal_utils.so|f540511b617af682c40c35e6730eb59d1a91b641
+vendor/lib64/mt6833/libnir_neon_driver.so:vendor/lib64/libnir_neon_driver.so|271465e153ae8281ec7b1ecd7cc0cc12f5a0fea8
+
 # NFC - from Redmi/opal_eea/opal:12/SP1A.210812.016/V13.0.4.0.SGLEUXM:user/release-keys
 vendor/bin/nfcstackp-vendor|1963713339cc744416cd54c116c8f98844489da2
 vendor/bin/STFlashTool|328b594435278385269c93777036ce4144903522
@@ -3240,7 +3258,6 @@ vendor/lib/libmsbc_mtk.so
 vendor/lib/libmt.so
 vendor/lib/libmtcloader.so
 vendor/lib/libmvpu_config_data.so
-vendor/lib/libneuropilot_hal_utils.so
 vendor/lib/libNoFpsActor.so
 vendor/lib/libnotifyaudiohal.so
 vendor/lib/libnvram.so
@@ -3520,7 +3537,6 @@ vendor/lib64/libmt.so
 vendor/lib64/libmt@1.2.so
 vendor/lib64/libmtcloader.so
 vendor/lib64/libmvpu_config_data.so
-vendor/lib64/libneuropilot_hal_utils.so
 vendor/lib64/libNoFpsActor.so
 vendor/lib64/libnvram.so
 vendor/lib64/libnvram_sec.so

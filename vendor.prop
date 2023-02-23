@@ -90,7 +90,6 @@ persist.sys.dalvik.vm.lib.2=libart.so
 debug.als.logs=1
 debug.mediatek.appgamepq_compress=1
 debug.mediatek.disp_decompress=1
-debug.mtk_tflite.target_nnapi=29
 debug.svi.logs=1
 
 # Display
@@ -251,8 +250,6 @@ ro.vendor.mtk_md1_support=22
 ro.vendor.mtk_md_world_mode_support=1
 ro.vendor.mtk_modem_monitor_support=1
 ro.vendor.mtk_mvpu_security_support=0
-ro.vendor.mtk_nn.option=A,B,C,D,E,F,G,Z
-ro.vendor.mtk_nn_quant_preferred=1
 ro.vendor.mtk_ovl_bringup=0
 ro.vendor.mtk_prefer_64bit_proc=0
 ro.vendor.mtk_protocol1_rat_config=N/C/Lf/Lt/W/G
@@ -285,6 +282,13 @@ vendor.sys.vm.watermarkscalefactor=1
 
 # Netflix
 ro.netflix.bsp_rev=MTK6833-32817-1
+
+# Neural Networks
+debug.mtk_tflite.target_nnapi=29
+ro.vendor.mtk_nn.option=A,B,E,F,Z
+ro.vendor.mtk_nn_baseline_support=1
+ro.vendor.mtk_nn_quant_preferred=1
+ro.vendor.mtk_nn_support=1
 
 # PQ
 ro.vendor.mtk_pq_color_mode=1
