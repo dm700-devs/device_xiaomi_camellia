@@ -172,10 +172,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss-V1-ndk.vendor:64 \
     android.hardware.gnss@2.1.vendor:64
 
-# Haptics
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/excluded-input-devices.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/excluded-input-devices.xml
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
