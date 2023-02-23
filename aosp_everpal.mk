@@ -29,8 +29,3 @@ PRODUCT_MODEL := everpal
 
 # Build info
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="everpal-user 12 SP1A.210812.016 V13.0.7.0.SGBINXM release-keys"
-
-BUILD_FINGERPRINT := Redmi/everpal_in/everpal:12/SP1A.210812.016/V13.0.7.0.SGBINXM:user/release-keys
