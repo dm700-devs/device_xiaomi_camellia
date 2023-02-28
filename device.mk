@@ -72,7 +72,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio_policy.stub \
     libaudiofoundation.vendor \
-    libaudiopreprocessing.vendor
+    libaudiopreprocessing
 
 PRODUCT_PACKAGES += \
     MtkInCallService
@@ -103,7 +103,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    libbluetooth_audio_session.vendor
+    libbluetooth_audio_session
 
 # Boot Control
 PRODUCT_PACKAGES += \
