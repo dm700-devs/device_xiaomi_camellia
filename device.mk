@@ -4,14 +4,14 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Install developer gsi keys into the ramdisk, to boot a developer GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
+# Install developer gsi keys into the ramdisk, to boot a GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/everpal/everpal-vendor.mk)
+$(call inherit-product, vendor/xiaomi/camellia/camellia-vendor.mk)
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -122,9 +122,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.6.vendor:64 \
     android.hardware.camera.provider@2.6.vendor:64
 
-PRODUCT_PACKAGES += \
-    Aperture
-
 # CAS
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service-lazy
@@ -207,15 +204,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
 
-# Input
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-fpc.idc \
-    $(LOCAL_PATH)/configs/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-goodix.idc
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl
-
 # IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service \
@@ -234,7 +222,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.everpal
+   android.hardware.light-service.xiaomi 
 
 # Media
 PRODUCT_PACKAGES += \
@@ -274,7 +262,7 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor:64
 
 # NFC
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.ese.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.hce.xml \
@@ -283,14 +271,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/com.nxp.mifare.xml
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service.st \
     com.android.nfc_extras \
     NfcNci \
     SecureElement \
     Tag
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libchrome.vendor:64
 
 # Permissions
@@ -401,28 +389,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     RcsService
 
-# Recovery
-PRODUCT_COPY_FILES += \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/mt6631_fm_v1_coeff.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6631_fm_v1_coeff.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/mt6631_fm_v1_patch.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6631_fm_v1_patch.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/mt6635_fm_v1_coeff.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6635_fm_v1_coeff.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/mt6635_fm_v1_patch.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6635_fm_v1_patch.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/novatek_ts_ct_fw.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_ct_fw.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/novatek_ts_ct_mp.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_ct_mp.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/novatek_ts_fw.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_fw.bin \
-    vendor/xiaomi/everpal/proprietary/vendor/firmware/novatek_ts_mp.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_mp.bin
-
 # Runtime Resource (RRO) Overlays
 PRODUCT_PACKAGES += \
-    ApertureOverlayEverpal \
-    ApertureQRScannerOverlayEverpal \
-    CarrierConfigOverlayEverpal \
-    FrameworksResOverlayEverpal \
-    SettingsOverlayEverpal \
-    SystemUIOverlayEverpal \
-    TelephonyOverlayEverpal \
-    TetheringConfigOverlayEverpal \
-    WifiOverlayEverpal
+    CarrierConfigOverlayCamellia \
+    FrameworksResOverlayCamellia \
+    SettingsOverlayCamellia \
+    SystemUIOverlayCamellia \
+    TelephonyOverlayCamellia \
+    TetheringConfigOverlayCamellia \
+    WifiOverlayCamellia
 
 # Screen Resolution
 TARGET_SCREEN_HEIGHT := 2400
@@ -474,17 +449,13 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.everpal
-
-# VNDK
-PRODUCT_PACKAGES += \
-    libcrypto-v32 \
-    libhidlbase-v32 \
-    libutils-v32
+    android.hardware.vibrator-service \
+    android.hardware.vibrator-impl
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-lazy.everpal \
+    android.hardware.wifi@1.0-service-lazy \
+    android.hardware.wifi.supplicant-service \
     hostapd \
     wpa_supplicant
 

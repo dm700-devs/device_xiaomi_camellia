@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_everpal.mk
+    $(LOCAL_DIR)/arrow_camellia.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_everpal-user \
-    aosp_everpal-userdebug \
-    aosp_everpal-eng
+    arrow_camellia-user \
+    arrow_camellia-userdebug \
+    arrow_camellia-eng

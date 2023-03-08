@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=everpal
+DEVICE=camellia
 VENDOR=xiaomi
 
 INITIAL_COPYRIGHT_YEAR=2023

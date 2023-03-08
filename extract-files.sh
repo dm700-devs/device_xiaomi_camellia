@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=everpal
+DEVICE=camellia
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
@@ -56,39 +56,6 @@ fi
 # Patch/fix blobs
 function blob_fixup {
     case "$1" in
-    vendor/lib64/libwifi-hal-mtk.so)
-        "$PATCHELF" --set-soname libwifi-hal-mtk.so "$2"
-        ;;
-    vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
-        ;&
-    vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
-        "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-        ;;
-    vendor/bin/mtk_agpsd)
-        "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v32.so" "${2}"
-        ;;
-    vendor/bin/hw/android.hardware.media.c2@1.2-mediatek)
-        ;&
-    vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
-       "$PATCHELF" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "$2"
-        ;;
-    vendor/lib*/libmtkcam_stdutils.so)
-        "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
-        ;;
-    vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
-        "$PATCHELF" --replace-needed "android.hardware.power-V2-ndk_platform.so" "android.hardware.power-V2-ndk.so" "${2}"
-        ;;
-    vendor/bin/hw/android.hardware.gnss-service.mediatek)
-        ;&
-    vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so)
-       "$PATCHELF" --replace-needed "android.hardware.gnss-V1-ndk_platform.so" "android.hardware.gnss-V1-ndk.so" "${2}"
-        ;;
-    vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
-        "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-        ;;
-    vendor/bin/hw/camerahalserver)
-        "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-        ;;
     vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc)
         echo "$(cat ${2}) input" > "${2}"
         ;;
