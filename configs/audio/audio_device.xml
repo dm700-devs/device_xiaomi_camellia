@@ -27,65 +27,28 @@
         <path name="receiver_output" value="turnon">
             <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="RCV Mux" value="Voice Playback" />
-            <kctl name="RCV_AMP_MODE" value="RECIEVER_MODE" />
-            <kctl name="Ext_Reciver_Amp Switch" value="1" />
-	    <kctl name="SpkrRight Sia81xx Audio Scene" value="Receiver" />
-            <kctl name="SpkrRight Sia81xx Power" value="On" />
         </path>
         <path name="receiver_output" value="turnoff">
             <kctl name="RCV Mux" value="Open" />
-            <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-            <kctl name="SpkrRight Sia81xx Power" value="Off" />
-	    <kctl name="SpkrRight Sia81xx Audio Scene" value="Playback" />
-        </path>
-	<!--receiver output mmi test-->
-        <path name="receiver_as_speaker_output_mmi" value="turnon">
-            <kctl name="DAC In Mux" value="Normal Path" />
-            <kctl name="RCV Mux" value="Voice Playback" />
-            <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
-            <kctl name="Ext_Reciver_Amp Switch" value="1" />
-	    <kctl name="SpkrRight Sia81xx Audio Scene" value="Playback" />
-            <kctl name="SpkrRight Sia81xx Power" value="On" />
-        </path>
-        <path name="receiver_as_speaker_output_mmi" value="turnoff">
-            <kctl name="RCV Mux" value="Open" />
-            <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-            <kctl name="SpkrRight Sia81xx Power" value="Off" />
-	    <kctl name="SpkrRight Sia81xx Audio Scene" value="Playback" />
         </path>
        <!-- 2-in-1 speaker output-->
         <path name="two_in_one_speaker_output" value="turnon">
-            <kctl name="RCV_AMP_MODE" value="RECIEVER_MODE" />
-            <kctl name="DAC In Mux" value="Normal Path" />
-            <kctl name="RCV Mux" value="Voice Playback" />
-            <kctl name="Ext_Reciver_Amp Switch" value="1" />
-	    <kctl name="SpkrRight Sia81xx Audio Scene" value="Receiver" />
-            <kctl name="SpkrRight Sia81xx Power" value="On" />
         </path>
         <path name="two_in_one_speaker_output" value="turnoff">
-            <kctl name="RCV Mux" value="Open" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-            <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
-	    <kctl name="SpkrRight Sia81xx Power" value="Off" />
-	    <kctl name="SpkrRight Sia81xx Audio Scene" value="Playback" />
         </path>
        <!--speaker output-->
         <path name="speaker_output" value="turnon">
             <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="LOL Mux" value="Playback_L_DAC" />
-            <kctl name="RCV Mux" value="Voice Playback" />
         </path>
         <path name="speaker_output" value="turnoff">
             <kctl name="LOL Mux" value="Open" />
-            <kctl name="RCV Mux" value="Open" />
         </path>
         <!--headhpone_speaker output-->
         <path name="headphoneSpeaker_output" value="turnon">
             <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="HPL Mux" value="LoudSPK Playback" />
-            <kctl name="HPR Mux" value="LoudSPK Playback" />
+            <kctl name="HPR Mux" value="Audio Playback" />
         </path>
         <path name="headphoneSpeaker_output" value="turnoff">
             <kctl name="HPL Mux" value="Open" />
@@ -94,54 +57,9 @@
         <!--external_speaker output-->
         <path name="ext_speaker_output" value="turnon">
             <kctl name="Ext_Speaker_Amp Switch" value="1" />
-            <kctl name="Ext_Reciver_Amp Switch" value="1" />
-            <kctl name="SpkrLeft Sia81xx Audio Scene" value="Playback" />
-            <kctl name="SpkrRight Sia81xx Audio Scene" value="Playback" />
-            <kctl name="SpkrRight Sia81xx Power" value="On" />
-            <kctl name="SpkrLeft Sia81xx Power" value="On" />
         </path>
         <path name="ext_speaker_output" value="turnoff">
             <kctl name="Ext_Speaker_Amp Switch" value="0" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-            <kctl name="SpkrRight Sia81xx Power" value="Off" />
-            <kctl name="SpkrLeft Sia81xx Power" value="Off" />
-            <kctl name="SpkrLeft Sia81xx Audio Scene" value="Playback" />
-            <kctl name="SpkrRight Sia81xx Audio Scene" value="Playback" />
-        </path>
-        <!--external_speaker output voice-->
-        <path name="ext_speaker_output_voice" value="turnon">
-            <kctl name="Ext_Speaker_Amp Switch" value="1" />
-            <kctl name="Ext_Reciver_Amp Switch" value="1" />
-            <kctl name="SpkrLeft Sia81xx Audio Scene" value="Voice" />
-            <kctl name="SpkrRight Sia81xx Audio Scene" value="Voice" />
-            <kctl name="SpkrRight Sia81xx Power" value="On" />
-            <kctl name="SpkrLeft Sia81xx Power" value="On" />
-        </path>
-        <path name="ext_speaker_output_voice" value="turnoff">
-            <kctl name="Ext_Speaker_Amp Switch" value="0" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-            <kctl name="SpkrRight Sia81xx Power" value="Off" />
-            <kctl name="SpkrLeft Sia81xx Power" value="Off" />
-            <kctl name="SpkrLeft Sia81xx Audio Scene" value="Voice" />
-            <kctl name="SpkrRight Sia81xx Audio Scene" value="Voice" />
-        </path>
-	<path name="ext_speaker_output_ata" value="turnon">
-            <kctl name="Ext_Speaker_Amp Switch" value="1" />
-            <kctl name="SpkrLeft Sia81xx Audio Scene" value="Playback" />
-            <kctl name="SpkrLeft Sia81xx Power" value="On" />
-        </path>
-        <path name="ext_speaker_output_ata" value="turnoff">
-            <kctl name="Ext_Speaker_Amp Switch" value="0" />
-            <kctl name="SpkrLeft Sia81xx Power" value="Off" />
-            <kctl name="SpkrLeft Sia81xx Audio Scene" value="Playback" />
-        </path>
-        <path name="ext_speaker_output_mono" value="turnon">
-            <kctl name="Ext_Speaker_Amp Switch" value="1" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-        </path>
-        <path name="ext_speaker_output_mono" value="turnoff">
-            <kctl name="Ext_Speaker_Amp Switch" value="0" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
         </path>
         <!--mic setting-->
         <path name="builtin_Mic_Mic1" value="turnon">
@@ -1086,11 +1004,11 @@
         </path>
         <path name="SPK_INIT" value="turnon">
             <kctl name="I2S1_HD_Mux" value="Low_Jitter" />
-            <kctl name="I2S1_Out_Mux" value="Dummy_Widget" />
+            <kctl name="I2S1_Out_Mux" value="Output_Widget" />
             <kctl name="I2S3_HD_Mux" value="Low_Jitter" />
-            <kctl name="I2S3_Out_Mux" value="Dummy_Widget" />
+            <kctl name="I2S3_Out_Mux" value="Output_Widget" />
             <kctl name="I2S5_HD_Mux" value="Low_Jitter" />
-            <kctl name="I2S5_Out_Mux" value="Dummy_Widget" />
+            <kctl name="I2S5_Out_Mux" value="Output_Widget" />
         </path>
         <path name="SPK_INIT" value="turnoff">
             <kctl name="I2S1_Out_Mux" value="Normal" />
@@ -1354,7 +1272,7 @@
             <kctl name="UL6_CH1 DL6_CH1" value="0" />
             <kctl name="UL6_CH2 DL6_CH2" value="0" />
         </path>
-        <path name="PLAYBACK4_TO_CAPTURE6" value="turnon">
+        <path name="PLAYBACK4_TO_CAPTURE6" value="turnoff">
             <kctl name="UL6_CH1 DL4_CH1" value="1" />
             <kctl name="UL6_CH2 DL4_CH2" value="1" />
         </path>
@@ -1419,18 +1337,12 @@
             <kctl name="UL5_CH2 ADDA_UL_CH2" value="0" />
         </path>
         <path name="ultrasound-proximity" value="turnon">
-            <kctl name="Ultrasound Mode" value="1040" />
-            <kctl name="Ultrasound Custom Setting 4" value="1" />
         </path>
         <path name="ultrasound-proximity" value="turnoff">
-            <kctl name="Ultrasound Mode" value="0"  />
         </path>
         <path name="ultrasound-proximity-speaker" value="turnon">
-            <kctl name="Ultrasound Mode" value="1041" />
-            <kctl name="Ultrasound Custom Setting 4" value="1" />
         </path>
         <path name="ultrasound-proximity-speaker" value="turnoff">
-            <kctl name="Ultrasound Mode" value="0"  />
         </path>
     </mixercontrol>
 </root>
