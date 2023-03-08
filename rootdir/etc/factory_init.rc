@@ -10,13 +10,9 @@ import /init.environ.rc
 import /vendor/etc/init/trustonic.rc
 import /vendor/etc/init/hw/init.nvdata.rc
 import /vendor/etc/init/microtrust.rc
-
-import /vendor/etc/init/vendor.microtrust.hardware.capi@2.0-service.rc
-import /vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
+import /system/etc/init/android.hidl.allocator@1.0-service.rc
+import /vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc
 import /vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
-import /vendor/etc/init/vendor.microtrust.hardware.thh@2.0-service.rc
-import /vendor/etc/init/microtrust.init_thh.rc
-
 import /vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
 import /vendor/etc/init/android.hardware.boot@1.2-service.rc
 import /vendor/etc/init/android.hardware.boot@1.2-service-lazy.rc
@@ -24,6 +20,7 @@ import /vendor/etc/init/vendor.mediatek.hardware.thp@1.0-service.rc
 
 #NFC
 import /vendor/etc/init/hw/init.stnfc.rc
+import /system/etc/init/hw/init.stnfc.rc
 
 #copy from system/etc for APEX
 import /system/etc/init/apexd.rc
@@ -111,11 +108,8 @@ sysclktz 0
     symlink /dev/block/by-name/proinfo /dev/pro_info
     symlink /dev/block/by-name/nvram /dev/nvram
     symlink /dev/block/by-name/para /dev/misc
+    symlink /dev/block/by-name/logo /dev/logo
 
-#+bug651594,chenrui1.wt,20210601,modify shutdown charging animation
-    symlink /dev/block/by-name/logo_a /dev/logo_a
-    symlink /dev/block/by-name/logo_b /dev/logo_b
-#-bug651594,chenrui1.wt,20210601,modify shutdown charging animation
 
 # Link /vendor to /system/vendor for devices without a vendor partition.
     symlink /system/vendor /vendor

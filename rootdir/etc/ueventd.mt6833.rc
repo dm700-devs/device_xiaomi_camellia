@@ -63,7 +63,7 @@
 # NFC
 /dev/msr3110              0666   root       root
 /dev/mt6605               0660   nfc        radio
-/dev/st21nfc              0660   nfc        radio
+/dev/st21nfc              0666   nfc        radio
 /dev/st54spi              0660   secure_element        secure_element
 
 # MTK BTIF driver
@@ -80,7 +80,7 @@
 /dev/mobicore             0600   system     system
 /dev/mobicore-user        0666   system     system
 /dev/t-base-tui           0666   system     system
-/dev/hardwareinfo         0660   root       system
+
 #v4l2 device
 /dev/video*      0660 camera system
 /dev/media*      0660 camera system
@@ -164,7 +164,3 @@
 
 #MTK In-House TEE
 /dev/ttyACM0              0660   radio      radio
-
-#elliptic sensor
-/dev/elliptic0            0644   system     system
-/dev/elliptic1            0644   system     system

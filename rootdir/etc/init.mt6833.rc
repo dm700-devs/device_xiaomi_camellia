@@ -6,7 +6,7 @@ import /vendor/etc/init/hw/init.project.rc
 import /FWUpgradeInit.rc
 import /vendor/etc/init/hw/init.volte.rc
 import /vendor/etc/init/hw/init.mal.rc
-import /vendor/etc/init/hw/init.sensor_2_0.rc
+import /vendor/etc/init/hw/${ro.vendor.init.sensor.rc}
 import /vendor/etc/init/hw/init.stnfc.rc
 import /system/etc/init/hw/init.stnfc.rc
 
@@ -39,11 +39,10 @@ on init
 # increase sysctl_rmem_max and sysctl_wmem_max values to 2M
     write /proc/sys/net/core/wmem_max 8388608
     write /proc/sys/net/core/rmem_max 8388608
-#ExtB HONGMI-84715,jiiyanan.wt,Add,20210611,network configuration optimization
-    write /proc/sys/net/ipv4/tcp_mtu_probing 1
 
-#ExtB HONGMI-84715,jiiyanan.wt,Add,20210611,network configuration optimization
+#Modify 网络配置优化，解决网络访问问题 for HQ-100536 by HQ-101013019 begin
     write /proc/sys/net/ipv4/tcp_mtu_probing 1
+#Modify 网络配置优化，解决网络访问问题 for HQ-100536 by HQ-101013019 end
 
 # update cpus for cpuset cgroup
     write /dev/cpuset/foreground/cpus 0-7
@@ -98,9 +97,7 @@ on charger
     chown system system /sys/class/leds/green/brightness
 
     start vendor.light-default
-
     start mi_thermald
-
     # Stop bootprof
     write /proc/bootprof "0"
 
@@ -125,10 +122,6 @@ on fs
     write /proc/sys/vm/swappiness 100
     write /sys/kernel/mm/swap/vma_ra_enabled false
     swapon_all /vendor/etc/fstab.enableswap
-
-	# mount rescue
-	mount ext4 /dev/block/by-name/rescue /mnt/rescue noatime
-	restorecon_recursive /mnt/rescue
 
 on fs
     mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
@@ -209,12 +202,6 @@ on post-fs
     # allow ccci_mdinit access ccci_dump
     chown root system /proc/ccci_dump
 
-on property:ro.factory_mode=1 && property:sys.boot_completed=1
-    chown system system /data/local/tmp
-    chmod 0777 /data/local/tmp
-    chmod 0666 /dev/block/sdc9
-
-
 on post-fs-data
     write /proc/bootprof "INIT:post-fs-data"
 
@@ -239,32 +226,16 @@ on post-fs-data
     chown system system /mnt/vendor/nvcfg/fg/old_fg_data
     chown system system /mnt/vendor/nvcfg/fg/car_tune_value
 
-    mkdir /mnt/vendor/persist/camera
-    chown system system /mnt/vendor/persist/camera
-    chmod 0777 /mnt/vendor/persist/camera
-    chmod 0644 /mnt/vendor/persist/camera/rear_dc_cal_wu.bin
-    restorecon_recursive /mnt/vendor/persist/camera
-
     # create basic filesystem structure
     # We chown/chmod /mnt/vendor/nvdata again so because mount is run as root + defaults
     chown root system /mnt/vendor/nvdata
     chmod 0771 /mnt/vendor/nvdata
     mkdir /mnt/vendor/nvdata/media 0771 media audio
 
-    # AudioDump
-    mkdir /data/vendor/audiohal 0771 system audio
-    mkdir /data/vendor/audiohal/audio_param 0771 system audio
-
     #Create cct mount point
     mkdir /mnt/vendor/cct
     chown root system /mnt/vendor/cct
     chmod 0771 /mnt/vendor/cct
-
-    #create persist mount point to persist
-    mkdir /mnt/vendor/persist
-    chown system system /mnt/vendor/persist
-    chmod 0771 /mnt/vendor/persist
-    restorecon_recursive /mnt/vendor/persist
 
     #Create flash folder
     mkdir /data/vendor/flash
@@ -307,12 +278,6 @@ on post-fs-data
     chown root system /data/vendor/flicker
     chmod 0771 /data/vendor/flicker
 
-    #+ExtB HONGMI-85188,jiyanan.wt,Add,20210609,Create mac_addr mount point
-    mkdir /data/vendor/mac_addr
-    chown root system /data/vendor/mac_addr
-    chmod 0744 /data/vendor/mac_addr
-    #-ExtB HONGMI-85188,jiyanan.wt,Add,20210609,Create mac_addr mount point
-
     # Set SELinux security contexts on upgrade or policy update.
     restorecon_recursive /mnt/vendor/nvdata
 
@@ -328,13 +293,6 @@ on post-fs-data
 # GPS
     chmod 0775 /vendor/xbin/MPED
     chmod 0666 /dev/gps_emi
-
-    #haptic Start
-    mkdir /mnt/vendor/persist/haptics 0755 system system
-    #haptic End
-
-    # Create directory used by audio&vibrator cit
-    mkdir /data/vendor/cit 0770 system system
 
 # -----------------------
 # Add by MTK
@@ -435,6 +393,11 @@ on post-fs-data
     chown media media /dev/audio_scp
     chown audioserver audio /sys/bus/platform/devices/rt5509_param.0/prop_param
     chown audioserver audio /sys/bus/platform/devices/rt5509_param.1/prop_param
+    #Awinic SKT
+    chown audioserver audio /sys/bus/i2c/devices/6-0058/actflag
+    chown audioserver audio /sys/bus/i2c/devices/6-0058/vmax
+    chmod 0660 /sys/bus/i2c/devices/6-0058/actflag
+    chmod 0660 /sys/bus/i2c/devices/6-0058/vmax
 
     #Accdet
     chown root radio /sys/devices/platform/Accdet_Driver/driver/accdet_call_state
@@ -747,10 +710,10 @@ on post-fs-data
     chmod 0666 /dev/exm0
 
 
-	#Thermal
-	mkdir /data/vendor/.tp/ 0775 system system
-	mkdir /data/vendor/thermal 0771 root system
-	mkdir /data/vendor/thermal/config 0771 root system
+    #Thermal
+    mkdir /data/vendor/.tp/ 0775 system system
+    mkdir /data/vendor/thermal 0777 root system
+    mkdir /data/vendor/thermal/config 0777 root system
 
     #MCUPM log
     chmod 0620 /sys/class/misc/mcupm/mcupm_mobile_log
@@ -773,6 +736,9 @@ on post-fs-data
     chmod 0664 sys/kernel/debug/ext_dev_io/MT6362.0-09/reg
     chmod 0664 sys/kernel/debug/ext_dev_io/MT6362.0-09/size
 
+    # BSP.Charge - 2020.11.24 - Add Charge-logger
+    mkdir /data/vendor/charge_logger 0771 system system
+
 # End of adding by MTK drivers
 # -----------------------
 on zygote-start
@@ -787,11 +753,21 @@ on boot
 
     chmod 0660 /sys/power/autosleep
 
+    # BSP.Charge - 2020.12.10 - modify input_suspend node owner
+    chown system system /sys/class/power_supply/battery/input_suspend
+
+    # BSP.Charge - 2020.12.10 - modify charge_logger_a.csv owner
+    chmod 0664 /data/vendor/charge_logger/charge_logger_a.csv
+    chown system system /data/vendor/charge_logger/charge_logger_a.csv
+
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
 
-    chmod 0664 /sys/class/leds/lcd-backlight/hbm
-    chown system system /sys/class/leds/lcd-backlight/hbm
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness_clone
+    chown system system /sys/class/leds/lcd-backlight/brightness_clone
+
+    chmod 0664 /sys/devices/platform/flashlights_mt6360/mt6360_FLASH
+    chown system system /sys/devices/platform/flashlights_mt6360/mt6360_FLASH
 
     chown system system /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
     chmod 0660 /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
@@ -824,17 +800,7 @@ on boot
     chown radio system /sys/power/tuxonice/do_hibernate
     chmod 0770 /sys/power/tuxonice
     chmod 0220 /sys/power/tuxonice/do_hibernate
-
-
-# Fingerprint
-    chown system system /sys/bus/spi/devices/spi5.0/clk_enable
-    chown system system /sys/bus/spi/devices/spi5.0/wakeup_enable
-    chown system system /sys/bus/spi/devices/spi5.0/fingerdown_wait
-    chown system system /sys/bus/spi/devices/spi5.0/irq
-    chmod 0200 /sys/bus/spi/devices/spi5.0/clk_enable
-    chmod 0200 /sys/bus/spi/devices/spi5.0/wakeup_enable
-    chmod 0600 /sys/bus/spi/devices/spi5.0/irq
-    chmod 0200 /sys/bus/spi/devices/spi5.0/fingerdown_wait
+    chmod 0666 /sys/class/huaqin/interface/hw_info/pcba_config
 
 # Smartbook Handler Framework
     chown system system /sys/power/sb_state
@@ -960,6 +926,9 @@ on boot
     chown root radio /proc/net/netfilter/nfnetlink_log
     chown root radio /proc/net/netfilter/nfnetlink_queue
 
+#Thermal
+    chown system system /sys/class/thermal/thermal_message/sconfig
+
 # WMT proc
     chown shell system /proc/driver/wmt_dbg
     chown shell system /proc/driver/wmt_aee
@@ -975,10 +944,6 @@ on boot
     chown system radio /dev/ttyGS1
 #Power Manager
     write /sys/power/pm_freeze_timeout 2000
-
-# Fingerprint
-on property:vendor.fps_hal.restartimes=max
-    stop vendor.fps_hal
 
 on property:vold.decrypt=trigger_reset_main
     write /proc/bootprof "INIT:vold.decrypt=trigger_reset_main"
@@ -1007,33 +972,23 @@ on property:vold.decrypt=trigger_shutdown_framework
 on property:persist.vendor.uartconsole.enable=*
     write /proc/mtprintk ${persist.vendor.uartconsole.enable}
 
-#+ExtR HONGMI-121738,jiyanan.wt,Add,20220114,set sar function
-#WiFi add sar parameter K16B GL
-on property:vendor.sysctl.tx=5
-      exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 5"
-#-ExtR HONGMI-121738,jiyanan.wt,Add,20220114,set sar function
-
-#+ExtB HONGMI-85945,liupeng.wt.Add,20210624 添加WIFI降SAR功能
-#WiFi add sar parameter GL
-on property:vendor.sysctl.tx=4
-    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 4"
-
-#WiFi add sar parameter IN
+#Code for HQ-100539 add by wangzhengyuan at 20201112 start
+#WiFi
 on property:vendor.sysctl.tx=3
     exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 3"
 
-#WiFi add sar parameter JP
+#WiFi
 on property:vendor.sysctl.tx=2
     exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 2"
 
-#WiFi add sar parameter CN
+#WiFi
 on property:vendor.sysctl.tx=1
     exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 1"
 
-#WiFi restore sar parameter
+#WiFi
 on property:vendor.sysctl.tx=0
     exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 0"
-#-ExtB HONGMI-85945,liupeng.wt.Add,20210624 添加WIFI降SAR功能
+#Code for HQ-100539 add by wangzhengyuan at 20201112 end
 
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B -z \
@@ -1143,6 +1098,64 @@ on property:persist.vendor.mediatek.fg.log.enable=1
     write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
     write /proc/sys/kernel/printk 8
 
+# add loghidl client
+service loghidlsysservice /system/bin/loghidlsysservice
+    class main
+    user root
+    group system
+    disabled
+
+# add PcbaConfigSet
+service pcbaconfig /system/vendor/bin/PcbaConfigSet
+    class core
+    user root
+    group root system
+    oneshot
+    seclabel u:r:PcbaConfigSet:s0
+
+on boot
+    start pcbaconfig
+
+service initprop_bin /system/vendor/bin/initprop_bin
+    class main
+    user root
+    oneshot
+    group root system
+    seclabel u:r:mnld:s0
+
+on boot
+    start initprop_bin
+
+on property:persist.odm.ril.oem.sno=*
+    setprop ro.ril.oem.sno ${persist.odm.ril.oem.sno}
+
+on property:persist.odm.ril.oem.psno=*
+    setprop ro.ril.oem.psno ${persist.odm.ril.oem.psno}
+
+on property:persist.odm.ril.oem.wifimac=*
+    setprop ro.ril.oem.wifimac ${persist.odm.ril.oem.wifimac}
+
+on property:persist.odm.ril.oem.btmac=*
+    setprop ro.ril.oem.btmac ${persist.odm.ril.oem.btmac}
+
+on property:persist.odm.ril.factory_id=*
+    setprop ro.ril.factory_id ${persist.odm.ril.factory_id}
+
+on property:persist.odm.ril.oem.imei1=*
+    setprop ro.ril.oem.imei1 ${persist.odm.ril.oem.imei1}
+
+on property:persist.odm.ril.oem.imei2=*
+    setprop ro.ril.oem.imei2 ${persist.odm.ril.oem.imei2}
+
+on property:sys.boot.cpuid=*
+    setprop ro.boot.cpuid ${sys.boot.cpuid}
+
+on property:sys.boot.hwc=*
+    setprop ro.boot.hwc ${sys.boot.hwc}
+
+on property:vendor.service.nvram_init=Ready
+    start initprop_bin
+
 # add meta_tst for ATM
 service meta_tst /vendor/bin/meta_tst
     class core
@@ -1159,18 +1172,70 @@ service factory_no_image /vendor/bin/factory
     capabilities BLOCK_SUSPEND NET_RAW NET_ADMIN SYS_ADMIN SYS_BOOT
     socket factory-atci stream 660 radio system
     disabled
+    oneshot	
+
+# start meta_tst for ATM
+on property:sys.boot_completed=1 && property:ro.boot.atm=enable
+    start meta_tst
+    start loghidlvendorservice
+    start loghidlsysservice
+
+# BSP.Charge - 2020.11.24 - Add Charge-logger start
+# add charge_logger service for dump charge message
+service charge_logger /vendor/bin/charge_logger
+    class main
+    user system
+    group system
+    disabled
     oneshot
+
+on property:sys.boot_completed=1
+    start charge_logger
+# BSP.Charge - 2020.11.24 - Add Charge-logger end
 
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal
 
+service enablefreqhop /vendor/bin/factory_bin c 1
+    class main
+    user root
+    oneshot
+    disabled
+
+service screenmode0 /vendor/bin/factory_bin s 0
+    class main
+    user root
+    oneshot
+    disabled
+
+service screenmode1 /vendor/bin/factory_bin s 1
+    class main
+    user root
+    oneshot
+    disabled
+
+service screenmode3 /vendor/bin/factory_bin s 3
+    class main
+    user root
+    oneshot
+    disabled
+
+service openpocket /vendor/bin/factory_bin p 1
+    class main
+    user root
+    oneshot
+    disabled
+
+service closepocket /vendor/bin/factory_bin p 0
+    class main
+    user root
+    oneshot
+    disabled
+
 # FPSGO FBT Game
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
-
-    chown system system /sys/class/thermal/thermal_message/sconfig
-
 
 # add this link for cust mount
 on init
@@ -1184,60 +1249,65 @@ service osi /system/bin/osi
     oneshot
     #seclabel u:r:osi:s0
 
+service factory_bin /vendor/bin/factory_bin
+    class core
+    user root
+    group root
+    oneshot
+    seclabel u:r:factory_bin:s0
+
+service maxcurrentNocall /vendor/bin/factory_bin m 0
+    user root
+    oneshot
+    seclabel u:r:factory_bin:s0
+    disabled
+
+service maxcurrentIncall /vendor/bin/factory_bin m 1
+    user root
+    oneshot
+    seclabel u:r:factory_bin:s0
+    disabled
+
+service disablefreqhop /vendor/bin/factory_bin c 0
+    class main
+    user root
+    oneshot
+    disabled
+
+#add display by hanwenhao
+service openad /system/vendor/bin/displayf_bin s 1
+    user root
+    group root system graphics
+    oneshot
+    disabled
+
+on property:sys.hq.ad=1
+    start openad
+
+service closead /system/vendor/bin/displayf_bin s 0
+    user root
+    group root system graphics
+    oneshot
+    disabled
+#end
+
+# reboot request when operator change
+on property:sys.boot_completed="" && property:persist.radio.op.name=AT && property:persist.vendor.op.name.last=UN
+   setprop persist.vendor.op.name.last "AT"
+   setprop sys.powerctl "reboot"
+
+on property:sys.boot_completed="" && property:persist.radio.op.name=UN && property:persist.vendor.op.name.last=AT
+   setprop persist.vendor.op.name.last "UN"
+   setprop sys.powerctl "reboot"
+
+on property:sys.boot_completed="" && property:persist.radio.op.name=UN && property:persist.vendor.op.name.last=""
+   setprop persist.vendor.op.name.last "UN"
+   setprop sys.powerctl "reboot"
+
+on property:sys.boot_completed=1 && property:persist.radio.op.name=*
+   setprop persist.vendor.op.name.last ${persist.radio.op.name}
 service mi_thermald /system/vendor/bin/mi_thermald
     class main
     user root
     group system
     seclabel u:r:mi_thermald:s0
-
-# Stop Serial Console
-on boot
-    stop console
-
-# Offline Charging daemon
-service vendor.charger /system/bin/chargeonlymode
-    class charger
-    user system
-    group system graphics input
-    capabilities SYS_BOOT
-    seclabel u:r:charger:s0
-
-# NFC
-on post-fs-data
-    mkdir /data/vendor/nfc_socket 0770 nfc nfc
-
-on property:ro.boot.product.hardware.sku=nfc
-    start nfc_hal_service
-    start mtk_secure_element_hal_service
-
-on property:vendor.nfc.nfcstackp.enable=0
-    stop nfcstackp_vendor
-
-on property:vendor.nfc.nfcstackp.enable=1
-    start nfcstackp_vendor
-
-service nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service.st
-    override
-    disabled
-    class hal
-    user nfc
-    group nfc
-
-service mtk_secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
-    override
-    disabled
-    class hal
-    user secure_element
-    group secure_element
-
-service stflashtool /vendor/bin/STFlashTool
-    class late_start
-    user nfc
-    group nfc
-    oneshot
-
-service nfcstackp_vendor /vendor/bin/nfcstackp-vendor
-    class late_start
-    user nfc
-    group nfc
-    disabled

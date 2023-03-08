@@ -25,6 +25,7 @@ on early-init
     write /sys/class/net/ccmni18/queues/rx-0/rps_cpus "0D"
     write /sys/class/net/ccmni19/queues/rx-0/rps_cpus "0D"
     write /sys/class/net/ccmni20/queues/rx-0/rps_cpus "0D"
+#    setprop ro.vendor.net.upload.mark.default blocking
 
 on post-fs-data
 

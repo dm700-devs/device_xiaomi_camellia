@@ -1,16 +1,26 @@
 # MTK project .rc configure
 
-import /vendor/etc/init/init.batterysecret.rc
-import init.mishow.ctl.rc
-
 on init
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
     mkdir /storage/usbotg 0700 root root
     write /sys/module/musb_hdrc/parameters/mu3d_force_on 1
 
+# BSP.System - 2020.11.9 - Add rescue.img
+    mount ext4 /dev/block/platform/bootdevice/by-name/rescue /mnt/rescue noatime
+    restorecon_recursive /mnt/rescue
 on post-fs-data
+
+#Turbo sched
     chmod 0666 /sys/module/migt/parameters/mi_viptask
     restorecon /sys/module/migt/parameters/mi_viptask
+
+#MiBokeh
+    mkdir /vendor/etc/camera 0777 system camera
+    mkdir /data/vendor/camera/mibokeh 0776 system camera
+
+#XIAOMI_AI_ASD
+    mkdir /data/misc/camera 0777 system camera
+    mkdir /data/vendor/camera 0777 system camera
 
 #Camera
     chmod 0660 /dev/MAINAF
@@ -34,35 +44,6 @@ on post-fs-data
     chmod 0660 /dev/BU64745GWZAF
     chown system camera /dev/BU64745GWZAF
 
-#XIAOMI_DUAL_CAM_BIN
-    mkdir /mnt/vendor/persist/camera/ 0777 system camera
-    mkdir /data/vendor/camera/ 0777 system camera
-# for intsense bokeh use
-    mkdir /data/vendor/camera/model 0777 system camera
-    mkdir /data/vendor/camera/model/dof_model 0777 system camera
-    mkdir /data/vendor/camera/model/rt_model 0777 system camera
-
-    copy /vendor/etc/camera/model/dof_model/capture_cache /data/vendor/camera/model/dof_model/capture_cache
-    copy /vendor/etc/camera/model/dof_model/capture_model /data/vendor/camera/model/dof_model/capture_model
-    copy /vendor/etc/camera/model/dof_model/capture_policy /data/vendor/camera/model/dof_model/capture_policy
-    copy /vendor/etc/camera/model/rt_model/preview_cache /data/vendor/camera/model/rt_model/preview_cache
-    copy /vendor/etc/camera/model/rt_model/preview_model /data/vendor/camera/model/rt_model/preview_model
-    copy /vendor/etc/camera/model/rt_model/preview_policy /data/vendor/camera/model/rt_model/preview_policy
-
-    chmod 0777 /data/vendor/camera/model/dof_model/capture_cache
-    chmod 0777 /data/vendor/camera/model/dof_model/capture_model
-    chmod 0777 /data/vendor/camera/model/dof_model/capture_policy
-    chmod 0777 /data/vendor/camera/model/rt_model/preview_cache
-    chmod 0777 /data/vendor/camera/model/rt_model/preview_model
-    chmod 0777 /data/vendor/camera/model/rt_model/preview_policy
-
-# for mishow
-    chown system system /sys/class/power_supply/battery/input_suspend
-    chmod 0777 /sys/class/power_supply/battery/input_suspend
-
-# for mibokeh use
-    mkdir /data/vendor/camera/mibokeh 0776 system camera
-
 #SMB
     chown system system /proc/smb/ScreenComm
     chmod 0660 /proc/smb/ScreenComm
@@ -70,9 +51,39 @@ on post-fs-data
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
-    chown system system /sys/class/power_supply/battery/charging_call_state
-    chmod 0660 /sys/class/power_supply/battery/charging_call_state
+#dual calib
+    mkdir /mnt/vendor/persist 0777 system camera
+    mkdir /mnt/vendor/persist/camera 0777 system camera
+    mkdir /data/vendor/camera 0777 system camera
+    chmod 0777 /vendor/etc/camera/golden_ov48b_i_gc02m1b_i.bin
+    chmod 0777 /vendor/etc/camera/golden_ov48b_ii_gc02m1b_ii.bin
+    chmod 0777 /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
+    chmod 0777 /data/vendor/camera/golden_rear_dc_cal_wd.bin
 
+
+#finggerprint
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+    chown system system /sys/bus/platform/devices/fingerprint/clk_enable
+    chmod 0660 /sys/bus/platform/devices/fingerprint/clk_enable
+    chown system /sys/bus/platform/devices/fingerprint/irq
+    chmod 0660 /sys/bus/platform/devices/fingerprint/irq
+    chown system system /sys/bus/platform/devices/fingerprint/hw_reset
+    chmod 0660 /sys/bus/platform/devices/fingerprint/hw_reset
+    chown system system /sys/bus/platform/devices/fingerprint/wakeup_enable
+    chmod 0660 /sys/bus/platform/devices/fingerprint/wakeup_enable
+    chown system system /sys/bus/platform/devices/fingerprint/fingerdown_wait
+    chmod 0660 /sys/bus/platform/devices/fingerprint/fingerdown_wait
+
+#TP
+    mkdir /data/vendor/focaltech
+    copy /vendor/firmware/focaltech_mp_fw_tianma.ini /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
+    chown system system /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
+    chmod 0660 /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
+
+#NFC
+    chmod 0666 /dev/st21nfc
+    chown nfc nfc /dev/st21nfc
 
 on init
     # Refer to http://source.android.com/devices/tech/storage/index.html
@@ -88,5 +99,25 @@ service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/
     class late_start
     disabled
 
-on property:sys.boot_completed=1
-    write /sys/class/power_supply/usb/boot_complete 1
+service sensorscal /system/vendor/bin/setsarcal.sh
+    class main
+    user root
+    oneshot
+    group root system
+    seclabel u:r:meta_tst:s0
+
+on boot
+
+#finggerprint
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+    chown system system /sys/bus/platform/devices/fingerprint/clk_enable
+    chmod 0660 /sys/bus/platform/devices/fingerprint/clk_enable
+    chown system /sys/bus/platform/devices/fingerprint/irq
+    chmod 0660 /sys/bus/platform/devices/fingerprint/irq
+    chown system system /sys/bus/platform/devices/fingerprint/hw_reset
+    chmod 0660 /sys/bus/platform/devices/fingerprint/hw_reset
+    chown system system /sys/bus/platform/devices/fingerprint/wakeup_enable
+    chmod 0660 /sys/bus/platform/devices/fingerprint/wakeup_enable
+    chown system system /sys/bus/platform/devices/fingerprint/fingerdown_wait
+    chmod 0660 /sys/bus/platform/devices/fingerprint/fingerdown_wait

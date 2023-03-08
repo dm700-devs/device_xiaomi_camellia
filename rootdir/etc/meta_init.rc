@@ -5,19 +5,16 @@
 #
 import /system_ext/etc/init/hw/vendor_init_as_system.rc
 import /init.environ.rc
+import /vendor/etc/init/hw/init.aee.rc
+import /system_ext/etc/init/hw/init.aee.rc
 import /vendor/etc/init/trustonic.rc
 import /vendor/etc/init/hw/meta_init.connectivity.rc
 import /vendor/etc/init/hw/meta_init.project.rc
 import /vendor/etc/init/microtrust.rc
-
-import /vendor/etc/init/vendor.microtrust.hardware.capi@2.0-service.rc
-import /vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
-import /vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
-import /vendor/etc/init/vendor.microtrust.hardware.thh@2.0-service.rc
-import /vendor/etc/init/microtrust.init_thh.rc
-
 import /vendor/etc/init/android.hardware.boot@1.2-service.rc
 import /vendor/etc/init/android.hardware.boot@1.2-service-lazy.rc
+import /vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc
+import /vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
 
 #copy from system/etc for APEX
 import /system/etc/init/apexd.rc
@@ -30,10 +27,6 @@ import /vendor/etc/init/hw/multi_init.rc
 
 #Make sure meta_init.modem.rc is the last rc file.
 import /vendor/etc/init/hw/meta_init.modem.rc
-
-#for meta mode factory AT CMD
-import /vendor/etc/init/factorybsp_service.rc
-import /vendor/etc/init/factorybsp_service_mtk.rc
 
 on early-init
     write /proc/bootprof "INIT:early-init"
@@ -109,10 +102,8 @@ on init
     symlink /dev/block/by-name/proinfo /dev/pro_info
     symlink /dev/block/by-name/nvram /dev/nvram
     symlink /dev/block/by-name/para /dev/misc
-#+bug651594,chenrui1.wt,20210601,modify shutdown charging animation
-    symlink /dev/block/by-name/logo_a /dev/logo_a
-    symlink /dev/block/by-name/logo_b /dev/logo_b
-#-bug651594,chenrui1.wt,20210601,modify shutdown charging animation
+    symlink /dev/block/by-name/logo /dev/logo
+
     # Mount cgroup mount point for cpu accounting
     mount cgroup none /acct cpuacct
     mkdir /acct/uid
@@ -273,6 +264,12 @@ on load_persist_props_action
     # avoid no log in meta mode due to logd-reinit
     stop keyinstall-1-0
     start keyinstall-1-0
+
+on property:persist.odm.hwc=*
+    setprop ro.boot.hwc ${persist.odm.hwc}
+
+on property:persist.odm.hwversion=*
+    setprop ro.boot.hwversion ${persist.odm.hwversion}
 
 # Indicate to fw loaders that the relevant mounts are up.
 on firmware_mounts_complete
@@ -616,6 +613,16 @@ service connsyslogger /system/bin/connsyslogger
     class main
     user shell
     group system shell radio sdcard_rw inet sdcard_r media_rw bluetooth gps wifi
+
+service loghidlvendorservice /vendor/bin/loghidlvendorservice
+    class main
+    user shell
+    group system shell radio
+
+service loghidlsysservice /system/bin/loghidlsysservice
+    class main
+    user shell
+    group system shell radio
 
 service meta_tst /vendor/bin/meta_tst
     user root
