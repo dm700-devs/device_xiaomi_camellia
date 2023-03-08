@@ -1,0 +1,12 @@
+//
+// Copyright (C) 2023 The Android Open Source Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+runtime_resource_overlay {
+    name: "TelephonyOverlayCamellia",
+    sdk_version: "current",
+    resource_dirs: ["res"],
+    vendor: true,
+}
