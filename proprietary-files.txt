@@ -1215,15 +1215,15 @@ vendor/etc/init/android.hardware.memtrack@1.0-service.rc
 vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.memtrack@1.0-impl.so
-vendor/lib/hw/gralloc.default.so
-vendor/lib/hw/memtrack.default.so
+vendor/lib/hw/gralloc.default.so:vendor/lib/hw/gralloc.mt6833.so
+vendor/lib/hw/memtrack.default.so:vendor/lib/hw/memtrack.mt6833.so
 vendor/lib/libdrm.so
 vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.memtrack@1.0-impl.so
-vendor/lib64/hw/gralloc.default.so
+vendor/lib64/hw/gralloc.default.so:vendor/lib64/hw/gralloc.mt6833.so
 vendor/lib64/hw/hwcomposer.mt6833.so
-vendor/lib64/hw/memtrack.default.so
+vendor/lib64/hw/memtrack.default.so:vendor/lib64/hw/memtrack.mt6833.so
 vendor/lib64/android.hardware.graphics.composer@2.1-resources.so
 vendor/lib64/android.hardware.graphics.composer@2.1.so
 vendor/lib64/libdrm.so
@@ -1343,12 +1343,12 @@ vendor/firmware/wifi.cfg
 # GPS
 vendor/bin/hw/android.hardware.gnss-service.mediatek
 vendor/etc/init/android.hardware.gnss-service.mediatek.rc
--vendor/etc/vintf/manifest/gnss@2.1-service.xml
--vendor/etc/vintf/manifest/gnss-default.xml
-vendor/lib/hw/gps.default.so
+-vendor/etc/vintf/manifest/gnss@2.1-service.xml:vendor/etc/vintf/manifest/gnss@2.1-mtk-service.xml
+-vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/gnss-mediatek.xml
+vendor/lib/hw/gps.default.so:vendor/lib/hw/gps.mt6833.so
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
-vendor/lib64/hw/gps.default.so
+vendor/lib64/hw/gps.default.so:vendor/lib64/hw/gps.mt6833.so
 vendor/lib64/android.hardware.gnss.measurement_corrections@1.0.so
 vendor/lib64/android.hardware.gnss.measurement_corrections@1.1.so
 vendor/lib64/android.hardware.gnss.visibility_control@1.0.so
@@ -1437,12 +1437,12 @@ vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
 # Listen
 vendor/lib/hw/android.hardware.soundtrigger@2.3-impl.so
-vendor/lib/hw/sound_trigger.primary.default.so
+vendor/lib/hw/sound_trigger.primary.default.so:vendor/lib/hw/sound_trigger.primary.mt6833.so
 vendor/lib/android.hardware.soundtrigger@2.1.so
 vendor/lib/android.hardware.soundtrigger@2.2.so
 vendor/lib/android.hardware.soundtrigger@2.3.so
 vendor/lib64/hw/android.hardware.soundtrigger@2.3-impl.so
-vendor/lib64/hw/sound_trigger.primary.default.so
+vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.primary.mt6833.so
 vendor/lib64/android.hardware.soundtrigger@2.1.so
 vendor/lib64/android.hardware.soundtrigger@2.2.so
 vendor/lib64/android.hardware.soundtrigger@2.3.so
@@ -1733,9 +1733,9 @@ vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 # Power-Hardware
 system_ext/lib64/vendor.mediatek.hardware.power@2.0.so
 system_ext/lib64/vendor.mediatek.hardware.power@2.1.so
--vendor/etc/vintf/manifest/power-default.xml
-vendor/lib/hw/power.default.so
-vendor/lib64/hw/power.default.so
+-vendor/etc/vintf/manifest/power-default.xml:vendor/etc/vintf/manifest/power-mediatek.xml
+vendor/lib/hw/power.default.so:vendor/lib/hw/power.mt6833.so
+vendor/lib64/hw/power.default.so:vendor/lib64/hw/power.mt6833.so
 vendor/lib64/android.hardware.power@1.0.so
 vendor/lib64/android.hardware.power@1.1.so
 vendor/lib64/android.hardware.power@1.2.so
@@ -1823,9 +1823,9 @@ vendor/lib64/hw/thermal_hal.so
 # Vibrator
 vendor/etc/init/vibrator-mtk-default.rc
 -vendor/etc/vintf/manifest/vibrator-mtk-default.xml
-vendor/lib/hw/vibrator.default.so
+vendor/lib/hw/vibrator.default.so:vendor/lib/hw/vibrator.mt6833.so
 vendor/lib/libvibrator.so
-vendor/lib64/hw/vibrator.default.so
+vendor/lib64/hw/vibrator.default.so:vendor/lib64/hw/vibrator.mt6833.so
 vendor/lib64/libvibrator.so
 
 # WiFi
