@@ -1428,6 +1428,9 @@ vendor/lib64/libpuresoftkeymasterdevice.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
+# Lbs
+-vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
+
 # Lights
 vendor/lib64/hw/lights.mt6833.so
 
