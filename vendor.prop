@@ -127,6 +127,9 @@ ro.hardware.egl=meow
 ro.hardware.hwcomposer=mtk_common
 ro.hardware.vulkan=mali
 
+# HWUI
+ro.hwui.render_ahead=20
+
 # IR
 ro.hardware.consumerir=common
 
