@@ -50,8 +50,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
-    android.hardware.audio@7.0-impl:32
+    android.hardware.audio@7.0-impl
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.common-util.vendor \
@@ -64,7 +63,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-util.vendor \
     android.hardware.audio@7.0.vendor \
     android.hardware.audio.effect@7.0.vendor \
-    android.hardware.audio.effect@7.0-impl:32
+    android.hardware.audio.effect@7.0-impl
 
 PRODUCT_PACKAGES += \
     audio.primary.default \
@@ -100,7 +99,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.1.vendor \
-    android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.bluetooth@1.1.vendor
 
 PRODUCT_PACKAGES += \
@@ -130,7 +129,7 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm-service.clearkey \
+    android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.4.vendor
 
 PRODUCT_PACKAGES += \
@@ -333,8 +332,6 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-mediatek \
-    android.hardware.power-V2-ndk.vendor:64 \
     android.hardware.power@1.2.vendor:64
 
 PRODUCT_COPY_FILES += \
