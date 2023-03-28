@@ -1447,7 +1447,7 @@ vendor/lib64/android.hardware.soundtrigger@2.3.so
 vendor/lib/libstagefright_soft_mpeg2dec.so
 
 # Media-Hardware
--vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml:vendor/etc/vintf/manifest/manifest_media_c2_mediatek.xml
+-vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
 vendor/lib/libstagefrighthw.so
 vendor/lib64/libstagefrighthw.so
 
