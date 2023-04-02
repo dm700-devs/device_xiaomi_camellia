@@ -13,13 +13,10 @@ on post-fs-data
     mkdir /mnt/vendor/nvdata/md3  0770 root system
     mkdir /data/md3	0770 root system
 
-#  Build-in Modified - S
-#    insmod /vendor/lib/modules/ccci_plat.ko
-#    insmod /vendor/lib/modules/ccci.ko
-#  Build-in Modified - E
+    # Build-in Modified - E
     chown radio radio /sys/kernel/ccci/boot
 
-#SeLinux
+    # SeLinux
     restorecon_recursive /mnt/vendor/protect_f
     restorecon_recursive /mnt/vendor/protect_s
 

@@ -48,7 +48,6 @@ on early-init
     # Set the security context of /postinstall if present.
     restorecon /postinstall
 
-
     # Set up linker config subdirectories based on mount namespaces
     mkdir /linkerconfig/bootstrap 0755
     mkdir /linkerconfig/default 0755
@@ -63,7 +62,6 @@ on early-init
     mount none /linkerconfig/bootstrap /linkerconfig bind rec
 
     start ueventd
-
 
     # Run apexd-bootstrap so that APEXes that provide critical libraries
     # become available. Note that this is executed as exec_start to ensure that
@@ -100,7 +98,6 @@ sysclktz 0
 
 # Temp Backward compatibility
     symlink /dev/block/by-name/boot /dev/bootimg
-    symlink /dev/block/by-name/recovery /dev/recovery
     symlink /dev/block/by-name/secro  /dev/sec_ro
     symlink /dev/block/by-name/kb /dev/kb
     symlink /dev/block/by-name/dkb /dev/dkb
@@ -109,10 +106,6 @@ sysclktz 0
     symlink /dev/block/by-name/nvram /dev/nvram
     symlink /dev/block/by-name/para /dev/misc
     symlink /dev/block/by-name/logo /dev/logo
-
-
-# Link /vendor to /system/vendor for devices without a vendor partition.
-    symlink /system/vendor /vendor
 
     # Mount cgroup mount point for cpu accounting
     mount cgroup none /acct cpuacct
@@ -142,9 +135,6 @@ sysclktz 0
     chmod 0664 /dev/stune/rt/tasks
 
     restorecon_recursive /mnt
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-
     mount configfs none /config nodev noexec nosuid
     chmod 0770 /config/sdcardfs
     chown system package_info /config/sdcardfs
@@ -370,9 +360,6 @@ on post-fs
     # Note that tracefs may be mounted under debug, so we need to cross filesystems
     restorecon --recursive --cross-filesystems /sys/kernel/debug
 
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
-
     chown system system /system/data
     mkdir /system/cache 0770 system cache
     # We restorecon /cache in case the cache partition has been reset.
@@ -440,12 +427,8 @@ on late-fs
 on post-fs-data
     write /proc/bootprof "INIT:post-fs-data"
 
-	#Thermal
-	mkdir /data/.tp/ 0775 system system
-
-    # symlink to bugreport storage location
-    rm /data/bugreports
-    symlink /data/user_de/0/com.android.shell/files/bugreports /data/bugreports
+    #Thermal
+    mkdir /data/.tp/ 0775 system system
 
     # VIA flashlessd service
     mkdir /data/flashless 0770 radio nvram
@@ -472,8 +455,6 @@ on post-fs-data
     # device info interface
     chmod 0440 /dev/devmap
     chown root system /dev/devmap
-
-
 
     #change partition permission
     exec /vendor/etc/partition_permission.sh
@@ -554,7 +535,7 @@ on zygote-start && property:ro.crypto.state=encrypted && property:ro.crypto.type
 
 on boot
     setprop sys.usb.configfs 1
-	setprop sys.usb.ffs.aio_compat 1
+    setprop sys.usb.ffs.aio_compat 1
     setprop vendor.usb.clear boot
 
     # TTY
@@ -666,26 +647,8 @@ service ueventd /system/bin/ueventd
     critical
     seclabel u:r:ueventd:s0
 
-service console /system/bin/sh
-    class core
-    console
-    disabled
-    user shell
-    group shell log readproc
-    seclabel u:r:shell:s0
-
 on property:sys.powerctl=*
     powerctl ${sys.powerctl}
-
-#Log too much setting
-on property:ro.vendor.mtklog_internal=1
-    setprop vendor.logmuch.value 10000
-
-on property:ro.debuggable=1
-    # Give writes to anyone for the trace folder on debug builds.
-    # The folder is used to store method traces.
-    chmod 0773 /data/misc/trace
-    start console
 
 # adbd is controlled via property triggers in init.<platform>.usb.rc
 service adbd /apex/com.android.adbd/bin/adbd --root_seclabel=u:r:su:s0
@@ -697,11 +660,10 @@ service adbd /apex/com.android.adbd/bin/adbd --root_seclabel=u:r:su:s0
 
 #INTERNAL_START
 ## Custom service area (START)
-# Please add custom service below
 
 service thermal_manager /vendor/bin/thermal_manager
     user root
-	group system
+    group system
     oneshot
 
 service permission_check /vendor/bin/permission_check
@@ -718,7 +680,6 @@ service ccci_rpcd /vendor/bin/ccci_rpcd 0
     user radio
     group radio system
     oneshot
-
 
 service fuelgauged /vendor/bin/fuelgauged
     class main

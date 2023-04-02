@@ -97,13 +97,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.ago.rc",
-    src: "etc/init.ago.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "meta_init.connectivity.rc",
     src: "etc/meta_init.connectivity.rc",
     sub_dir: "init/hw",

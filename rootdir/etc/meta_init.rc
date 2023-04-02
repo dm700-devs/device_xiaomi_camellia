@@ -42,7 +42,6 @@ on early-init
     # Set the security context of /postinstall if present.
     restorecon /postinstall
 
-
     # Set up linker config subdirectories based on mount namespaces
     mkdir /linkerconfig/bootstrap 0755
     mkdir /linkerconfig/default 0755
@@ -64,10 +63,6 @@ on early-init
 
     # Generate linker config based on apex mounted in bootstrap namespace
     update_linker_config
-#INTERNAL_START
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
-#INTERNAL_END
 
     # force on usb
     # write /sys/module/musb_hdrc/parameters/musb_force_on 1
@@ -82,19 +77,8 @@ on init
 
     write /proc/bootprof "INIT: on init start"
 
-    # Backward compatibility.
-    symlink /system/bin /bin
-    symlink /system/etc /etc
-
-    # Backward compatibility.
-    symlink /sys/kernel/debug /d
-
-    # Link /vendor to /system/vendor for devices without a vendor partition.
-    symlink /system/vendor /vendor
-
 # Temp Backward compatibility
     symlink /dev/block/by-name/boot /dev/bootimg
-    symlink /dev/block/by-name/recovery /dev/recovery
     symlink /dev/block/by-name/secro  /dev/sec_ro
     symlink /dev/block/by-name/kb /dev/kb
     symlink /dev/block/by-name/dkb /dev/dkb
@@ -142,9 +126,6 @@ on init
     chmod 0660 /sys/power/wake_unlock
 
     restorecon_recursive /mnt
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-
     mount configfs none /config nodev noexec nosuid
     chmod 0770 /config/sdcardfs
     chown system package_info /config/sdcardfs
@@ -227,12 +208,6 @@ on init
 
     # set fwmark on accepted sockets
     write /proc/sys/net/ipv4/tcp_fwmark_accept 1
-
-#INTERNAL_START
-    symlink /sdcard /mnt/sdcard
-
-    mkdir /mnt/cd-rom 0000 system system
-#INTERNAL_END
 
     # enable armv8_deprecated instruction hooks
     write /proc/sys/abi/swp 1
@@ -367,9 +342,6 @@ on post-fs
     # Note that tracefs may be mounted under debug, so we need to cross filesystems
     restorecon --recursive --cross-filesystems /sys/kernel/debug
     chmod 0755 /sys/kernel/debug/tracing
-
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
 
     # We chown/chmod /cache again so because mount is run as root + defaults
     chown system cache /cache
@@ -576,24 +548,6 @@ service ueventd /system/bin/ueventd
     class core
     critical
     seclabel u:r:ueventd:s0
-
-service console /system/bin/sh
-    class core
-    console
-    disabled
-    user shell
-    group shell log readproc
-    seclabel u:r:shell:s0
-
-#Log too much setting
-on property:ro.vendor.mtklog_internal=1
-    setprop vendor.logmuch.value 10000
-
-on property:ro.debuggable=1
-    # Give writes to anyone for the trace folder on debug builds.
-    # The folder is used to store method traces.
-    chmod 0773 /data/misc/trace
-    start console
 
 # adbd is controlled via property triggers in init.<platform>.usb.rc
 service adbd /apex/com.android.adbd/bin/adbd --root_seclabel=u:r:su:s0
