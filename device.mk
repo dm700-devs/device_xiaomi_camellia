@@ -335,9 +335,8 @@ PRODUCT_COPY_FILES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.3.vendor:64 \
-    android.hardware.radio@1.1.vendor \
-    android.hardware.radio@1.6.vendor:64
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio@1.6.vendor
 
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
