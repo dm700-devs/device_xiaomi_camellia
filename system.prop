@@ -19,9 +19,6 @@ dalvik.vm.boot-dex2oat-threads=6
 dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
 dalvik.vm.image-dex2oat-threads=6
 
-# Dex2oat64
-dalvik.vm.dex2oat64.enabled=true
-
 # Display
 debug.sf.use_phase_offsets_as_durations=1
 debug.sf.late.sf.duration=27600000
@@ -31,9 +28,6 @@ debug.sf.early.app.duration=20000000
 debug.sf.earlyGl.sf.duration=27600000
 debug.sf.earlyGl.app.duration=20000000
 debug.sf.hwc.min.duration=23000000
-
-# Keylayout
-qemu.hw.mainkeys=0
 
 # RIL
 vendor.rild.libpath=mtk-ril.so
@@ -81,7 +75,6 @@ ro.config.per_app_memcg=false
 # Misc
 ro.vendor.mtk_omacp_support=1
 ro.vendor.mtk_cta_set=1
-ro.support_one_handed_mode=true
 ro.mediatek.version.branch=alps-mp-s0.mssi1.tc8sp-mt6785
 persist.vendor.mdlog.flush_log_ratio=72340194296137244
 ro.vendor.mtk_gwsd_support=1

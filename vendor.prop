@@ -80,17 +80,8 @@ vendor.mtk.camera.app.fd.video=1
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 
-# Dalvik
-dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt
-persist.sys.dalvik.vm.lib.2=libart.so
-
-# Debug
-debug.als.logs=1
-debug.mediatek.appgamepq_compress=1
-debug.mediatek.disp_decompress=1
-debug.svi.logs=1
-
 # Display
+debug.mediatek.disp_decompress=1
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_gl_backpressure=1
 debug.sf.enable_transaction_tracing=false
@@ -98,7 +89,6 @@ debug.sf.enable_hwc_vds=0
 debug.sf.latch_unsignaled=1
 debug.sf.predict_hwc_composition_strategy=0
 ro.opengles.version=196610
-ro.surface_flinger.force_hwc_copy_for_virtual_displas=true
 ro.surface_flinger.primary_display_orientation=ORIENTATION_0
 ro.vendor.display.sensortype=2
 ro.vendor.display.svi=1
@@ -120,6 +110,7 @@ ro.hardware.gatekeeper=beanpod
 
 # GPU
 ro.gfx.driver.0=com.mediatek.mt6833.gamedriver
+debug.mediatek.appgamepq_compress=1
 
 # Graphics
 ro.hardware.egl=meow
@@ -204,12 +195,10 @@ persist.vendor.mtk_sim_switch_policy=2
 persist.vendor.mtk_wfc_support=1
 ro.colorpick_adjust=true
 ro.config.vc_call_vol_steps=15
-ro.control_privapp_permissions=enforce
 ro.incremental.enable=yes
 ro.logd.size.stats=64K
 ro.mtk_cam_dualzoom_support=1
 ro.mtk_key_manager_support=1
-ro.oem_unlock_supported=1
 ro.vendor.all_modes.colorpick_adjust=true
 ro.vendor.ap_info_monitor=0
 ro.vendor.bt.platform=connac1x
