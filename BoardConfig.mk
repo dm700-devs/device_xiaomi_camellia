@@ -71,6 +71,10 @@ BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_camellia
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_camellia
+
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -110,6 +114,9 @@ BOARD_USES_METADATA_PARTITION := true
 # NFC
 ODM_MANIFEST_SKUS += nfc
 ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/configs/nfc/manifest_nfc.xml
+
+# OTA assert
+TARGET_OTA_ASSERT_DEVICE := camellia,camellian
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
