@@ -166,12 +166,18 @@ ro.logd.kernel=false
 ro.hardware.kmsetkey=beanpod
 
 # LMK
-ro.lmk.kill_timeout_ms=100
-ro.lmk.psi_complete_stall_ms=70
+ro.lmk.low=1001
+ro.lmk.medium=800
+ro.lmk.critical=0
+ro.lmk.critical_upgrade=false
+ro.lmk.upgrade_pressure=100
+ro.lmk.downgrade_pressure=100
+ro.lmk.psi_partial_stall_ms=70
+ro.lmk.psi_complete_stall_ms=700
+ro.lmk.thrashing_limit=100
+ro.lmk.thrashing_limit_decay=10
+ro.lmk.swap_util_max=100
 ro.lmk.swap_free_low_percentage=20
-ro.lmk.swap_util_max=90
-ro.lmk.thrashing_limit=30
-ro.lmk.thrashing_limit_decay=50
 
 # Media
 media.c2.dmabuf.padding=3072
