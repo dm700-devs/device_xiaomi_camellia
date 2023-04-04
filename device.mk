@@ -255,7 +255,7 @@ PRODUCT_PACKAGES += \
     mtk_plpath_utils.recovery
 
 # NFC
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.ese.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.hce.xml \
@@ -264,15 +264,14 @@ PRODUCT_PACKAGES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/com.nxp.mifare.xml
 
-#PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service.st \
-    com.android.nfc_extras \
-    NfcNci \
-    SecureElement \
-    Tag
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/nfc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
 
-#PRODUCT_PACKAGES += \
-    libchrome.vendor:64
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service.st \
+    NfcNci \
+    Tag
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -358,7 +357,8 @@ PRODUCT_PACKAGES += \
     init.mt6833.usb.rc \
     init.project.rc \
     init.sensor_2_0.rc \
-    init_connectivity.rc
+    init_connectivity.rc \
+    init.stnfc.rc
 
 PRODUCT_PACKAGES += \
     meta_init.connectivity.common.rc \

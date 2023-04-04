@@ -1,0 +1,16 @@
+# This file needs to be executed by vendor_init at boot of the device,
+# in normal and FM mode.
+
+on post-fs-data && property:ro.boot.product.hardware.sku=nfc
+    mkdir /data/vendor/nfc 0770 nfc nfc
+
+service nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service.st
+    override
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+on init && property:ro.boot.product.hardware.sku=nfc
+    start nfc_hal_service
+    start mtk_secure_element_hal_service

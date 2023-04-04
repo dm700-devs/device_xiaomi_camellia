@@ -125,6 +125,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.stnfc.rc",
+    src: "etc/init.stnfc.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "meta_init.connectivity.common.rc",
     src: "etc/meta_init.connectivity.common.rc",
     sub_dir: "init/hw",
