@@ -11,7 +11,6 @@ vendor/lib/libaudiocomponentenginec.so
 vendor/lib/libaudiocustparam_vendor.so
 vendor/lib/libaudiodcrflt_vendor.so
 vendor/lib/libaudiofmtconv.so
-vendor/lib/libaudiofoundation.so
 vendor/lib/libaudioloudc.so
 vendor/lib/libaudioprimarydevicehalifclient.so
 vendor/lib/libaudiotoolkit_vendor.so
@@ -24,7 +23,6 @@ vendor/lib64/libaudiocomponentenginec.so
 vendor/lib64/libaudiocustparam_vendor.so
 vendor/lib64/libaudiodcrflt_vendor.so
 vendor/lib64/libaudiofmtconv.so
-vendor/lib64/libaudiofoundation.so
 vendor/lib64/libaudioloudc.so
 vendor/lib64/libaudioprimarydevicehalifclient.so
 vendor/lib64/libaudiotoolkit_vendor.so
@@ -1119,6 +1117,7 @@ vendor/lib64/libwvhidl.so
 # Display-Hardware
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
+-vendor/etc/vintf/manifest/manifest_hwcomposer.xml
 vendor/lib/hw/gralloc.default.so:vendor/lib/hw/gralloc.mt6833.so
 vendor/lib/hw/memtrack.default.so:vendor/lib/hw/memtrack.mt6833.so
 vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
@@ -1318,8 +1317,43 @@ vendor/lib/hw/sound_trigger.primary.default.so:vendor/lib/hw/sound_trigger.prima
 vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.primary.mt6833.so
 
 # Media-Hardware
+vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
+vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
 -vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
+vendor/etc/mtk_omx_core.cfg
+vendor/etc/mtk_platform_codecs_config.xml
+vendor/lib/libMtkOmxAdpcmDec.so
+vendor/lib/libMtkOmxAlacDec.so
+vendor/lib/libMtkOmxApeDec.so
+vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
+vendor/lib/libMtkOmxCore.so
+vendor/lib/libMtkOmxGsmDec.so
+vendor/lib/libMtkOmxMp3Dec.so
+vendor/lib/libcodec2_mtk_c2store.so
+vendor/lib/libcodec2_mtk_vdec.so
+vendor/lib/libcodec2_mtk_venc.so
+vendor/lib/libcodec2_soft_common.so
+vendor/lib/libcodec2_soft_mtk_alacdec.so
+vendor/lib/libcodec2_soft_mtk_apedec.so
+vendor/lib/libcodec2_soft_mtk_imaadpcmdec.so
+vendor/lib/libcodec2_soft_mtk_mp3dec.so
+vendor/lib/libcodec2_soft_mtk_msadpcmdec.so
+vendor/lib/libcodec2_vpp_qt_plugin.so
+vendor/lib/libcodec2_vpp_rs_plugin.so
 vendor/lib/libstagefrighthw.so
+vendor/lib64/libMtkOmxCore.so
+vendor/lib64/libcodec2_mtk_c2store.so
+vendor/lib64/libcodec2_mtk_vdec.so
+vendor/lib64/libcodec2_mtk_venc.so
+vendor/lib64/libcodec2_soft_common.so
+vendor/lib64/libcodec2_soft_mtk_alacdec.so
+vendor/lib64/libcodec2_soft_mtk_apedec.so
+vendor/lib64/libcodec2_soft_mtk_imaadpcmdec.so
+vendor/lib64/libcodec2_soft_mtk_mp3dec.so
+vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so
+vendor/lib64/libcodec2_vpp_qt_plugin.so
+vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libstagefrighthw.so
 
 # MTK-IMS
@@ -1362,8 +1396,6 @@ system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # Mediatek
-vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
-vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
 vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
@@ -1375,7 +1407,6 @@ vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
-vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
 vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
@@ -1388,7 +1419,6 @@ vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
 vendor/etc/init/vendor.mediatek.hardware.nwk_opt@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 vendor/etc/permissions/com.mediatek.hardware.vow_dsp.xml
-vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
 -vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
 vendor/lib/hw/vendor.mediatek.hardware.mms@1.6-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
@@ -1396,12 +1426,6 @@ vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.12-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib/mt6833/libmtk_drvb.so
-vendor/lib/libMtkOmxAdpcmDec.so
-vendor/lib/libMtkOmxAlacDec.so
-vendor/lib/libMtkOmxApeDec.so
-vendor/lib/libMtkOmxCore.so
-vendor/lib/libMtkOmxGsmDec.so
-vendor/lib/libMtkOmxMp3Dec.so
 vendor/lib/libMtkSpeechEnh.so
 vendor/lib/libmtkares.so
 vendor/lib/libmtkcam.atmseventmgr.so
@@ -1459,7 +1483,6 @@ vendor/lib64/hw/vendor.mediatek.hardware.pq@2.12-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/mt6833/libmtk_drvb.so
 vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
-vendor/lib64/libMtkOmxCore.so
 vendor/lib64/libMtkSpeechEnh.so
 vendor/lib64/libmtk-fusion-ril-prop-vsim.so
 vendor/lib64/libmtk-ril.so
@@ -1842,7 +1865,6 @@ vendor/etc/init/netdagent.rc
 vendor/etc/init/networksetting.rc
 vendor/etc/init/nvram_daemon.rc
 vendor/etc/init/tetheroffloadservice.rc
-vendor/etc/init/vendor_flash_recovery.rc
 vendor/etc/init/volte_clientapi_ua.rc
 vendor/etc/init/volte_rcs_ua.rc
 vendor/etc/init/vpud.rc
@@ -2202,8 +2224,6 @@ vendor/etc/fstb.cfg
 vendor/etc/gbe.cfg
 vendor/etc/gps_log.cfg
 vendor/etc/mpe.conf
-vendor/etc/mtk_omx_core.cfg
-vendor/etc/mtk_platform_codecs_config.xml
 vendor/etc/partition_permission.sh
 vendor/etc/sensor_log.cfg
 vendor/etc/slp_conf
@@ -2219,15 +2239,11 @@ vendor/lib/hw/libSoftGatekeeper.so
 vendor/lib/mt6833/libaiselector.so
 vendor/lib/mt6833/libdpframework.so
 vendor/lib/mt6833/libpq_prot.so
-vendor/lib/soundfx/libhapticgenerator.so
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
 vendor/lib/android.frameworks.sensorservice@1.0.so
 vendor/lib/arm.graphics-V1-ndk_platform.so
-vendor/lib/audio_common-aidl-cpp.so
-vendor/lib/audioclient-types-aidl-cpp.so
-vendor/lib/framework-permission-aidl-cpp.so
 vendor/lib/gc02m1b_aac_depth_mipi_mono_tuning.so
 vendor/lib/gc02m1b_qtech_depth_mipi_mono_india_tuning.so
 vendor/lib/gc02m1b_qtech_depth_mipi_mono_tuning.so
@@ -2259,7 +2275,6 @@ vendor/lib/libasn1c_core.so
 vendor/lib/libasn1c_mapi.so
 vendor/lib/libasn1c_mdmi.so
 vendor/lib/libaurisysdemo.so
-vendor/lib/libavservices_minijail.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libblisrc32_vendor.so
 vendor/lib/libbwc.so
@@ -2268,22 +2283,6 @@ vendor/lib/libcares_naptr.so
 vendor/lib/libcarrierconfig.so
 vendor/lib/libccci_util.so
 vendor/lib/libcheckpid.so
-vendor/lib/libcodec2_hidl@1.0.so
-vendor/lib/libcodec2_hidl@1.1.so
-vendor/lib/libcodec2_hidl@1.2.so
-vendor/lib/libcodec2_hidl_plugin.so
-vendor/lib/libcodec2_mtk_c2store.so
-vendor/lib/libcodec2_mtk_vdec.so
-vendor/lib/libcodec2_mtk_venc.so
-vendor/lib/libcodec2_soft_common.so
-vendor/lib/libcodec2_soft_mtk_alacdec.so
-vendor/lib/libcodec2_soft_mtk_apedec.so
-vendor/lib/libcodec2_soft_mtk_imaadpcmdec.so
-vendor/lib/libcodec2_soft_mtk_mp3dec.so
-vendor/lib/libcodec2_soft_mtk_msadpcmdec.so
-vendor/lib/libcodec2_vndk.so
-vendor/lib/libcodec2_vpp_qt_plugin.so
-vendor/lib/libcodec2_vpp_rs_plugin.so
 vendor/lib/libconnfem.so
 vendor/lib/libcustom_nvram.so
 vendor/lib/libcvsd_mtk.so
@@ -2333,7 +2332,6 @@ vendor/lib/libmp4enc_xa.ca7.so
 vendor/lib/libmsbc_mtk.so
 vendor/lib/libmt.so
 vendor/lib/libmtcloader.so
-vendor/lib/libneuropilot_hal_utils.so
 vendor/lib/libnvram.so
 vendor/lib/libnvram_sec.so
 vendor/lib/libnwk_opt_halwrap_vendor.so
@@ -2352,17 +2350,10 @@ vendor/lib/librgbwlightsensor.so
 vendor/lib/librpc.so
 vendor/lib/librt_extamp_intf.so
 vendor/lib/libscltm.so
-vendor/lib/libsfplugin_ccodec_utils.so
-vendor/lib/libshmemcompat.so
-vendor/lib/libshmemutil.so
 vendor/lib/libsimlock.so
 vendor/lib/libsimmelock.so
 vendor/lib/libspeech_enh_lib.so
 vendor/lib/libspeechparser_vendor.so
-vendor/lib/libstagefright_amrnb_common.so
-vendor/lib/libstagefright_bufferpool@2.0.1.so
-vendor/lib/libstagefright_softomx.so
-vendor/lib/libstagefright_softomx_plugin.so
 vendor/lib/libstfactory-vendor.so
 vendor/lib/libstorage_otp.so
 vendor/lib/libsysenv.so
@@ -2405,7 +2396,6 @@ vendor/lib/ov48b_qtech_main_mipi_raw_tuning.so
 vendor/lib/ov8856_aac_front_mipi_raw_tuning.so
 vendor/lib/ov8856_ofilm_front_mipi_raw_india_tuning.so
 vendor/lib/ov8856_ofilm_front_mipi_raw_tuning.so
-vendor/lib/shared-file-region-aidl-cpp.so
 vendor/lib64/hw/kmsetkey.beanpod.so
 vendor/lib64/hw/libSoftGatekeeper.so
 vendor/lib64/mt6833/libaiselector.so
@@ -2492,9 +2482,7 @@ vendor/lib64/libasn1c_core.so
 vendor/lib64/libasn1c_mapi.so
 vendor/lib64/libasn1c_mdmi.so
 vendor/lib64/libaurisysdemo.so
-vendor/lib64/libavservices_minijail_vendor.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
-vendor/lib64/libbinderdebug.so
 vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libbwc.so
 vendor/lib64/libcapctrl.so
@@ -2502,26 +2490,8 @@ vendor/lib64/libcares_naptr.so
 vendor/lib64/libcarrierconfig.so
 vendor/lib64/libccci_util.so
 vendor/lib64/libcheckpid.so
-vendor/lib64/libcodec2_hidl@1.0.so
-vendor/lib64/libcodec2_hidl@1.1.so
-vendor/lib64/libcodec2_hidl@1.2.so
-vendor/lib64/libcodec2_hidl_plugin.so
-vendor/lib64/libcodec2_mtk_c2store.so
-vendor/lib64/libcodec2_mtk_vdec.so
-vendor/lib64/libcodec2_mtk_venc.so
-vendor/lib64/libcodec2_soft_common.so
-vendor/lib64/libcodec2_soft_mtk_alacdec.so
-vendor/lib64/libcodec2_soft_mtk_apedec.so
-vendor/lib64/libcodec2_soft_mtk_imaadpcmdec.so
-vendor/lib64/libcodec2_soft_mtk_mp3dec.so
-vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so
-vendor/lib64/libcodec2_vndk.so
-vendor/lib64/libcodec2_vpp_qt_plugin.so
-vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libcomposer_ext.so
 vendor/lib64/libconnfem.so
-vendor/lib64/libcppbor_external.so
-vendor/lib64/libcppcose_rkp.so
 vendor/lib64/libcustom_nvram.so
 vendor/lib64/libcvsd_mtk.so
 vendor/lib64/libdecrypt.so
@@ -2598,7 +2568,6 @@ vendor/lib64/libmsnr.so
 vendor/lib64/libmt.so
 vendor/lib64/libmt@1.2.so
 vendor/lib64/libmtcloader.so
-vendor/lib64/libneuropilot_hal_utils.so
 vendor/lib64/libnvram.so
 vendor/lib64/libnvram_sec.so
 vendor/lib64/libnwk_opt_halwrap_vendor.so
@@ -2618,15 +2587,10 @@ vendor/lib64/librpc.so
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libscltm.so
 vendor/lib64/libsdk_sr.so
-vendor/lib64/libsfplugin_ccodec_utils.so
-vendor/lib64/libshmemcompat.so
-vendor/lib64/libshmemutil.so
 vendor/lib64/libsimlock.so
 vendor/lib64/libsimmelock.so
-vendor/lib64/libsoft_attestation_cert.so
 vendor/lib64/libspeech_enh_lib.so
 vendor/lib64/libspeechparser_vendor.so
-vendor/lib64/libstagefright_bufferpool@2.0.1.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/libstfactory-vendor.so
 vendor/lib64/libsysenv.so
@@ -2660,7 +2624,6 @@ vendor/lib64/libwpfa.so
 vendor/lib64/libwvkeybox.so
 vendor/lib64/libwvkeyboxext.so
 vendor/lib64/libxmi_high_dynamic_range.so
-vendor/lib64/libz_stable.so
 vendor/lib64/meta_wifi_data.so
 vendor/lib64/nwk_opt_imp.so
 vendor/lib64/ov02b10_aac_macro_mipi_raw_IdxMgr.so
@@ -2675,7 +2638,6 @@ vendor/lib64/ov8856_aac_front_mipi_raw_tuning.so
 vendor/lib64/ov8856_ofilm_front_mipi_raw_IdxMgr.so
 vendor/lib64/ov8856_ofilm_front_mipi_raw_india_tuning.so
 vendor/lib64/ov8856_ofilm_front_mipi_raw_tuning.so
-vendor/lib64/shared-file-region-aidl-cpp.so
 vendor/lib64/wechat.beanpod.so
 -vendor/priv-app/GpuGameDriver.mt6833/GpuGameDriver.mt6833.apk
 vendor/thh/ta/020f0000000000000000000000000000.ta
