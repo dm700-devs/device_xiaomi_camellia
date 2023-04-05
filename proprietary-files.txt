@@ -1,4 +1,4 @@
-# All blobs from camellia-user 12 SP1A.210812.016 V13.0.5.0.SKSMIXM release-keys, unless pinned
+# All blobs from camellia-user 12 SP1A.210812.016 V13.0.6.0.SKSMIXM release-keys, unless pinned
 
 # Audio
 vendor/lib/soundfx/libmisoundfx.so
