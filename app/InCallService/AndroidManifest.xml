@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Copyright (C) 2023 The LineageOS Project
-    SPDX-License-Identifier: Apache-2.0
--->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.lineageos.mediatek.incallservice"
     android:versionCode="1"
@@ -15,7 +10,7 @@
         android:persistent="true">
         <receiver
             android:directBootAware="true"
-            android:exported="true"
+            android:exported="true"    
             android:name="org.lineageos.mediatek.incallservice.OnLockedBootCompleteReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
