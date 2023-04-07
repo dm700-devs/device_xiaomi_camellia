@@ -11,10 +11,10 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.telephony.overlay.Camellia">
-    <application android:hasCode="false" />
+    package="com.android.telephony.overlay.Camellia" >
+
     <overlay
       android:targetPackage="com.android.phone"
       android:isStatic="true"
-      android:priority="1"/>
+      android:priority="100"/>
 </manifest>

@@ -6,7 +6,5 @@
 
 runtime_resource_overlay {
     name: "TelephonyOverlayCamellia",
-    sdk_version: "current",
-    resource_dirs: ["res"],
     vendor: true,
 }

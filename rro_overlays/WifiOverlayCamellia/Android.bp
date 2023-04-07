@@ -6,7 +6,5 @@
 
 runtime_resource_overlay {
     name: "WifiOverlayCamellia",
-    theme: "WifiOverlay",
-    sdk_version: "current",
     vendor: true
 }
