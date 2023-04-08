@@ -82,5 +82,7 @@ Only the three quirks included above are recognized at this point:
     </Settings>
     <Include href="media_codecs_c2.xml" />
     <Include href="media_codecs_mediatek_audio.xml" />
+    <Include href="media_codecs_mediatek_video.xml" />
     <Include href="media_codecs_google_audio.xml" />
+    <Include href="media_codecs_google_video_le.xml" />
 </MediaCodecs>
