@@ -25,7 +25,7 @@
      <dimen name="status_bar_height_portrait">103.0px</dimen>
 
     <!-- Height of the status bar in landscape -->
-    <dimen name="status_bar_height_landscape">24.0px</dimen>
+    <dimen name="status_bar_height_landscape">24.0dip</dimen>
 
     <!-- Radius of the software rounded corners at the top of the display in its natural
         orientation. If zero, the value of rounded_corner_radius is used. -->
