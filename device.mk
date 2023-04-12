@@ -441,8 +441,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service \
-    android.hardware.vibrator-impl
+    android.hardware.vibrator-service.mediatek
 
 # WiFi
 PRODUCT_PACKAGES += \

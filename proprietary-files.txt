@@ -1393,7 +1393,6 @@ system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
 vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
-vendor/bin/hw/android.hardware.vibrator-service.mediatek
 vendor/bin/hw/vendor.mediatek.hardware.aee@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
@@ -1687,14 +1686,6 @@ vendor/lib64/android.hardware.thermal@2.0.so
 # Thermal-Hardware
 vendor/lib/hw/thermal_hal.so
 vendor/lib64/hw/thermal_hal.so
-
-# Vibrator
-vendor/etc/init/vibrator-mtk-default.rc
--vendor/etc/vintf/manifest/vibrator-mtk-default.xml
-vendor/lib/hw/vibrator.default.so:vendor/lib/hw/vibrator.mt6833.so
-vendor/lib/libvibrator.so
-vendor/lib64/hw/vibrator.default.so:vendor/lib64/hw/vibrator.mt6833.so
-vendor/lib64/libvibrator.so
 
 # WiFi
 -vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
