@@ -1313,14 +1313,17 @@ vendor/lib64/hw/sound_trigger.primary.default.so:vendor/lib64/hw/sound_trigger.p
 # Media-Hardware
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
+vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
 vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
+vendor/etc/seccomp_policy/mediacodec.policy
+vendor/etc/seccomp_policy/mediaextractor.policy
+vendor/etc/seccomp_policy/mediaswcodec.policy
 -vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
 vendor/etc/mtk_omx_core.cfg
 vendor/etc/mtk_platform_codecs_config.xml
 vendor/lib/libMtkOmxAdpcmDec.so
 vendor/lib/libMtkOmxAlacDec.so
 vendor/lib/libMtkOmxApeDec.so
-vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
 vendor/lib/libMtkOmxCore.so
 vendor/lib/libMtkOmxGsmDec.so
 vendor/lib/libMtkOmxMp3Dec.so
@@ -1622,6 +1625,9 @@ vendor/lib/hw/power.default.so:vendor/lib/hw/power.mt6833.so
 vendor/lib64/hw/power.default.so:vendor/lib64/hw/power.mt6833.so
 -vendor/lib64/libpowerhal.so
 
+# Public libraries
+vendor/etc/public.libraries.txt
+
 # Radio
 etc/apns-conf.xml:product/etc/apns-conf.xml
 vendor/etc/vendor-apns-conf.xml
@@ -1632,6 +1638,7 @@ vendor/etc/virtual-spn-conf-by-imsi.xml
 vendor/lib/libvsim.so
 
 # Sensors
+vendor/etc/sensors/hals.conf
 vendor/lib/android.hardware.sensors@1.0.so
 vendor/lib/libsensorndkbridge.so
 vendor/lib64/hw/sensors.mt6833.so
