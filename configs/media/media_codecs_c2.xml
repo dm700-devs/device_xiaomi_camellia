@@ -96,10 +96,10 @@
             <Alias name="OMX.MTK.AUDIO.DECODER.ADPCM.DVI" />
             <Limit name="channel-count" max="8" />
         </MediaCodec>
-        <MediaCodec name="c2.mtk.ape.decoder" type="audio/ape">
+        <!--<MediaCodec name="c2.mtk.ape.decoder" type="audio/ape">
             <Alias name="OMX.MTK.AUDIO.DECODER.APE" />
             <Limit name="channel-count" max="2" />
-        </MediaCodec>
+        </MediaCodec>-->
         <MediaCodec name="c2.mtk.alac.decoder" type="audio/alac">
             <Alias name="OMX.MTK.AUDIO.DECODER.ALAC" />
             <Limit name="channel-count" max="8" />
@@ -347,16 +347,17 @@
             <Feature name="can-swap-width-height" value="1"/>
             <Limit name="performance-point-1920x1080" value="30" />
         </MediaCodec>
-        <!--<MediaCodec name="c2.mtk.avc.encoder.secure" type="video/avc" >
+        <MediaCodec name="c2.mtk.avc.encoder.secure" type="video/avc" >
             <Limit name="size" min="160x128" max="1920x1088" />
             <Limit name="alignment" value="16x16" />
             <Limit name="block-size" value="16x16" />
             <Limit name="concurrent-instances" max="16" />
             <Limit name="performance-point-1920x1088" value="30" />
-        </MediaCodec>-->
+            <Feature name="special-codec" required="true" />
+        </MediaCodec>
         <MediaCodec name="c2.mtk.hevc.encoder" type="video/hevc" >
             <Alias name="OMX.MTK.VIDEO.ENCODER.HEVC" />
-            <Limit name="size" min="640x480" max="2560x1440" />
+            <Limit name="size" min="160x128" max="2560x1440" />
             <Limit name="alignment" value="16x16" />
             <Limit name="block-size" value="16x16" />
             <Limit name="quality" range="0-100" default="50" />
@@ -364,6 +365,17 @@
             <Feature name="bitrate-modes" value="VBR,CBR,CQ" />
             <Limit name="performance-point-1920x1080" value="30" />
         </MediaCodec>
+        <MediaCodec name="c2.mtk.heif.encoder" type="image/vnd.android.heic" >
+            <Limit name="size" min="160x128" max="2560x1440" />
+            <Limit name="alignment" value="16x16" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="quality" range="0-100" default="50" />
+            <Quirk name="requires-allocate-on-input-ports" />
+            <Quirk name="requires-allocate-on-output-ports" />
+            <Limit name="concurrent-instances" max="2" />
+            <Feature name="bitrate-modes" value="VBR,CBR,CQ" />
+            <Limit name="performance-point-1920x1080" value="30" />
+        </MediaCodec>      
         <MediaCodec name="c2.android.h263.encoder" type="video/3gpp" update="true">
             <Alias name="OMX.google.h263.encoder" />
             <!-- profiles and levels:  ProfileBaseline : Level45 -->

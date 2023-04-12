@@ -174,7 +174,7 @@
                    bitRate="256000"
                    sampleRate="48000"
                    channels="2" />
-	</EncoderProfile>-->
+        </EncoderProfile>-->
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
             <Video codec="h263"
                    bitRate="1000000"
@@ -263,7 +263,7 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
- <!--
+<!--
         <EncoderProfile quality="timelapseqhd" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="50000000"
@@ -274,7 +274,7 @@
                    bitRate="256000"
                    sampleRate="48000"
                    channels="2" />
-	</EncoderProfile>
+        </EncoderProfile>
         <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="50000000"
@@ -285,7 +285,7 @@
                    bitRate="256000"
                    sampleRate="48000"
                    channels="2" />
-	</EncoderProfile>-->
+        </EncoderProfile>-->
         <EncoderProfile quality="highspeedlow" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="9000000"
