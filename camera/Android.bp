@@ -8,5 +8,5 @@ android_app_import {
 	},
 	privileged: true,
 	product_specific: true,
-	overrides: ["Camera2", "Snap"],
+	overrides: ["Camera2", "Snap", "Aperture"],
 }
