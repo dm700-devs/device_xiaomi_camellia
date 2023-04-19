@@ -133,8 +133,7 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
-    android.hardware.memtrack@1.0-service \
-    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack-V1-ndk \
     disable_configstore \
     libdrm.vendor
 
@@ -191,6 +190,7 @@ PRODUCT_BOOT_JARS += \
     mediatek-framework \
     mediatek-ims-base \
     mediatek-ims-common \
+    mediatek-services \
     mediatek-telecom-common \
     mediatek-telephony-base \
     mediatek-telephony-common

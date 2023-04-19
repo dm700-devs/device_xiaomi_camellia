@@ -169,7 +169,7 @@ media.c2.dmabuf.padding=3072
 # MediaTek
 ro.vendor.mediatek.platform=MT6833
 ro.vendor.mediatek.version.branch=alps-mp-s0.mp1.tc8sp-mt6785
-ro.vendor.mediatek.version.release=alps-mp-s0.mp1.tc8sp-mt6785-V1.12_xiaomi.s0mp1.k85v1.64_P46
+ro.vendor.mediatek.version.release=alps-mp-s0.mp1.tc8sp-mt6785-V1.12.13_xiaomi.s0mp1.k85v1.64_P30
 
 # Misc
 init.userspace_reboot.is_supported=true

@@ -125,16 +125,6 @@
         <fqname>@1.0::IOmxStore/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.memtrack</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IMemtrack</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IMemtrack/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
         <version>1.2</version>
@@ -508,12 +498,12 @@
     <hal format="hidl">
         <name>vendor.mediatek.hardware.pq</name>
         <transport>hwbinder</transport>
-        <version>2.12</version>
+        <version>2.13</version>
         <interface>
             <name>IPictureQuality</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.12::IPictureQuality/default</fqname>
+        <fqname>@2.13::IPictureQuality/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.videotelephony</name>
