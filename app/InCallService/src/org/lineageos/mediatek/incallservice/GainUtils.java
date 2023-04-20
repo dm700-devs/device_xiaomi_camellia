@@ -10,7 +10,7 @@ public class GainUtils {
 
     public static void setGainLevel(int audioDevice, int gainIndex, int streamType) {
         String parameters = String.format("volumeDevice=%d;volumeIndex=%d;volumeStreamType=%d",
-                                          audioDevice, Math.min(7, gainIndex), streamType);
+                                          audioDevice, Math.min(10, gainIndex), streamType);
         Log.d(LOG_TAG, "Setting audio parameters to: " + parameters);
         AudioSystem.setParameters(parameters);
     }
