@@ -325,43 +325,21 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libprotobuf-cpp-lite
 
-# Ramdisk
+# Rootdir
 PRODUCT_PACKAGES += \
-    factory_init.connectivity.common.rc \
-    factory_init.connectivity.rc \
-    factory_init.project.rc \
-    factory_init.rc
+    init.insmod.sh
 
 PRODUCT_PACKAGES += \
     fstab.enableswap \
-    fstab.mt6833
-
-PRODUCT_PACKAGES += \
-    init.connectivity.common.rc \
+    fstab.mt6833 \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6833.rc \
     init.mt6833.usb.rc \
     init.project.rc \
     init.sensor_2_0.rc \
-    init_connectivity.rc \
-    init.stnfc.rc
-
-PRODUCT_PACKAGES += \
-    meta_init.connectivity.common.rc \
-    meta_init.connectivity.rc \
-    meta_init.modem.rc \
-    meta_init.project.rc \
-    meta_init.rc
-
-PRODUCT_PACKAGES += \
-    multi_init.rc
-
-PRODUCT_PACKAGES += \
+    init.stnfc.rc \
     ueventd.mt6833.rc
-
-PRODUCT_PACKAGES += \
-    init.insmod.sh
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.mt6833:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6833

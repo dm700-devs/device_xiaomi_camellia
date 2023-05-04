@@ -5,24 +5,24 @@ on init
     mkdir /storage/usbotg 0700 root root
     write /sys/module/musb_hdrc/parameters/mu3d_force_on 1
 
-# BSP.System - 2020.11.9 - Add rescue.img
+    # BSP.System - 2020.11.9 - Add rescue.img
     mount ext4 /dev/block/platform/bootdevice/by-name/rescue /mnt/rescue noatime
     restorecon_recursive /mnt/rescue
-on post-fs-data
 
-#Turbo sched
+on post-fs-data
+    # Turbo sched
     chmod 0666 /sys/module/migt/parameters/mi_viptask
     restorecon /sys/module/migt/parameters/mi_viptask
 
-#MiBokeh
+    # MiBokeh
     mkdir /vendor/etc/camera 0777 system camera
     mkdir /data/vendor/camera/mibokeh 0776 system camera
 
-#XIAOMI_AI_ASD
+    # XIAOMI_AI_ASD
     mkdir /data/misc/camera 0777 system camera
     mkdir /data/vendor/camera 0777 system camera
 
-#Camera
+    # Camera
     chmod 0660 /dev/MAINAF
     chown system camera /dev/MAINAF
 
@@ -44,14 +44,14 @@ on post-fs-data
     chmod 0660 /dev/BU64745GWZAF
     chown system camera /dev/BU64745GWZAF
 
-#SMB
+    # SMB
     chown system system /proc/smb/ScreenComm
     chmod 0660 /proc/smb/ScreenComm
 
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
-#dual calib
+    # dual calib
     mkdir /mnt/vendor/persist 0777 system camera
     mkdir /mnt/vendor/persist/camera 0777 system camera
     mkdir /data/vendor/camera 0777 system camera
@@ -60,8 +60,7 @@ on post-fs-data
     chmod 0777 /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
     chmod 0777 /data/vendor/camera/golden_rear_dc_cal_wd.bin
 
-
-#finggerprint
+    # Fingerprint
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
     chown system system /sys/bus/platform/devices/fingerprint/clk_enable
@@ -75,49 +74,16 @@ on post-fs-data
     chown system system /sys/bus/platform/devices/fingerprint/fingerdown_wait
     chmod 0660 /sys/bus/platform/devices/fingerprint/fingerdown_wait
 
-#TP
+    # TP
     mkdir /data/vendor/focaltech
     copy /vendor/firmware/focaltech_mp_fw_tianma.ini /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
     chown system system /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
     chmod 0660 /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
 
-#NFC
+    # NFC
     chmod 0666 /dev/st21nfc
     chown nfc nfc /dev/st21nfc
-
-on init
-    # Refer to http://source.android.com/devices/tech/storage/index.html
-    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
-    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
-    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
-    #           Developers expect data stored in these locations to be available over long periods of time."
-    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
-    #
-    # export SECONDARY_STORAGE /storage/sdcard1
 
 service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
     class late_start
     disabled
-
-service sensorscal /system/vendor/bin/setsarcal.sh
-    class main
-    user root
-    oneshot
-    group root system
-    seclabel u:r:meta_tst:s0
-
-on boot
-
-#finggerprint
-    chown system system /dev/goodix_fp
-    chmod 0644 /dev/goodix_fp
-    chown system system /sys/bus/platform/devices/fingerprint/clk_enable
-    chmod 0660 /sys/bus/platform/devices/fingerprint/clk_enable
-    chown system /sys/bus/platform/devices/fingerprint/irq
-    chmod 0660 /sys/bus/platform/devices/fingerprint/irq
-    chown system system /sys/bus/platform/devices/fingerprint/hw_reset
-    chmod 0660 /sys/bus/platform/devices/fingerprint/hw_reset
-    chown system system /sys/bus/platform/devices/fingerprint/wakeup_enable
-    chmod 0660 /sys/bus/platform/devices/fingerprint/wakeup_enable
-    chown system system /sys/bus/platform/devices/fingerprint/fingerdown_wait
-    chmod 0660 /sys/bus/platform/devices/fingerprint/fingerdown_wait
