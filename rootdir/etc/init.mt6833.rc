@@ -3,7 +3,6 @@
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6833.usb.rc
 import /vendor/etc/init/hw/init.project.rc
-import /FWUpgradeInit.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.stnfc.rc
 
@@ -21,7 +20,6 @@ on early-init
 
 on init
     write /proc/bootprof "INIT:init"
-    mkdir /mnt/cd-rom 0000 system system
 
 # change lk_env permission
     chown root system /proc/lk_env
@@ -43,8 +41,6 @@ on late-init
     write /proc/bootprof "INIT:late-init"
     # enable rcu_expedited
     write /sys/kernel/rcu_expedited 1
-
-# mount different fs start
 
 on charger
     #Set CPU/Dram init parameter
@@ -105,8 +101,8 @@ on fs
     write /sys/kernel/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
 
-on fs
-    mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
+    mount ext4 /dev/block/platform/bootdevice/by-name/rescue /mnt/rescue noatime
+    restorecon_recursive /mnt/rescue
 
 on late-fs
     write /proc/bootprof "INIT:late-fs"
