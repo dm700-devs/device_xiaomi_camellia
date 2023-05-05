@@ -330,7 +330,6 @@ PRODUCT_PACKAGES += \
     init.insmod.sh
 
 PRODUCT_PACKAGES += \
-    fstab.enableswap \
     fstab.mt6833 \
     init.connectivity.rc \
     init.modem.rc \
