@@ -6,19 +6,6 @@ ro.audio.usb.period_us=16000
 # Brand
 Build.BRAND=MTK
 
-# Dalvik
-pm.dexopt.install=speed-profile
-pm.dexopt.bg-dexopt=speed-profile
-pm.dexopt.boot=verify
-pm.dexopt.first-boot=quicken
-pm.dexopt.ab-ota=speed-profile
-dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
-dalvik.vm.dex2oat-threads=6
-dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5
-dalvik.vm.boot-dex2oat-threads=6
-dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
-dalvik.vm.image-dex2oat-threads=6
-
 # RIL
 vendor.rild.libpath=mtk-ril.so
 vendor.rild.libargs=-d /dev/ttyC0
@@ -58,9 +45,6 @@ ro.iorapd.enable=false
 
 # Kernel
 ro.kernel.zio=38,108,105,16
-
-# Memory
-ro.config.per_app_memcg=false
 
 # Misc
 ro.vendor.mtk_omacp_support=1
