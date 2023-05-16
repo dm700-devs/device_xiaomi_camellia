@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_camellia.mk
+    $(LOCAL_DIR)/aosp_camellia.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_camellia-user \
-    arrow_camellia-userdebug \
-    arrow_camellia-eng
+    aosp_camellia-user \
+    aosp_camellia-userdebug \
+    aosp_camellia-eng
