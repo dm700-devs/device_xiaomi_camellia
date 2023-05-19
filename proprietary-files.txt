@@ -1625,9 +1625,9 @@ vendor/lib64/nfc_nci.st21nfc.st.so
 
 # Power-Hardware
 vendor/lib/hw/power.default.so:vendor/lib/hw/power.mt6833.so
--vendor/lib/libpowerhal.so
+vendor/lib/libpowerhal.so
 vendor/lib64/hw/power.default.so:vendor/lib64/hw/power.mt6833.so
--vendor/lib64/libpowerhal.so
+vendor/lib64/libpowerhal.so
 
 # Radio
 etc/apns-conf.xml:product/etc/apns-conf.xml
