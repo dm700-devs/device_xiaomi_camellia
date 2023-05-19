@@ -26,9 +26,9 @@ namespace impl {
 namespace mediatek {
 
 class Power : public BnPower {
+public:
     Power();
     ~Power();
-    int handle;
     ndk::ScopedAStatus setMode(Mode type, bool enabled) override;
     ndk::ScopedAStatus isModeSupported(Mode type, bool* _aidl_return) override;
     ndk::ScopedAStatus setBoost(Boost type, int32_t durationMs) override;
@@ -38,6 +38,24 @@ class Power : public BnPower {
                                          int64_t durationNanos,
                                          std::shared_ptr<IPowerHintSession>* _aidl_return) override;
     ndk::ScopedAStatus getHintSessionPreferredRate(int64_t* outNanoseconds) override;
+private:
+    typedef void (*libpowerhal_Init_handle)(int);
+    typedef void (*libpowerhal_LockRel_handle)(int);
+    typedef void (*libpowerhal_UserScnDisableAll_handle)(void);
+    typedef void (*libpowerhal_UserScnRestoreAll_handle)(void);
+    typedef int (*libpowerhal_CusLockHint_handle)(int32_t, int32_t, __pid_t);
+
+    void *powerHandle;
+    libpowerhal_Init_handle libpowerhal_Init;
+    libpowerhal_CusLockHint_handle libpowerhal_CusLockHint;
+    libpowerhal_LockRel_handle libpowerhal_LockRel;
+    libpowerhal_UserScnDisableAll_handle libpowerhal_UserScnDisableAll;
+    libpowerhal_UserScnRestoreAll_handle libpowerhal_UserScnRestoreAll;
+
+    int mLaunchHandle;
+    int mExpensiveRenderingHandle;
+    int mSustainedPerformanceHandle;
+    bool mLowPowerEnabled;
 };
 
 }  // namespace mediatek

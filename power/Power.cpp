@@ -14,16 +14,22 @@
  * limitations under the License.
  */
 
-#include "Power.h"
-#include "libpowerhal.h"
+#include <dlfcn.h>
 
-#include <android-base/file.h>
+#include "Power.h"
+
 #include <android-base/logging.h>
 
-#include <linux/input.h>
+#ifdef TAP_TO_WAKE_NODE
+#include <android-base/file.h>
+#endif
 
-constexpr int kWakeupModeOff = 4;
-constexpr int kWakeupModeOn = 5;
+#define POWERHAL_LIB_NAME "libpowerhal.so"
+#define LIBPOWERHAL_INIT "libpowerhal_Init"
+#define LIBPOWERHAL_CUSLOCKHINT "libpowerhal_CusLockHint"
+#define LIBPOWERHAL_LOCKREL "libpowerhal_LockRel"
+#define LIBPOWERHAL_USERSCNDISABLEALL "libpowerhal_UserScnDisableAll"
+#define LIBPOWERHAL_USERSCNRESTOREALL "libpowerhal_UserScnRestoreAll"
 
 namespace aidl {
 namespace android {
@@ -32,60 +38,108 @@ namespace power {
 namespace impl {
 namespace mediatek {
 
-const std::vector<Boost> BOOST_RANGE{ndk::enum_range<Boost>().begin(),
-                                     ndk::enum_range<Boost>().end()};
-const std::vector<Mode> MODE_RANGE{ndk::enum_range<Mode>().begin(), ndk::enum_range<Mode>().end()};
+#ifdef MODE_EXT
+extern bool isDeviceSpecificModeSupported(Mode type, bool* _aidl_return);
+extern bool setDeviceSpecificMode(Mode type, bool enabled);
+#endif
 
-Power::Power() { libpowerhal_Init(1); }
+const std::vector<Boost> SUPPORTED_BOOSTS {
+    Boost::INTERACTION,
+    Boost::DISPLAY_UPDATE_IMMINENT,
+};
 
-Power::~Power() { }
+const std::vector<Mode> SUPPORTED_MODES {
+#ifdef TAP_TO_WAKE_NODE
+    Mode::DOUBLE_TAP_TO_WAKE,
+#endif
+    Mode::LOW_POWER,
+    Mode::SUSTAINED_PERFORMANCE,
+    Mode::LAUNCH,
+    Mode::EXPENSIVE_RENDERING,
+    Mode::INTERACTIVE,
+};
 
-static int open_ts_input() {
-    int fd = -1;
-    DIR *dir = opendir("/dev/input");
-
-    if (dir != NULL) {
-        struct dirent *ent;
-
-        while ((ent = readdir(dir)) != NULL) {
-            if (ent->d_type == DT_CHR) {
-                char absolute_path[PATH_MAX] = {0};
-                char name[80] = {0};
-
-                strcpy(absolute_path, "/dev/input/");
-                strcat(absolute_path, ent->d_name);
-
-                fd = open(absolute_path, O_RDWR);
-                if (ioctl(fd, EVIOCGNAME(sizeof(name) - 1), &name) > 0) {
-                    if (strcmp(name, "fts_ts") == 0 ||
-                            strcmp(name, "NVTCapacitiveTouchScreen") == 0)
-                        break;
-                }
-
-                close(fd);
-                fd = -1;
-            }
-        }
-
-        closedir(dir);
+Power::Power() {
+    powerHandle = dlopen(POWERHAL_LIB_NAME, RTLD_LAZY);
+    if (!powerHandle) {
+        LOG(ERROR) << "Could not dlopen " << POWERHAL_LIB_NAME;
+        abort();
     }
 
-    return fd;
+    libpowerhal_Init =
+        reinterpret_cast<libpowerhal_Init_handle>(dlsym(powerHandle, LIBPOWERHAL_INIT));
+
+    if (!libpowerhal_Init) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_INIT;
+        abort();
+    }
+
+    libpowerhal_CusLockHint =
+        reinterpret_cast<libpowerhal_CusLockHint_handle>(dlsym(powerHandle, LIBPOWERHAL_CUSLOCKHINT));
+
+    if (!libpowerhal_CusLockHint) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_CUSLOCKHINT;
+        abort();
+    }
+
+    libpowerhal_LockRel =
+        reinterpret_cast<libpowerhal_LockRel_handle>(dlsym(powerHandle, LIBPOWERHAL_LOCKREL));
+
+    if (!libpowerhal_LockRel) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_LOCKREL;
+        abort();
+    }
+
+    libpowerhal_UserScnDisableAll =
+         reinterpret_cast<libpowerhal_UserScnDisableAll_handle>(dlsym(powerHandle, LIBPOWERHAL_USERSCNDISABLEALL));
+
+    if (!libpowerhal_UserScnDisableAll) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_USERSCNDISABLEALL;
+        abort();
+    }
+
+    libpowerhal_UserScnRestoreAll =
+        reinterpret_cast<libpowerhal_UserScnRestoreAll_handle>(dlsym(powerHandle, LIBPOWERHAL_USERSCNRESTOREALL));
+
+    if (!libpowerhal_UserScnRestoreAll) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_USERSCNRESTOREALL;
+        abort();
+    }
+
+    mLowPowerEnabled = 0;
+    libpowerhal_Init(1);
 }
+
+Power::~Power() { }
 
 ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     LOG(VERBOSE) << "Power setMode: " << static_cast<int32_t>(type) << " to: " << enabled;
 
+#ifdef MODE_EXT
+    if (setDeviceSpecificMode(type, enabled)) {
+        return ndk::ScopedAStatus::ok();
+    }
+#endif
     switch (type) {
+#ifdef TAP_TO_WAKE_NODE
+        case Mode::DOUBLE_TAP_TO_WAKE:
+        {
+            ::android::base::WriteStringToFile(enabled ? "1" : "0", TAP_TO_WAKE_NODE, true);
+            break;
+        }
+#endif
         case Mode::LAUNCH:
         {
-            if (this->handle != 0) {
-                libpowerhal_LockRel(this->handle);
-                this->handle = 0;
+            if (mLowPowerEnabled && !mLaunchHandle)
+                break;
+
+            if (mLaunchHandle != 0) {
+                libpowerhal_LockRel(mLaunchHandle);
+                mLaunchHandle = 0;
             }
 
-            if (enabled)
-                this->handle = libpowerhal_CusLockHint(11, 30000, getpid());
+            if (enabled && !mLowPowerEnabled)
+                mLaunchHandle = libpowerhal_CusLockHint(11, 30000, getpid());
 
             break;
         }
@@ -101,21 +155,39 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
                 libpowerhal_UserScnDisableAll();
             break;
         }
-        case Mode::DOUBLE_TAP_TO_WAKE:
+        case Mode::EXPENSIVE_RENDERING:
         {
-            int fd = open_ts_input();
-            if (fd == -1)
-                return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+            if (mLowPowerEnabled && !mExpensiveRenderingHandle)
+                break;
 
-            struct input_event ev = {
-                .type = EV_SYN,
-                .code = SYN_CONFIG,
-                .value = (enabled ? kWakeupModeOn : kWakeupModeOff),
-             };
-             write(fd, &ev, sizeof(ev));
-             close(fd);
-             break;
+            if (mExpensiveRenderingHandle != 0) {
+                libpowerhal_LockRel(mExpensiveRenderingHandle);
+                mExpensiveRenderingHandle = 0;
+            }
+
+            if (enabled && !mLowPowerEnabled)
+                mExpensiveRenderingHandle = libpowerhal_CusLockHint(12, 0, getpid());
+
+            break;
         }
+        case Mode::SUSTAINED_PERFORMANCE:
+        {
+            if (mLowPowerEnabled && !mSustainedPerformanceHandle)
+                break;
+
+            if (mSustainedPerformanceHandle != 0) {
+                libpowerhal_LockRel(mSustainedPerformanceHandle);
+                mSustainedPerformanceHandle = 0;
+            }
+
+            if (enabled && !mLowPowerEnabled)
+                mSustainedPerformanceHandle = libpowerhal_CusLockHint(8, 0, getpid());
+
+            break;
+        }
+        case Mode::LOW_POWER:
+            mLowPowerEnabled = enabled;
+            break;
         default:
             break;
     }
@@ -123,39 +195,49 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
 }
 
 ndk::ScopedAStatus Power::isModeSupported(Mode type, bool* _aidl_return) {
-    LOG(INFO) << "Power isModeSupported: " << static_cast<int32_t>(type);
+#ifdef MODE_EXT
+    if (isDeviceSpecificModeSupported(type, _aidl_return)) {
+        return ndk::ScopedAStatus::ok();
+    }
+#endif
 
-    if (type == Mode::DOUBLE_TAP_TO_WAKE) {
-        int fd = open_ts_input();
-        if (fd != -1) {
-            *_aidl_return = true;
-            close(fd);
-        }
-    }
-    else {
-        *_aidl_return = type >= MODE_RANGE.front() && type <= MODE_RANGE.back();
-    }
+    LOG(INFO) << "Power isModeSupported: " << static_cast<int32_t>(type);
+    *_aidl_return = std::find(SUPPORTED_MODES.begin(), SUPPORTED_MODES.end(), type) != SUPPORTED_MODES.end();
 
     return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Power::setBoost(Boost type, int32_t durationMs) {
-    int32_t intType = static_cast<int32_t>(type);
+    int mediatek_type = 0;
 
-    // Avoid boosts with 0 duration, as those will run indefinitely
-    if (type == Boost::INTERACTION && durationMs < 1)
-        durationMs = 80;
+    if (mLowPowerEnabled) {
+        LOG(VERBOSE) << "Will not perform boosts in LOW_POWER";
+        return ndk::ScopedAStatus::ok();
+    }
 
-    LOG(VERBOSE) << "Power setBoost: " << intType
-                 << ", duration: " << durationMs;
+    switch (type) {
+        case Boost::INTERACTION:
+            LOG(VERBOSE) << "Power setBoost INTERACTION for: " << durationMs << "ms";
+            if (durationMs < 1)
+                durationMs = 80;
+            mediatek_type = 0; // INTERACTION
+            break;
+        case Boost::DISPLAY_UPDATE_IMMINENT:
+            LOG(VERBOSE) << "Power setBoost DISPLAY_UPDATE_IMMINENT for: " << durationMs << "ms";
+            mediatek_type = 1; // DISPLAY_UPDATE_IMMINENT
+            break;
+        default:
+            LOG(ERROR) << "Power unknown boost type: " << static_cast<int32_t>(type);
+            return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+    }
 
-    libpowerhal_CusLockHint(intType, durationMs, getpid());
+    libpowerhal_CusLockHint(mediatek_type, durationMs, getpid());
     return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Power::isBoostSupported(Boost type, bool* _aidl_return) {
     LOG(INFO) << "Power isBoostSupported: " << static_cast<int32_t>(type);
-    *_aidl_return = type >= BOOST_RANGE.front() && type <= BOOST_RANGE.back();
+    *_aidl_return = std::find(SUPPORTED_BOOSTS.begin(), SUPPORTED_BOOSTS.end(), type) != SUPPORTED_BOOSTS.end();
 
     return ndk::ScopedAStatus::ok();
 }
