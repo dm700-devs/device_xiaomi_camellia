@@ -1375,7 +1375,6 @@ system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # Mediatek
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
-vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
 vendor/bin/hw/vendor.mediatek.hardware.aee@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
@@ -1384,7 +1383,6 @@ vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
-vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
 vendor/etc/init/vendor.mediatek.hardware.aee@1.1-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mms@1.6-service.rc
@@ -1394,7 +1392,6 @@ vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
 vendor/etc/init/vendor.mediatek.hardware.nwk_opt@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 vendor/etc/permissions/com.mediatek.hardware.vow_dsp.xml
--vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
 vendor/lib/hw/vendor.mediatek.hardware.mms@1.6-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
