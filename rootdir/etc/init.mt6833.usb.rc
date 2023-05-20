@@ -419,95 +419,6 @@ on property:sys.usb.config=accessory,audio_source,adb && property:sys.usb.config
     write /config/usb_gadget/g1/idVendor 0x18d1
     write /config/usb_gadget/g1/idProduct 0x2d05
 
-on property:sys.usb.config=via_bypass && property:vendor.usb.acm_cnt=0 && \
-property:sys.usb.configfs=1
-    setprop vendor.usb.pid 0x2031
-on property:sys.usb.config=via_bypass && property:vendor.usb.acm_cnt=1 && \
-property:sys.usb.configfs=1
-    setprop vendor.usb.pid 0x2033
-    setprop vendor.usb.acm_port1 ""
-
-##via_modem,via_ets,via_atc,acm
-on property:sys.usb.config=via_bypass && property:vendor.usb.acm_enable=1 && \
-property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "via_bypass"
-    write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
-    write /sys/devices/platform/mt_usb/saving 1
-    symlink /config/usb_gadget/g1/functions/via_modem.gs0 /config/usb_gadget/g1/configs/b.1/f1
-    symlink /config/usb_gadget/g1/functions/via_ets.gs0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/via_atc.gs0 /config/usb_gadget/g1/configs/b.1/f3
-    symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port0} /config/usb_gadget/g1/configs/b.1/f4
-    write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
-    setprop sys.usb.state ${sys.usb.config}
-
-##via_modem,via_ets,via_atc,adb
-on property:sys.usb.config=via_bypass && property:vendor.usb.acm_enable=0 && \
-property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "via_bypass"
-    write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
-    write /sys/devices/platform/mt_usb/saving 1
-    symlink /config/usb_gadget/g1/functions/via_modem.gs0 /config/usb_gadget/g1/configs/b.1/f1
-    symlink /config/usb_gadget/g1/functions/via_ets.gs0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/via_atc.gs0 /config/usb_gadget/g1/configs/b.1/f3
-    write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
-    setprop sys.usb.state ${sys.usb.config}
-
-on property:sys.usb.config=via_bypass,adb && property:vendor.usb.acm_cnt=0 && \
-property:sys.usb.configfs=1
-    setprop vendor.usb.pid 0x2032
-on property:sys.usb.config=via_bypass,adb && property:vendor.usb.acm_cnt=1 && \
-property:sys.usb.configfs=1
-    setprop vendor.usb.pid 0x2034
-    setprop vendor.usb.acm_port1 ""
-on property:sys.usb.config=via_bypass,adb && property:vendor.usb.acm_cnt=2 && \
-property:sys.usb.configfs=1
-    setprop vendor.usb.pid 0x2050
-
-on property:sys.usb.config=via_bypass,adb && property:sys.usb.configfs=1
-    start adbd
-
-##via_modem,via_ets,via_atc,adb,acm
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=via_bypass,adb && \
-property:vendor.usb.acm_enable=1 && property:vendor.usb.acm_cnt=1 && \
-property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "rndis_adb_acm"
-    write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
-    write /sys/devices/platform/mt_usb/saving 1
-    symlink /config/usb_gadget/g1/functions/via_modem.gs0 /config/usb_gadget/g1/configs/b.1/f1
-    symlink /config/usb_gadget/g1/functions/via_ets.gs0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/via_atc.gs0 /config/usb_gadget/g1/configs/b.1/f3
-    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f4
-    symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port0} /config/usb_gadget/g1/configs/b.1/f5
-    write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
-    setprop sys.usb.state ${sys.usb.config}
-
-##via_modem,acm,adb
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=via_bypass,adb && \
-property:vendor.usb.acm_enable=1 && property:vendor.usb.acm_cnt=2 && \
-property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "rndis_adb_acm2"
-    write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
-    write /sys/devices/platform/mt_usb/saving 1
-    symlink /config/usb_gadget/g1/functions/via_modem.gs0 /config/usb_gadget/g1/configs/b.1/f1
-    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port0} /config/usb_gadget/g1/configs/b.1/f3
-    symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port1} /config/usb_gadget/g1/configs/b.1/f4
-    write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
-    setprop sys.usb.state ${sys.usb.config}
-
-##via_modem,via_ets,via_atc,adb
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=via_bypass,adb && \
-property:vendor.usb.acm_enable=0 && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "rndis_adb"
-    write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
-    write /sys/devices/platform/mt_usb/saving 1
-    symlink /config/usb_gadget/g1/functions/via_modem.gs0 /config/usb_gadget/g1/configs/b.1/f1
-    symlink /config/usb_gadget/g1/functions/via_ets.gs0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/via_atc.gs0 /config/usb_gadget/g1/configs/b.1/f3
-    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f4
-    write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
-    setprop sys.usb.state ${sys.usb.config}
-
 ### main function : mass_storage ###
 on property:sys.usb.config=mass_storage && property:vendor.usb.acm_cnt=0 && \
 property:sys.usb.configfs=1
@@ -747,8 +658,6 @@ on property:sys.usb.config=gs1gs3
     setprop sys.usb.config acm_gs1gs3
 on property:sys.usb.config=mtp,gs1gs3
     setprop sys.usb.config acm_gs1gs3
-on property:sys.usb.config=via_bypass,gs1gs3
-    setprop sys.usb.config acm_gs1gs3
 on property:sys.usb.config=rndis,gs1gs3
     setprop sys.usb.config acm_gs1gs3
 on property:sys.usb.config=acm_gs1gs3
@@ -834,27 +743,6 @@ on property:vendor.em.usb.set=RG_USB20_INTR_CAL
 	write /proc/mtk_usb/usb20_phy/RG_USB20_INTR_CAL ${vendor.em.usb.value}
 on property:vendor.em.usb.set=RG_USB20_DISCTH
 	write /proc/mtk_usb/usb20_phy/RG_USB20_DISCTH ${vendor.em.usb.value}
-
-on property:vendor.em.usb.bypass.enable=0
-	write /sys/class/usb_rawbulk/gps/enable 1
-on property:vendor.em.usb.bypass.enable=1
-	write /sys/class/usb_rawbulk/pcv/enable 1
-on property:vendor.em.usb.bypass.enable=2
-	write /sys/class/usb_rawbulk/atc/enable 1
-on property:vendor.em.usb.bypass.enable=3
-	write /sys/class/usb_rawbulk/ets/enable 1
-on property:vendor.em.usb.bypass.enable=4
-	write /sys/class/usb_rawbulk/data/enable 1
-on property:vendor.em.usb.bypass.disable=0
-	write /sys/class/usb_rawbulk/gps/enable 0
-on property:vendor.em.usb.bypass.disable=1
-	write /sys/class/usb_rawbulk/pcv/enable 0
-on property:vendor.em.usb.bypass.disable=2
-	write /sys/class/usb_rawbulk/atc/enable 0
-on property:vendor.em.usb.bypass.disable=3
-	write /sys/class/usb_rawbulk/ets/enable 0
-on property:vendor.em.usb.bypass.disable=4
-	write /sys/class/usb_rawbulk/data/enable 0
 
 ### vendor process start ###
 on property:vendor.usb.config=*
