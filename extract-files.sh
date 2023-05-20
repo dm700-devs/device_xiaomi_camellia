@@ -61,9 +61,6 @@ function blob_fixup {
     system/lib64/libsink.so)
         "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
 	;;
-    vendor/lib64/libwifi-hal-mtk.so)
-        "$PATCHELF" --set-soname libwifi-hal-mtk.so "$2"
-        ;;
     vendor/bin/hw/android.hardware.media.c2@1.2-mediatek*)
        "$PATCHELF" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "$2"
         ;;

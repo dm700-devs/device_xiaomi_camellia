@@ -1648,9 +1648,6 @@ vendor/etc/thermal-tgame.conf
 vendor/etc/thermal-youtube.conf
 vendor/etc/thermald-devices.conf
 
-# WiFi
--vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
-
 # Misc
 vendor/bin/hw/mtkfusionrild
 vendor/bin/hw/tetheroffloadservice
