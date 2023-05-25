@@ -401,7 +401,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.mediatek
+    android.hardware.vibrator-service-awinic
 
 # VNDK
 PRODUCT_COPY_FILES += \
