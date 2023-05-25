@@ -424,8 +424,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service \
-    android.hardware.vibrator-impl
+    android.hardware.vibrator-service-awinic
 
 # WiFi
 PRODUCT_PACKAGES += \
