@@ -121,6 +121,9 @@ ro.hardware.fp.sideCap=true
 # FRP
 ro.frp.pst=/dev/block/platform/bootdevice/by-name/frp
 
+# FM
+ro.vendor.builtin_fm_antenna_support=1
+
 # Gatekeeper
 ro.hardware.gatekeeper=beanpod
 
