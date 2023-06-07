@@ -71,6 +71,9 @@ BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# FM
+BOARD_HAVE_MTK_FM := true
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_camellia
 TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_camellia
