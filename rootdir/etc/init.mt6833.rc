@@ -985,6 +985,15 @@ on property:sys.boot_completed=1
     write /proc/cpufreq/cpufreq_sched_disable 0
     write /proc/sys/kernel/sched_migration_cost_ns 200000
 
+    # Change Virtual Memory
+    write /proc/sys/vm/min_free_kbytes 4096
+    write /proc/sys/vm/oom_kill_allocating_task 0
+    write /proc/sys/vm/dirty_ratio 90
+    write /proc/sys/vm/dirty_background_ratio 70
+    write /proc/sys/vm/overcommit_ratio 80
+    write /proc/sys/vm/vfs_cache_pressure 400
+    write /proc/sys/vm/extra_free_kbytes 24300
+
     # restore perf. parameters
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 0"
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 0"
