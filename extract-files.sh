@@ -65,9 +65,7 @@ function blob_fixup {
     vendor/lib64/libwifi-hal-mtk.so)
         "$PATCHELF" --set-soname libwifi-hal-mtk.so "$2"
         ;;
-    vendor/bin/hw/android.hardware.media.c2@1.2-mediatek)
-        ;&
-    vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
+    vendor/bin/hw/android.hardware.media.c2@1.2-mediatek*)
        "$PATCHELF" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "$2"
         ;;
     vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
@@ -81,15 +79,9 @@ function blob_fixup {
     vendor/bin/hw/android.hardware.memtrack-service.mediatek)
        "$PATCHELF" --replace-needed "android.hardware.memtrack-V1-ndk_platform.so" "android.hardware.memtrack-V1-ndk.so" "${2}"
         ;;
-    vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
-        ;&
-    vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
-        "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-        ;;
+    vendor/lib*/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
+	;&
     vendor/bin/hw/camerahalserver)
-        "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-        ;;
-    vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
         "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
         ;;
     esac
