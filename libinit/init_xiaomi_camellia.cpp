@@ -16,7 +16,7 @@ static const variant_info_t camelliain_info = {
     .brand = "Redmi",
     .device = "camellia",
     .model = "Redmi Note 10T 5G",
-    .build_fingerprint = "Redmi/camellia_in/camelliain:12/SP1A.210812.016/V13.0.5.0.SKSINXM:user/release-keys",
+    .build_fingerprint = "Redmi/camellia_in/camelliain:12/SP1A.210812.016/V14.0.4.0.TKSMIXM:user/release-keys",
 
     .nfc = false,
 };
@@ -28,7 +28,7 @@ static const variant_info_t camelliacn_info = {
     .brand = "Redmi",
     .device = "camellia",
     .model = "Redmi Note 11SE",
-    .build_fingerprint = "Redmi/camellia/camellia:12/SP1A.210812.016/V13.0.5.0.SKSMIXM:user/release-keys",
+    .build_fingerprint = "Redmi/camellia/camellia:12/SP1A.210812.016/V14.0.4.0.TKSMIXM:user/release-keys",
 
     .nfc = false,
 };
@@ -40,7 +40,7 @@ static const variant_info_t camellia_info = {
     .brand = "Redmi",
     .device = "camellia",
     .model = "Redmi Note 10 5G",
-    .build_fingerprint = "Redmi/camellia/camellia:12/SP1A.210812.016/V13.0.5.0.SKSMIXM:user/release-keys",
+    .build_fingerprint = "Redmi/camellia/camellia:12/SP1A.210812.016/V14.0.4.0.TKSMIXM:user/release-keys",
 
     .nfc = false,
 };
@@ -52,7 +52,7 @@ static const variant_info_t camelliagl_info = {
     .brand = "Redmi",
     .device = "camellian",
     .model = "Redmi Note 10 5G",
-    .build_fingerprint = "Redmi/camellian_global/camellian:12/SP1A.210812.016/V13.0.5.0.SKSMIXM:user/release-keys",
+    .build_fingerprint = "Redmi/camellian_global/camellian:12/SP1A.210812.016/V14.0.4.0.TKSMIXM:user/release-keys",
 
     .nfc = true,
 };
@@ -64,7 +64,7 @@ static const variant_info_t camellianp_info = {
     .brand = "POCO",
     .device = "camellian",
     .model = "POCO M3 Pro 5G",
-    .build_fingerprint = "POCO/camellian_p_global/camellian:12/SP1A.210812.016/V13.0.5.0.SKSMIXM:user/release-keys",
+    .build_fingerprint = "POCO/camellian_p_global/camellian:12/SP1A.210812.016/V14.0.4.0.TKSMIXM:user/release-keys",
 
     .nfc = true,
 };
