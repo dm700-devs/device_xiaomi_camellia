@@ -223,7 +223,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.camellia
+    android.hardware.light-service.mediatek
 
 # Media
 PRODUCT_PACKAGES += \
@@ -389,6 +389,7 @@ PRODUCT_PACKAGES += \
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/mediatek \
     hardware/xiaomi
 
 # SoundTrigger
@@ -419,7 +420,7 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service-lazy.camellia \
+    android.hardware.wifi@1.0-service-lazy.mediatek \
     hostapd \
     wpa_supplicant
 
