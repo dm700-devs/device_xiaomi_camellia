@@ -38,7 +38,7 @@ static const dalvik_heap_info_t dalvik_heap_info_6144 = {
 
 static const dalvik_heap_info_t dalvik_heap_info_4096 = {
     .heapstartsize = "8m",
-    .heapgrowthlimit = "192m",
+    .heapgrowthlimit = "256m",
     .heapsize = "512m",
     .heapminfree = "8m",
     .heapmaxfree = "16m",
