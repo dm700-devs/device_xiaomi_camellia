@@ -129,7 +129,6 @@ ro.hardware.gatekeeper=beanpod
 
 # GPU
 debug.mediatek.appgamepq_compress=1
-ro.gfx.driver.0=com.mediatek.mt6833.gamedriver
 
 # Graphics
 ro.hardware.egl=meow

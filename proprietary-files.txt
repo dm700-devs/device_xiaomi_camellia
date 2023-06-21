@@ -2546,7 +2546,6 @@ vendor/lib64/ov8856_ofilm_front_mipi_raw_IdxMgr.so
 vendor/lib64/ov8856_ofilm_front_mipi_raw_india_tuning.so
 vendor/lib64/ov8856_ofilm_front_mipi_raw_tuning.so
 vendor/lib64/wechat.beanpod.so
--vendor/priv-app/GpuGameDriver.mt6833/GpuGameDriver.mt6833.apk
 vendor/thh/ta/020f0000000000000000000000000000.ta
 vendor/thh/ta/05120000000000000000000000000000.ta
 vendor/thh/ta/06090000000000000000000000000000.ta
