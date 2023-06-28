@@ -1,74 +1,63 @@
 # Audio
-ro.camera.sound.forced=0
 ro.audio.silent=0
 ro.audio.usb.period_us=16000
-
-# Brand
-Build.BRAND=MTK
-
-# RIL
-vendor.rild.libpath=mtk-ril.so
-vendor.rild.libargs=-d /dev/ttyC0
-ro.vendor.mtk_telephony_add_on_policy=0
-
-# Perf
-ro.mtk_perf_fast_start_win=1
-ro.mtk_perf_response_time=1
-ro.mtk_perf_simple_start_win=1
-
-# Media
+ro.camera.sound.forced=0
 ro.vendor.mtk_flv_playback_support=1
-media.stagefright.thumbnail.prefer_hw_codecs=true
-vendor.mtk_thumbnail_optimization=true
 
-# USB
-ro.sys.usb.mtp.whql.enable=0
-ro.sys.usb.storage.type=mtp
-ro.sys.usb.charging.only=yes
-ro.sys.usb.bicr=no
+# Charger
+ro.charger.enable_suspend=true
 
-# Storage
+# Display
+debug.sf.enable_transaction_tracing=false
+
+# FUSE
 persist.sys.fuse.passthrough.enable=true
 
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
-persist.vendor.vonr_setting_support=1
 
 # IPO
-sys.ipo.pwrdncap=2
 sys.ipo.disable=1
-
-# iorapd
-ro.iorapd.enable=false
+sys.ipo.pwrdncap=2
 
 # Kernel
 ro.kernel.zio=38,108,105,16
 
 # Misc
-ro.vendor.mtk_omacp_support=1
-ro.vendor.mtk_cta_set=1
-ro.mediatek.version.branch=alps-mp-s0.mssi1.tc8sp-mt6785
-persist.vendor.mdlog.flush_log_ratio=72340194296137244
-ro.vendor.mtk_gwsd_support=1
-persist.vendor.pms_removable=1
 persist.vendor.vzw_device_type=0
+persist.vendor.wfc.sys_wfc_support=1
+ro.vendor.mtk_omacp_support=1
 
-# Netflix
-ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b
-ro.netflix.signup=1
+# Perf
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+ro.mtk_perf_simple_start_win=1
+
+# Platform
+Build.BRAND=MTK
+
+# Radio
+ro.vendor.mtk_telephony_add_on_policy=0
+vendor.rild.libargs=-d /dev/ttyC0
+vendor.rild.libpath=mtk-ril.so
+
+# USB
+persist.sys.usb.config=none
+ro.sys.usb.bicr=no
+ro.sys.usb.charging.only=yes
+ro.sys.usb.mtp.whql.enable=0
+ro.sys.usb.storage.type=mtp
 
 # WiFi
+mediatek.wlan.ctia=0
+ro.mediatek.wlan.p2p=1
+ro.mediatek.wlan.wsc=1
 wifi.direct.interface=p2p0
 wifi.interface=wlan0
-ro.mediatek.wlan.wsc=1
-ro.mediatek.wlan.p2p=1
-mediatek.wlan.ctia=0
 wifi.tethering.interface=ap0
-persist.vendor.wfc.sys_wfc_support=1
 
 # Zygote
-persist.device_config.runtime_native.usap_pool_enabled=true
-ro.zygote.preload.enable=0
 zygote.critical_window.minute=10
+
