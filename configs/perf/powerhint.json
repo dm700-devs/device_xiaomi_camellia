@@ -368,6 +368,24 @@
       "Node": "GPUBlockBoost",
       "Duration": 0,
       "Value": "50"
+    },
+    {
+      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
+      "Node": "PowerHALAudioState",
+      "Duration": 0,
+      "Value": "AUDIO_STREAMING_LOW_LATENCY"
+    },
+    {
+      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 0,
+      "Value": "840000"
+    },
+    {
+      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 0,
+      "Value": "1042000"
     }
   ]
 }
