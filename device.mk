@@ -328,6 +328,7 @@ PRODUCT_PACKAGES += \
     libmtkperf_client_vendor
 
 PRODUCT_PACKAGES += \
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
 
 # Radio
