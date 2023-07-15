@@ -327,6 +327,9 @@ PRODUCT_PACKAGES += \
     libmtkperf_client \
     libmtkperf_client_vendor
 
+PRODUCT_PACKAGES += \
+    vendor.mediatek.hardware.mtkpower@1.2.vendor
+
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
