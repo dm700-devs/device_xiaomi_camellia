@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,10 @@
 namespace {
 int open_ts_input() {
     int fd = -1;
-    DIR *dir = opendir("/dev/input");
+    DIR* dir = opendir("/dev/input");
 
     if (dir != NULL) {
-        struct dirent *ent;
+        struct dirent* ent;
 
         while ((ent = readdir(dir)) != NULL) {
             if (ent->d_type == DT_CHR) {
@@ -37,8 +37,7 @@ int open_ts_input() {
 
                 fd = open(absolute_path, O_RDWR);
                 if (ioctl(fd, EVIOCGNAME(sizeof(name) - 1), &name) > 0) {
-                    if (strcmp(name, "fts_ts") == 0 ||
-                            strcmp(name, "NVTCapacitiveTouchScreen") == 0)
+                    if (strcmp(name, "fts_ts") == 0 || strcmp(name, "NVTCapacitiveTouchScreen") == 0)
                         break;
                 }
 
@@ -55,11 +54,11 @@ int open_ts_input() {
 }  // anonymous namespace
 
 namespace aidl {
-namespace android {
+namespace google {
 namespace hardware {
 namespace power {
 namespace impl {
-namespace mediatek {
+namespace pixel {
 
 static constexpr int kInputEventWakeupModeOff = 4;
 static constexpr int kInputEventWakeupModeOn = 5;
@@ -91,16 +90,16 @@ bool setDeviceSpecificMode(Mode type, bool enabled) {
             ev.value = enabled ? kInputEventWakeupModeOn : kInputEventWakeupModeOff;
             write(fd, &ev, sizeof(ev));
             close(fd);
-            return true;
         }
+            return true;
         default:
             return false;
     }
 }
 
-}  // namespace mediatek
+}  // namespace pixel
 }  // namespace impl
 }  // namespace power
 }  // namespace hardware
-}  // namespace android
+}  // namespace google
 }  // namespace aidl
