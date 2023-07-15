@@ -1141,7 +1141,6 @@ vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/bin/hw/vendor.mediatek.hardware.aee@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
-vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
@@ -1149,14 +1148,11 @@ vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 vendor/etc/init/vendor.mediatek.hardware.aee@1.1-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mms@1.6-service.rc
-vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc
-vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
 vendor/etc/init/vendor.mediatek.hardware.nwk_opt@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 vendor/etc/permissions/com.mediatek.hardware.vow_dsp.xml
 vendor/lib/hw/vendor.mediatek.hardware.mms@1.6-impl.so
-vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
@@ -1182,9 +1178,6 @@ vendor/lib/vendor.mediatek.hardware.mms@1.3.so
 vendor/lib/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib/vendor.mediatek.hardware.mms@1.6.so
-vendor/lib/vendor.mediatek.hardware.mtkpower@1.0.so
-vendor/lib/vendor.mediatek.hardware.mtkpower@1.1.so
-vendor/lib/vendor.mediatek.hardware.mtkpower@1.2.so
 vendor/lib/vendor.mediatek.hardware.netdagent@1.0.so
 vendor/lib/vendor.mediatek.hardware.nvram@1.0.so
 vendor/lib/vendor.mediatek.hardware.nvram@1.1.so
@@ -1206,7 +1199,6 @@ vendor/lib/vendor.mediatek.hardware.pq@2.9.so
 vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
 vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/lib64/hw/vendor.mediatek.hardware.mms@1.6-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
@@ -1252,17 +1244,12 @@ vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower@1.2.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 vendor/lib64/vendor.mediatek.hardware.nwk_opt@1.0.so
-vendor/lib64/vendor.mediatek.hardware.power@1.1.so
-vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.0.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.1.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.10.so
@@ -1287,8 +1274,8 @@ vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/nfc_nci.st21nfc.st.so
 
 # Power-Hardware
-vendor/lib/libpowerhal.so
-vendor/lib64/libpowerhal.so
+vendor/lib64/vendor.mediatek.hardware.power@1.1.so
+vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 
 # Public libraries
 vendor/etc/public.libraries.txt
@@ -1363,13 +1350,11 @@ vendor/bin/factory
 vendor/bin/factory_bin
 vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
-vendor/bin/gbe
 vendor/bin/gsm0710muxd
 vendor/bin/hw/mtkfusionrild
 vendor/bin/hw/tetheroffloadservice
 vendor/bin/hw/vtservice_hidl
 vendor/bin/initprop_bin
-vendor/bin/iperf
 vendor/bin/ipsec_mon
 vendor/bin/iwlist
 vendor/bin/jpegtool
@@ -1416,7 +1401,6 @@ vendor/etc/apdb/APDB_MT6853_S01__W2236
 vendor/etc/apdb/APDB_MT6853_S01__W2236_ENUM
 vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_foursemi.xml
-vendor/etc/cgroups.json
 vendor/etc/ecc_list.xml
 vendor/etc/ecc_list_OP01.xml
 vendor/etc/ecc_list_OP02.xml
@@ -1429,7 +1413,6 @@ vendor/etc/ecc_list_OP236.xml
 vendor/etc/ecc_list_preference.xml
 vendor/etc/factory.ini
 vendor/etc/fstb.cfg
-vendor/etc/gbe.cfg
 vendor/etc/gnss/agps_profiles_conf2.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
@@ -1449,13 +1432,11 @@ vendor/etc/init/aee_aedv.rc
 vendor/etc/init/aee_aedv64.rc
 vendor/etc/init/atcid.rc
 vendor/etc/init/audiocmdservice_atci.rc
-vendor/etc/init/bootperf.rc
 vendor/etc/init/chipinfo_init.rc
 vendor/etc/init/dmc_core.rc
 vendor/etc/init/em_hidl_user.rc
 vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
-vendor/etc/init/gbe.rc
 vendor/etc/init/gsm0710muxd.rc
 vendor/etc/init/init.bt_drv.rc
 vendor/etc/init/init.cccimdinit.rc
@@ -1822,8 +1803,6 @@ vendor/etc/security/cacerts_supl/lab/ef4b31e6.0
 vendor/etc/slp_conf
 vendor/etc/smsdbvisitor.xml
 vendor/etc/special_pws_channel.xml
-vendor/etc/task_profiles.json
-vendor/etc/throttle.sh
 vendor/etc/wfd_source_capability.csv
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/HEVCSecureVdecCA.so
@@ -1905,7 +1884,6 @@ vendor/lib/liblogwrap_vendor.so
 vendor/lib/libminiui.so
 vendor/lib/libmisound.so
 vendor/lib/libmml.so
-vendor/lib/libmmprofile.so
 vendor/lib/libmnetlink_v104.so
 vendor/lib/libmp3dec_mtk.so
 vendor/lib/libmp4enc_sa.ca7.so
@@ -1918,11 +1896,8 @@ vendor/lib/libneuropilot_hal_utils.so
 vendor/lib/libnvram.so
 vendor/lib/libnvram_sec.so
 vendor/lib/libnwk_opt_halwrap_vendor.so
-vendor/lib/libperfctl_vendor.so
 vendor/lib/libpixelflinger.so
 vendor/lib/libpkm.so
-vendor/lib/libpower_timer.so
-vendor/lib/libpowerhalwrap_vendor.so
 vendor/lib/libpq_cust_base.so
 vendor/lib/libpqframework.so
 vendor/lib/librcs_interface.so
@@ -2084,7 +2059,6 @@ vendor/lib64/libmipc.so
 vendor/lib64/libmisound.so
 vendor/lib64/libmmagent.so
 vendor/lib64/libmml.so
-vendor/lib64/libmmprofile.so
 vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmnl.so
 vendor/lib64/libmp3dec_mtk.so
@@ -2098,11 +2072,8 @@ vendor/lib64/libneuropilot_hal_utils.so
 vendor/lib64/libnvram.so
 vendor/lib64/libnvram_sec.so
 vendor/lib64/libnwk_opt_halwrap_vendor.so
-vendor/lib64/libperfctl_vendor.so
 vendor/lib64/libpixelflinger.so
 vendor/lib64/libpkm.so
-vendor/lib64/libpower_timer.so
-vendor/lib64/libpowerhalwrap_vendor.so
 vendor/lib64/libpq_cust_base.so
 vendor/lib64/libpqframework.so
 vendor/lib64/libpqparamparser.so
