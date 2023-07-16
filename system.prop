@@ -44,7 +44,6 @@ vendor.rild.libargs=-d /dev/ttyC0
 vendor.rild.libpath=mtk-ril.so
 
 # USB
-persist.sys.usb.config=none
 ro.sys.usb.bicr=no
 ro.sys.usb.charging.only=yes
 ro.sys.usb.mtp.whql.enable=0
