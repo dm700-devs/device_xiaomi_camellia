@@ -245,6 +245,9 @@ PRODUCT_PACKAGES += \
     init.sensor_2_0.rc \
     ueventd.mtk.rc
 
+PRODUCT_PACKAGES += \
+    init.recovery.mt6877.rc
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1-service.multihal \
