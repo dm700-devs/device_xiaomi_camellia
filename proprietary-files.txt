@@ -1,5 +1,9 @@
 # All blobs from camellian_global-user 13 TP1A.220624.014 V14.0.6.0.TKSMIXM release-keys, unless pinned
 
+# AEE
+vendor/lib/libaedv.so
+vendor/lib64/libaedv.so
+
 # Audio
 vendor/firmware/aw87559_pid_5a_fm_0.bin
 vendor/firmware/aw87559_pid_5a_music_0.bin
