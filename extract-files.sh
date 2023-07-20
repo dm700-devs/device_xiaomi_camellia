@@ -57,6 +57,9 @@ function blob_fixup {
     case "$1" in
         system/lib64/libsink.so)
             "${PATCHELF}" --add-needed "libshim_sink.so" "$2"
+	    ;;
+        vendor/lib*/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
+            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
             ;;
     esac
 }
