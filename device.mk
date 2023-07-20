@@ -281,6 +281,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayCamellia \
     FrameworksResOverlayCamellia \
+    SettingsOverlayCamellia \
     SystemUIOverlayCamellia \
     TelephonyOverlayCamellia \
     TetheringConfigOverlayCamellia \
