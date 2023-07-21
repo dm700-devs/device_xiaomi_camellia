@@ -164,7 +164,6 @@ vendor/etc/audio_param/VolumeGainMap_AudioParam.xml
 vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
 vendor/etc/audio_param/Volume_AudioParam.xml
 vendor/etc/audio_param/Volume_ParamUnitDesc.xml
-vendor/etc/audio_param/fs18xx.bin
 vendor/etc/audio_param_global/AudioParamOptions.xml
 vendor/etc/audio_param_global/AudioParamOptions_vext.xml
 vendor/etc/audio_param_global/BtInfo_AudioParam.xml
