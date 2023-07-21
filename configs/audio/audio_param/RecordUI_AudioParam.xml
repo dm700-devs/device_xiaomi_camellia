@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AudioParam version="1.1">
+  <ParamTree>
+    <Param path="" param_id="0"/>
+    <Param path="ASR,Handset" param_id="1"/>
+    <Param path="ASR" param_id="2"/>
+    <Param path="ASR,USB" param_id="0"/>
+    <Param path="Customization2" param_id="2"/>
+    <Param path="Customization2,USB" param_id="0"/>
+    <Param path="SndRecNormal,Handset" param_id="3"/>
+    <Param path="SndRecLecture,Handset" param_id="3"/>
+    <Param path="SndRecMeeting,Handset" param_id="3"/>
+    <Param path="CamRecNormal,Handset" param_id="3"/>
+    <Param path="VR" param_id="4"/>
+    <Param path="VoicePerformance,Handset" param_id="3"/>
+    <Param path="VoiceUnLk" param_id="4"/>
+    <Param path="VoiceUnLk,Handset" param_id="5"/>
+    <Param path="5-pole HS" param_id="6"/>
+    <Param path="5-pole HS+ANC" param_id="6"/>
+    <Param path="ASR,5-pole HS" param_id="7"/>
+    <Param path="ASR,5-pole HS+ANC" param_id="7"/>
+    <Param path="KTV" param_id="8"/>
+    <Param path="HDR_RECORD,Handset" param_id="9"/>
+    <Param path="HDR_RECORD,4-pole HS" param_id="10"/>
+    <Param path="HDR_RECORD,USB" param_id="10"/>
+  </ParamTree>
+  <ParamUnitPool>
+    <ParamUnit param_id="0">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="1"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="0"/>
+      <Param name="UL NLP visibility" value="0"/>
+      <Param name="UL ES LB visibility" value="0"/>
+      <Param name="UL AES LB visibility" value="0"/>
+      <Param name="UL Sample Rate" value="48000"/>
+      <Param name="UL Gain Set" value="1"/>
+      <Param name="UL Gain Name" value="mic1,mic2,mic3,mic4"/>
+    </ParamUnit>
+    <ParamUnit param_id="1">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="1"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="1"/>
+      <Param name="UL NLP visibility" value="1"/>
+      <Param name="UL ES LB visibility" value="1"/>
+      <Param name="UL AES LB visibility" value="1"/>
+      <Param name="UL Sample Rate" value="16000"/>
+      <Param name="UL Gain Set" value="1"/>
+      <Param name="UL Gain Name" value="mic1,mic2,mic3,mic4"/>
+    </ParamUnit>
+    <ParamUnit param_id="2">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="1"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="1"/>
+      <Param name="UL NLP visibility" value="1"/>
+      <Param name="UL ES LB visibility" value="1"/>
+      <Param name="UL AES LB visibility" value="1"/>
+      <Param name="UL Sample Rate" value="16000"/>
+      <Param name="UL Gain Set" value="1"/>
+      <Param name="UL Gain Name" value="mic1,mic2,mic3,mic4"/>
+    </ParamUnit>
+    <ParamUnit param_id="3">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="2"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="0"/>
+      <Param name="UL NLP visibility" value="0"/>
+      <Param name="UL ES LB visibility" value="0"/>
+      <Param name="UL AES LB visibility" value="0"/>
+      <Param name="UL Sample Rate" value="48000"/>
+      <Param name="UL Gain Set" value="1"/>
+      <Param name="UL Gain Name" value="mic1,mic2,mic3,mic4"/>
+    </ParamUnit>
+    <ParamUnit param_id="4">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="1"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="0"/>
+      <Param name="UL NLP visibility" value="0"/>
+      <Param name="UL ES LB visibility" value="0"/>
+      <Param name="UL AES LB visibility" value="0"/>
+      <Param name="UL Sample Rate" value="48000"/>
+      <Param name="UL Gain Set" value="1"/>
+      <Param name="UL Gain Name" value="mic1,mic2,mic3,mic4"/>
+    </ParamUnit>
+    <ParamUnit param_id="5">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="2"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="0"/>
+      <Param name="UL NLP visibility" value="0"/>
+      <Param name="UL ES LB visibility" value="0"/>
+      <Param name="UL AES LB visibility" value="0"/>
+      <Param name="UL Sample Rate" value="48000"/>
+      <Param name="UL Gain Set" value="1"/>
+      <Param name="UL Gain Name" value="mic1,mic2,mic3,mic4"/>
+    </ParamUnit>
+    <ParamUnit param_id="6">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="2"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="0"/>
+      <Param name="UL NLP visibility" value="0"/>
+      <Param name="UL ES LB visibility" value="0"/>
+      <Param name="UL AES LB visibility" value="0"/>
+      <Param name="UL Sample Rate" value="48000"/>
+      <Param name="UL Gain Set" value="1"/>
+      <Param name="UL Gain Name" value="mic1,mic2,mic3,mic4"/>
+    </ParamUnit>
+    <ParamUnit param_id="7">
+      <Param name="DRC+DG visibility" value="1"/>
+      <Param name="FIR visibility" value="2"/>
+      <Param name="NREC visibility" value="1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="1"/>
+      <Param name="UL Limiter TH visibility" value="1"/>
+      <Param name="UL AEC visibility" value="1"/>
+      <Param name="UL NLP visibility" value="1"/>
+      <Param name="UL ES LB visibility" value="1"/>
+      <Param name="UL AES LB visibility" value="1"/>
+      <Param name="UL Sample Rate" value="16000"/>
+      <Param name="UL Gain Set" value="1"/>
+      <Param name="UL Gain Name" value="mic1,mic2,mic3,mic4"/>
+    </ParamUnit>
+    <ParamUnit param_id="8">
+      <Param name="DRC+DG visibility" value="-1"/>
+      <Param name="FIR visibility" value="-1"/>
+      <Param name="NREC visibility" value="-1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="-1"/>
+      <Param name="UL Limiter TH visibility" value="-1"/>
+      <Param name="UL AEC visibility" value="-1"/>
+      <Param name="UL NLP visibility" value="-1"/>
+      <Param name="UL ES LB visibility" value="-1"/>
+      <Param name="UL AES LB visibility" value="-1"/>
+      <Param name="UL Sample Rate" value="16000"/>
+      <Param name="UL Gain Set" value="1"/>
+      <Param name="UL Gain Name" value="mic1,mic2,mic3,mic4"/>
+    </ParamUnit>
+    <ParamUnit param_id="9">
+      <Param name="DRC+DG visibility" value="-1"/>
+      <Param name="FIR visibility" value="-1"/>
+      <Param name="NREC visibility" value="-1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="-1"/>
+      <Param name="UL Limiter TH visibility" value="-1"/>
+      <Param name="UL AEC visibility" value="-1"/>
+      <Param name="UL NLP visibility" value="-1"/>
+      <Param name="UL ES LB visibility" value="-1"/>
+      <Param name="UL AES LB visibility" value="-1"/>
+      <Param name="UL Sample Rate" value="16000"/>
+      <Param name="UL Gain Set" value="2"/>
+      <Param name="UL Gain Name" value="mic1_adc1,mic1_adc2,mic2_adc3,mic2_adc4"/>
+    </ParamUnit>
+    <ParamUnit param_id="10">
+      <Param name="DRC+DG visibility" value="-1"/>
+      <Param name="FIR visibility" value="-1"/>
+      <Param name="NREC visibility" value="-1"/>
+      <Param name="UL cal. visibility" value="-1"/>
+      <Param name="UL Digital Gain visibility" value="-1"/>
+      <Param name="UL Limiter TH visibility" value="-1"/>
+      <Param name="UL AEC visibility" value="-1"/>
+      <Param name="UL NLP visibility" value="-1"/>
+      <Param name="UL ES LB visibility" value="-1"/>
+      <Param name="UL AES LB visibility" value="-1"/>
+      <Param name="UL Sample Rate" value="16000"/>
+      <Param name="UL Gain Set" value="2"/>
+      <Param name="UL Gain Name" value="mic1_adc1,mic1_adc2"/>
+    </ParamUnit>
+  </ParamUnitPool>
+</AudioParam>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="VoWVoiceCommand" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="VoiceCommand">
+			<Category name="common"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="voice_command" type="string"/>
+		<Param name="voice_command_2nd" type="string"/>
+		<Param name="voice_command_3rd" type="string"/>
+	</ParamUnit>
+</ParamUnitDesc>

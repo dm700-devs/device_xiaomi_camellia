@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AudioParam version="1.0">
+	<ParamTree>
+		<Param path="RCV" param_id="0"/>
+		<Param path="HS" param_id="1"/>
+		<Param path="HP" param_id="1"/>
+		<Param path="SPK" param_id="0"/>
+		<Param path="HS5POLE" param_id="1"/>
+		<Param path="USB" param_id="1"/>
+		<Param path="HEARING_AID" param_id="2"/>
+		<Param path="HSSPK" param_id="1"/>
+		<Param path="BT_A2DP" param_id="1"/>
+		<Param path="BT_A2DP_HP" param_id="1"/>
+		<Param path="BT_A2DP_SPK" param_id="1"/>
+
+	</ParamTree>
+	<ParamUnitPool>
+		<ParamUnit param_id="0">
+			<Param name="crs_gain" value="40,37,34,31,28,25,22,19,16,14,12,10,8,6,4"/>
+		</ParamUnit>
+		<ParamUnit param_id="1">
+			<Param name="crs_gain" value="40,37,34,31,29,27,25,23,21,19,17,15,13,11,9"/>
+		</ParamUnit>
+		<ParamUnit param_id="2">
+			<Param name="crs_gain" value="48,45,41,37,33,29,25,22,18,15,12,9,6,3,0"/>
+		</ParamUnit>
+	</ParamUnitPool>
+</AudioParam>

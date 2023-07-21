@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AudioParam version="1.0">
+	<ParamTree>
+		<Param path="common" param_id="0"/>
+	</ParamTree>
+	<ParamUnitPool>
+		<ParamUnit param_id="0">
+			<Param name="training" value="hhhh"/>
+			<Param name="testing" value="hh"/>
+		</ParamUnit>
+	</ParamUnitPool>
+</AudioParam>

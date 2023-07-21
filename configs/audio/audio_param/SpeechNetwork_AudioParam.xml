@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AudioParam version="1.0">
+  <ParamTree>
+    <Param path="" param_id="0"/>
+    <Param path="GSM" param_id="1"/>
+    <Param path="CDMA" param_id="2"/>
+    <Param path="VoLTE" param_id="3"/>
+  </ParamTree>
+  <ParamUnitPool>
+    <ParamUnit param_id="0">
+      <Param name="speech_network_support" value="0xFFF"/>
+    </ParamUnit>
+    <ParamUnit param_id="1">
+      <Param name="speech_network_support" value="0xFE1"/>
+    </ParamUnit>
+    <ParamUnit param_id="2">
+      <Param name="speech_network_support" value="0x10"/>
+    </ParamUnit>
+    <ParamUnit param_id="3">
+      <Param name="speech_network_support" value="0xE"/>
+    </ParamUnit>
+  </ParamUnitPool>
+</AudioParam>

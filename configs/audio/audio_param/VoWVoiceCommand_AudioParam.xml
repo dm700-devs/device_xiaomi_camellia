@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AudioParam version="1.0">
+	<ParamTree>
+		<Param path="common" param_id="0"/>
+	</ParamTree>
+	<ParamUnitPool>
+		<ParamUnit param_id="0">
+			<Param name="voice_command" value="keyword02"/>
+			<Param name="voice_command_2nd" value="none"/>
+			<Param name="voice_command_3rd" value="none"/>
+		</ParamUnit>
+	</ParamUnitPool>
+</AudioParam>

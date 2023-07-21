@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParamUnitDesc tab_name="VoWMicSetting" version="1.0">
+	<CategoryTypeList>
+		<CategoryType name="VoWMicSetting">
+			<Category name="common"/>
+		</CategoryType>
+	</CategoryTypeList>
+	<ParamUnit>
+		<Param name="main_mic" type="int"/>
+		<Param name="ref_mic" type="int"/>
+		<Param name="3rd_mic" type="int"/>
+	</ParamUnit>
+</ParamUnitDesc>

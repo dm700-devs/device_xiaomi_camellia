@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AudioParam version="1.1">
+  <ParamTree>
+    <Param path="Sound recording,Handset" param_id="0"/>
+    <Param path="Sound recording,Headset" param_id="0"/>
+    <Param path="Sound recording,USB" param_id="1"/>
+    <Param path="Sound recording,HS5POLE" param_id="3"/>
+    <Param path="Sound recording,HS5POLE_ANC" param_id="3"/>
+    <Param path="Camera recording,Handset" param_id="2"/>
+    <Param path="Camera recording,Headset" param_id="2"/>
+    <Param path="Camera recording,USB" param_id="1"/>
+    <Param path="Camera recording,HS5POLE" param_id="3"/>
+    <Param path="Camera recording,HS5POLE_ANC" param_id="3"/>
+    <Param path="CUSTOMIZATION1,Handset" param_id="2"/>
+    <Param path="CUSTOMIZATION1,Headset" param_id="2"/>
+    <Param path="CUSTOMIZATION1,USB" param_id="1"/>
+    <Param path="CUSTOMIZATION1,HS5POLE" param_id="3"/>
+    <Param path="CUSTOMIZATION1,HS5POLE_ANC" param_id="3"/>
+    <Param path="VR,Handset" param_id="2"/>
+    <Param path="VR,Headset" param_id="2"/>
+    <Param path="VR,USB" param_id="1"/>
+    <Param path="VR,HS5POLE" param_id="3"/>
+    <Param path="VR,HS5POLE_ANC" param_id="3"/>
+    <Param path="VoicePerformance,Handset" param_id="0"/>
+    <Param path="VoicePerformance,Headset" param_id="0"/>
+    <Param path="VoicePerformance,USB" param_id="1"/>
+    <Param path="VoicePerformance,HS5POLE" param_id="3"/>
+    <Param path="VoicePerformance,HS5POLE_ANC" param_id="3"/>
+    <Param path="VOICE_UNLOCK,Handset" param_id="2"/>
+    <Param path="VOICE_UNLOCK,Headset" param_id="2"/>
+    <Param path="VOICE_UNLOCK,USB" param_id="1"/>
+    <Param path="VOICE_UNLOCK,HS5POLE" param_id="3"/>
+    <Param path="VOICE_UNLOCK,HS5POLE_ANC" param_id="3"/>
+    <Param path="CUSTOMIZATION2,Handset" param_id="2"/>
+    <Param path="CUSTOMIZATION2,Headset" param_id="2"/>
+    <Param path="CUSTOMIZATION2,USB" param_id="1"/>
+    <Param path="CUSTOMIZATION2,HS5POLE" param_id="3"/>
+    <Param path="CUSTOMIZATION2,HS5POLE_ANC" param_id="3"/>
+    <Param path="CUSTOMIZATION3,Handset" param_id="2"/>
+    <Param path="CUSTOMIZATION3,Headset" param_id="2"/>
+    <Param path="CUSTOMIZATION3,USB" param_id="1"/>
+    <Param path="CUSTOMIZATION3,HS5POLE" param_id="3"/>
+    <Param path="CUSTOMIZATION3,HS5POLE_ANC" param_id="3"/>
+    <Param path="FastRecord,Handset" param_id="0"/>
+    <Param path="FastRecord,Headset" param_id="0"/>
+    <Param path="FastRecord,USB" param_id="1"/>
+    <Param path="FastRecord,HS5POLE" param_id="3"/>
+    <Param path="FastRecord,HS5POLE_ANC" param_id="3"/>
+    <Param path="Unprocessed,Handset" param_id="4"/>
+    <Param path="Unprocessed,Headset" param_id="4"/>
+    <Param path="Unprocessed,USB" param_id="1"/>
+    <Param path="Unprocessed,HS5POLE" param_id="4"/>
+    <Param path="Unprocessed,HS5POLE_ANC" param_id="4"/>
+    <Param path="AAudio,Handset" param_id="0"/>
+    <Param path="AAudio,Headset" param_id="0"/>
+    <Param path="AAudio,USB" param_id="1"/>
+    <Param path="AAudio,HS5POLE" param_id="0"/>
+    <Param path="AAudio,HS5POLE_ANC" param_id="0"/>
+    <Param path="KTV,Handset" param_id="0"/>
+    <Param path="KTV,Headset" param_id="0"/>
+    <Param path="KTV,USB" param_id="1"/>
+    <Param path="KTV,HS5POLE" param_id="3"/>
+    <Param path="KTV,HS5POLE_ANC" param_id="3"/>
+    <Param path="HDR_RECORD,Sound recording,Handset" param_id="5"/>
+    <Param path="HDR_RECORD,Sound recording,Headset" param_id="6"/>
+    <Param path="HDR_RECORD,Camera recording,Handset" param_id="5"/>
+    <Param path="HDR_RECORD,Camera recording,Headset" param_id="6"/>
+    <Param path="HDR_RECORD,VR,Handset" param_id="5"/>
+    <Param path="HDR_RECORD,VR,Headset" param_id="6"/>
+    <Param path="HDR_RECORD,FastRecord,Handset" param_id="5"/>
+    <Param path="HDR_RECORD,FastRecord,Headset" param_id="6"/>
+    <Param path="HDR_RECORD,KTV,Handset" param_id="5"/>
+    <Param path="HDR_RECORD,KTV,Headset" param_id="6"/>
+    <Param path="Default,Sound recording,Headset" param_id="7"/>
+    <Param path="Default,Camera recording,Headset" param_id="8"/>
+    <Param path="Default,VR,Headset" param_id="9"/>
+    <Param path="Default,FastRecord,Headset" param_id="10"/>
+    <Param path="Default,VoicePerformance,Headset" param_id="11"/>
+    <Param path="Default,Sound recording,Handset" param_id="12"/>
+    <Param path="Default,Camera recording,Handset" param_id="13"/>
+    <Param path="Default,VR,Handset" param_id="14"/>
+    <Param path="Default,FastRecord,Handset" param_id="15"/>
+    <Param path="Default,VoicePerformance,Handset" param_id="16"/>
+    <Param path="Default,Sound recording,USB" param_id="17"/>
+    <Param path="Default,Camera recording,USB" param_id="18"/>
+    <Param path="Default,VR,USB" param_id="19"/>
+    <Param path="Default,FastRecord,USB" param_id="20"/>
+    <Param path="Default,VoicePerformance,USB" param_id="21"/>
+  </ParamTree>
+  <ParamUnitPool>
+    <ParamUnit param_id="0">
+      <Param name="ul_gain" value="34"/>
+    </ParamUnit>
+    <ParamUnit param_id="1">
+      <Param name="ul_gain" value="0"/>
+    </ParamUnit>
+    <ParamUnit param_id="2">
+      <Param name="ul_gain" value="20"/>
+    </ParamUnit>
+    <ParamUnit param_id="3">
+      <Param name="ul_gain" value="24"/>
+    </ParamUnit>
+    <ParamUnit param_id="4">
+      <Param name="ul_gain" value="6"/>
+    </ParamUnit>
+    <ParamUnit param_id="5">
+      <Param name="ul_gain" value="34,0,34,0"/>
+    </ParamUnit>
+    <ParamUnit param_id="6">
+      <Param name="ul_gain" value="34,0"/>
+    </ParamUnit>
+    <ParamUnit param_id="7">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+    <ParamUnit param_id="8">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+    <ParamUnit param_id="9">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+    <ParamUnit param_id="10">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+    <ParamUnit param_id="11">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+    <ParamUnit param_id="12">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+    <ParamUnit param_id="13">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+    <ParamUnit param_id="14">
+      <Param name="ul_gain" value="14"/>
+    </ParamUnit>
+    <ParamUnit param_id="15">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+    <ParamUnit param_id="16">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+    <ParamUnit param_id="17">
+      <Param name="ul_gain" value="30"/>
+    </ParamUnit>
+    <ParamUnit param_id="18">
+      <Param name="ul_gain" value="30"/>
+    </ParamUnit>
+    <ParamUnit param_id="19">
+      <Param name="ul_gain" value="25"/>
+    </ParamUnit>
+    <ParamUnit param_id="20">
+      <Param name="ul_gain" value="30"/>
+    </ParamUnit>
+    <ParamUnit param_id="21">
+      <Param name="ul_gain" value="31"/>
+    </ParamUnit>
+  </ParamUnitPool>
+</AudioParam>
