@@ -1662,7 +1662,6 @@ vendor/lib/libjpeg-alpha_vendor.so
 vendor/lib/libladder.so
 vendor/lib/liblogwrap_vendor.so
 vendor/lib/libminiui.so
-vendor/lib/libmisound.so
 vendor/lib/libmml.so
 vendor/lib/libmnetlink_v104.so
 vendor/lib/libmp3dec_mtk.so
@@ -1836,7 +1835,6 @@ vendor/lib64/libmfllcore.so
 vendor/lib64/libmi_bokehpre.so
 vendor/lib64/libminiui.so
 vendor/lib64/libmipc.so
-vendor/lib64/libmisound.so
 vendor/lib64/libmmagent.so
 vendor/lib64/libmml.so
 vendor/lib64/libmnetlink_v104.so
