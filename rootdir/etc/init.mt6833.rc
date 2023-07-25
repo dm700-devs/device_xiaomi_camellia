@@ -923,24 +923,6 @@ on property:vold.decrypt=trigger_shutdown_framework
 on property:persist.vendor.uartconsole.enable=*
     write /proc/mtprintk ${persist.vendor.uartconsole.enable}
 
-#Code for HQ-100539 add by wangzhengyuan at 20201112 start
-#WiFi
-on property:vendor.sysctl.tx=3
-    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 3"
-
-#WiFi
-on property:vendor.sysctl.tx=2
-    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 2"
-
-#WiFi
-on property:vendor.sysctl.tx=1
-    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 1"
-
-#WiFi
-on property:vendor.sysctl.tx=0
-    exec - root -- /system/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 0"
-#Code for HQ-100539 add by wangzhengyuan at 20201112 end
-
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B -z \
         -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
@@ -1024,24 +1006,6 @@ on property:persist.vendor.mediatek.fg.force25c=0
     write /sys/bus/platform/devices/battery/Battery_Temperature 65535
     write /sys/bus/platform/devices/battery_bq/FG_tempfunction_enable 1
 
-# add loghidl client
-service loghidlsysservice /system/bin/loghidlsysservice
-    class main
-    user root
-    group system
-    disabled
-
-# add PcbaConfigSet
-service pcbaconfig /vendor/bin/PcbaConfigSet
-    class core
-    user root
-    group root system
-    oneshot
-    seclabel u:r:PcbaConfigSet:s0
-
-on boot
-    start pcbaconfig
-
 service initprop_bin /vendor/bin/initprop_bin
     class main
     user root
@@ -1052,35 +1016,12 @@ service initprop_bin /vendor/bin/initprop_bin
 on boot
     start initprop_bin
 
-on property:persist.odm.ril.oem.sno=*
-    setprop ro.ril.oem.sno ${persist.odm.ril.oem.sno}
-
-on property:persist.odm.ril.oem.psno=*
-    setprop ro.ril.oem.psno ${persist.odm.ril.oem.psno}
-
-on property:persist.odm.ril.oem.wifimac=*
-    setprop ro.ril.oem.wifimac ${persist.odm.ril.oem.wifimac}
-
-on property:persist.odm.ril.oem.btmac=*
-    setprop ro.ril.oem.btmac ${persist.odm.ril.oem.btmac}
-
-on property:persist.odm.ril.factory_id=*
-    setprop ro.ril.factory_id ${persist.odm.ril.factory_id}
-
-on property:persist.odm.ril.oem.imei1=*
-    setprop ro.ril.oem.imei1 ${persist.odm.ril.oem.imei1}
-
-on property:persist.odm.ril.oem.imei2=*
-    setprop ro.ril.oem.imei2 ${persist.odm.ril.oem.imei2}
-
-on property:sys.boot.cpuid=*
-    setprop ro.boot.cpuid ${sys.boot.cpuid}
-
-on property:sys.boot.hwc=*
-    setprop ro.boot.hwc ${sys.boot.hwc}
-
 on property:vendor.service.nvram_init=Ready
     start initprop_bin
+
+# start meta_tst for ATM
+on property:sys.boot_completed=1 && property:ro.boot.atm=enable
+    start meta_tst
 
 # add meta_tst for ATM
 service meta_tst /vendor/bin/meta_tst
@@ -1099,25 +1040,6 @@ service factory_no_image /vendor/bin/factory
     socket factory-atci stream 660 radio system
     disabled
     oneshot	
-
-# start meta_tst for ATM
-on property:sys.boot_completed=1 && property:ro.boot.atm=enable
-    start meta_tst
-    start loghidlvendorservice
-    start loghidlsysservice
-
-# BSP.Charge - 2020.11.24 - Add Charge-logger start
-# add charge_logger service for dump charge message
-service charge_logger /vendor/bin/charge_logger
-    class main
-    user system
-    group system
-    disabled
-    oneshot
-
-on property:sys.boot_completed=1
-    start charge_logger
-# BSP.Charge - 2020.11.24 - Add Charge-logger end
 
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
@@ -1166,14 +1088,6 @@ on boot
 # add this link for cust mount
 on init
     symlink /dev/block/platform/bootdevice /dev/block/bootdevice
-
-# VSIM service (vendor OSI)
-service osi /system/bin/osi
-    class main
-    user root
-    disabled
-    oneshot
-    #seclabel u:r:osi:s0
 
 service factory_bin /vendor/bin/factory_bin
     class core
