@@ -1131,22 +1131,6 @@ service closead /vendor/bin/displayf_bin s 0
     disabled
 #end
 
-# reboot request when operator change
-on property:sys.boot_completed="" && property:persist.radio.op.name=AT && property:persist.vendor.op.name.last=UN
-   setprop persist.vendor.op.name.last "AT"
-   setprop sys.powerctl "reboot"
-
-on property:sys.boot_completed="" && property:persist.radio.op.name=UN && property:persist.vendor.op.name.last=AT
-   setprop persist.vendor.op.name.last "UN"
-   setprop sys.powerctl "reboot"
-
-on property:sys.boot_completed="" && property:persist.radio.op.name=UN && property:persist.vendor.op.name.last=""
-   setprop persist.vendor.op.name.last "UN"
-   setprop sys.powerctl "reboot"
-
-on property:sys.boot_completed=1 && property:persist.radio.op.name=*
-   setprop persist.vendor.op.name.last ${persist.radio.op.name}
-
 service mi_thermald /vendor/bin/mi_thermald
     class main
     user root
