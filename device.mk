@@ -47,7 +47,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
+    android.hardware.audio.service.mediatek \
     android.hardware.audio@7.1-impl
 
 PRODUCT_PACKAGES += \
