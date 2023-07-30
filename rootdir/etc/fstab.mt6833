@@ -99,3 +99,6 @@ product                              /product                  ext4     ro      
 /dev/block/by-name/pi_img            /pi_img                   emmc     defaults             defaults
 /dev/block/by-name/expdb             /expdb                    emmc     defaults             defaults
 /dev/block/by-name/seccfg            /seccfg                   emmc     defaults             defaults
+
+# ZRAM
+/dev/block/zram0                     none                      swap     defaults             zramsize=55%
