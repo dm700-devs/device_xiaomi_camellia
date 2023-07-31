@@ -220,7 +220,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.mediatek
+    android.hardware.lights-service.mediatek
 
 # Media
 PRODUCT_PACKAGES += \
