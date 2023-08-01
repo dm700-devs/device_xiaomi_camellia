@@ -1,0 +1,19 @@
+typeattribute hal_fingerprint_default data_between_core_and_vendor_violators;
+
+allow hal_fingerprint_default vendor_fingerprint_device:dir r_dir_perms;
+allow hal_fingerprint_default vendor_fingerprint_device:file rw_file_perms;
+
+allow hal_fingerprint_default fingerprint_data_file:dir rw_dir_perms;
+allow hal_fingerprint_default fingerprint_data_file:file create_file_perms;
+allow hal_fingerprint_default vendor_fingerprint_data_file:dir rw_dir_perms;
+allow hal_fingerprint_default vendor_fingerprint_data_file:file create_file_perms;
+
+allow hal_fingerprint_default mtee_trusty_file:dir r_dir_perms;
+allow hal_fingerprint_default sysfs_batteryinfo:dir r_dir_perms;
+allow hal_fingerprint_default sysfs_pmu:dir r_dir_perms;
+allow hal_fingerprint_default mtee_trusty_file:file r_file_perms;
+allow hal_fingerprint_default sysfs_batteryinfo:file r_file_perms;
+allow hal_fingerprint_default sysfs_pmu:file r_file_perms;
+
+get_prop(hal_fingerprint_default, vendor_fingerprint_prop)
+set_prop(hal_fingerprint_default, vendor_fingerprint_prop)

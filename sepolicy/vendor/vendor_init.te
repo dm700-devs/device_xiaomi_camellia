@@ -1,0 +1,3 @@
+get_prop(vendor_init, vts_status_prop)
+
+set_prop(vendor_init, vendor_mtk_powerhal_prop)

@@ -1,0 +1,14 @@
+# Power
+genfscon proc  /proc/cpufreq/cpufreq_cci_mode                                                 u:object_r:proc_cpufreq:s0
+genfscon sysfs /sys/module/fbt_cpu/parameters/bhr_opp                                         u:object_r:sysfs_fbt_cpu:s0
+genfscon sysfs /sys/kernel/fpsgo/fbt/boost_ta                                                 u:object_r:sysfs_fpsgo:s0
+
+# Wakeup source stats
+genfscon sysfs /devices/platform/11e01000.i2c5/i2c-5/5-004e/wakeup/wakeup17                   u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11e01000.i2c5/i2c-5/5-004e/wakeup/wakeup18                   u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11e01000.i2c5/i2c-5/5-004e/tcpc/type_c_port0/wakeup19        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11e01000.i2c5/i2c-5/5-004e/tcpc/type_c_port0/wakeup20        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11e01000.i2c5/i2c-5/5-004e/tcpc/type_c_port0/wakeup21        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/input/input2/wakeup11                                         u:object_r:sysfs_wakeup:s0
+genfscon sysfs /sys/devices/platform/11e01000.i2c5/i2c-5/5-004e/wakeup/wakeup18               u:object_r:sysfs_wakeup:s0
+genfscon sysfs /sys/devices/platform/battery/power_supply/bms/wakeup23                        u:object_r:sysfs_wakeup:s0

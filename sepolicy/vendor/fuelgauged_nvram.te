@@ -1,0 +1,2 @@
+allow fuelgauged_nvram sysfs_dt_firmware_android:dir r_dir_perms;
+allow fuelgauged_nvram sysfs_dt_firmware_android:file r_file_perms;
