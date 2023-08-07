@@ -1134,7 +1134,7 @@ service mi_thermald /vendor/bin/mi_thermald
     class main
     user root
     group system
-    #seclabel u:r:mi_thermald:s0
+    seclabel u:r:mi_thermald:s0
 
 # Offline Charging daemon
 service charger /system/bin/charger
@@ -1142,4 +1142,4 @@ service charger /system/bin/charger
     user system
     group system graphics input
     capabilities SYS_BOOT
-    #seclabel u:r:charger:s0
+    seclabel u:r:charger:s0
