@@ -271,9 +271,6 @@ vendor/etc/audio_param_global/Volume_ParamUnitDesc.xml
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
 vendor/etc/init/init.bt_drv.rc
-vendor/firmware/BT_FW.cfg
-vendor/firmware/soc2_2_ram_bt_1_1_hdr.bin
-vendor/firmware/soc2_2_ram_bt_1a_1_hdr.bin
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib/libbluetooth_mtk.so
 vendor/lib/libbluetooth_mtk_pure.so
@@ -919,9 +916,19 @@ vendor/bin/wmt_loader
 vendor/etc/init/init.connfem.rc
 vendor/etc/init/init.wmt_drv.rc
 vendor/firmware/WMT_SOC.cfg
-vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin
-vendor/firmware/soc2_2_ram_mcu_1a_1_hdr.bin
 vendor/firmware/txpowerctrl.cfg
+
+# Connectivity (Firmware) - from a13xins-user 13 TP1A.220624.014 M136BXXU4CWE3 release-keys
+vendor/firmware/BT_FW.cfg|b9a6d28bdb5b7f7b34881a6ff33fa48ff9db81b0
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin|18dfcca431a72f8a26ca92fad6f3db60e8db62c1
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1a_1.bin|9fa98689eea3bd6ab91e7faf82ef9fb74b010de1
+vendor/firmware/soc2_2_ram_bt_1_1_hdr.bin|df01b984000f02b8bf8eedaaace90e1a049636d1
+vendor/firmware/soc2_2_ram_bt_1a_1_hdr.bin|95ec2e59a13d8bcc8561adacfb3fb734b98d4d80
+vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin|33a0ff6d4e8e2dc85be91e25dc073cf11e5bf65c
+vendor/firmware/soc2_2_ram_mcu_1a_1_hdr.bin|bc98f4d18c4e483ad9f22a364cc905be70d402fa
+vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin|3f936d875c797454c77b83b3da39739bbada20cb
+vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin|fa3f34c6f6bba459f68454bf276f9e37489824a1
+vendor/firmware/wifi.cfg|11f1dd51796530deb995831c6c37251b79fca189
 
 # Display
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
@@ -1437,9 +1444,4 @@ vendor/firmware/awinic_params.bin
 vendor/bin/wlan_assistant
 vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/wlan_assistant.rc
-vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin
-vendor/firmware/WIFI_RAM_CODE_soc2_2_1a_1.bin
-vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin
-vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin
-vendor/firmware/wifi.cfg
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
