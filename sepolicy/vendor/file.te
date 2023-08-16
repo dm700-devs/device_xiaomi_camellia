@@ -8,3 +8,6 @@ type vendor_fingerprint_device, fs_type, sysfs_type;
 
 # PPS
 type pps_socket, file_type;
+
+# Sensor
+type sysfs_palm_sensor, fs_type, sysfs_type;

@@ -4,5 +4,6 @@ allow hal_sensors_default nvcfg_file:dir create_dir_perms;
 allow hal_sensors_default nvcfg_file:file create_file_perms;
 allow hal_sensors_default sensor_data_file:file create_file_perms;
 allow hal_sensors_default sensor_data_file:dir create_dir_perms;
+allow hal_sensors_default sysfs_palm_sensor:file rw_file_perms;
 
 allow hal_sensors_default system_server:binder call;

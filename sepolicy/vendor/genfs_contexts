@@ -14,6 +14,9 @@ genfscon sysfs /devices/platform/13000000.mali/js_ctx_scheduling_mode           
 genfscon sysfs /devices/platform/13000000.mali/dvfs_period                                    u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/13000000.mali/modalias                                       u:object_r:sysfs_gpu:s0
 
+# Sensor
+genfscon sysfs /devices/virtual/touch/touch_dev/palm_sensor                                   u:object_r:sysfs_palm_sensor:s0
+
 # Wakeup source stats
 genfscon sysfs /devices/platform/11e01000.i2c5/i2c-5/5-004e/wakeup/wakeup16                   u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11e01000.i2c5/i2c-5/5-004e/wakeup/wakeup17                   u:object_r:sysfs_wakeup:s0
