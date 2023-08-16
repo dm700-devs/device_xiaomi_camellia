@@ -1,3 +1,10 @@
+# Fingerprint
+genfscon sysfs /devices/platform/fingerprint                                                  u:object_r:vendor_fingerprint_data_file:s0
+genfscon sysfs /devices/platform/fingerprint/clk_enable                                       u:object_r:vendor_fingerprint_data_file:s0
+genfscon sysfs /devices/platform/fingerprint/irq                                              u:object_r:vendor_fingerprint_data_file:s0
+genfscon sysfs /devices/platform/fingerprint/wakeup_enable                                    u:object_r:vendor_fingerprint_data_file:s0
+genfscon sysfs /devices/platform/fingerprint/fingerdown_wait                                  u:object_r:vendor_fingerprint_data_file:s0
+
 # Power
 genfscon proc  /cpufreq/cpufreq_cci_mode                                                      u:object_r:proc_cpufreq:s0
 genfscon sysfs /module/fbt_cpu/parameters/bhr_opp                                             u:object_r:sysfs_fbt_cpu:s0
@@ -5,6 +12,7 @@ genfscon sysfs /kernel/fpsgo/fbt/boost_ta                                       
 genfscon sysfs /devices/platform/13000000.mali                                                u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/13000000.mali/js_ctx_scheduling_mode                         u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/13000000.mali/dvfs_period                                    u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/13000000.mali/modalias                                       u:object_r:sysfs_gpu:s0
 
 # Wakeup source stats
 genfscon sysfs /devices/platform/11e01000.i2c5/i2c-5/5-004e/wakeup/wakeup16                   u:object_r:sysfs_wakeup:s0
