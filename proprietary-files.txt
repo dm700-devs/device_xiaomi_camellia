@@ -676,9 +676,6 @@ vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 
 # Firmware
-vendor/firmware/BT_FW.cfg
-vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin
-vendor/firmware/WIFI_RAM_CODE_soc2_2_1a_1.bin
 vendor/firmware/WMT_SOC.cfg
 vendor/firmware/aw87559_pid_5a_fm_0.bin
 vendor/firmware/aw87559_pid_5a_music_0.bin
@@ -763,16 +760,21 @@ vendor/firmware/nt36672c_tr_02_ts_mp.bin
 vendor/firmware/nt36672d_tm_03_ts_fw.bin
 vendor/firmware/nt36672d_tm_03_ts_mp.bin
 vendor/firmware/remoteproc_scp
-vendor/firmware/soc2_2_ram_bt_1_1_hdr.bin
-vendor/firmware/soc2_2_ram_bt_1a_1_hdr.bin
-vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin
-vendor/firmware/soc2_2_ram_mcu_1a_1_hdr.bin
-vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin
-vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin
 vendor/firmware/st21nfc_fw.bin
 vendor/firmware/st21nfc_fw7.bin
 vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
+
+# Firmware (Connectivity) - from a13xins-user 13 TP1A.220624.014 M136BXXU4CWE3 release-keys
+vendor/firmware/BT_FW.cfg|b9a6d28bdb5b7f7b34881a6ff33fa48ff9db81b0
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin|18dfcca431a72f8a26ca92fad6f3db60e8db62c1
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1a_1.bin|9fa98689eea3bd6ab91e7faf82ef9fb74b010de1
+vendor/firmware/soc2_2_ram_bt_1_1_hdr.bin|df01b984000f02b8bf8eedaaace90e1a049636d1
+vendor/firmware/soc2_2_ram_bt_1a_1_hdr.bin|95ec2e59a13d8bcc8561adacfb3fb734b98d4d80
+vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin|33a0ff6d4e8e2dc85be91e25dc073cf11e5bf65c
+vendor/firmware/soc2_2_ram_mcu_1a_1_hdr.bin|bc98f4d18c4e483ad9f22a364cc905be70d402fa
+vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin|3f936d875c797454c77b83b3da39739bbada20cb
+vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin|fa3f34c6f6bba459f68454bf276f9e37489824a1
 
 # FM Radio
 -system_ext/lib64/libfmjni.so:system/lib64/libfmjni.so
