@@ -58,9 +58,6 @@ function blob_fixup {
     system/lib64/libsink.so)
         "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
 	;;
-    vendor/bin/hw/android.hardware.media.c2@1.2-mediatek*)
-       "$PATCHELF" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "$2"
-        ;;
     vendor/bin/hw/android.hardware.gnss-service.mediatek)
         ;&
     vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so)
