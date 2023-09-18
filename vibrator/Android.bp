@@ -1,0 +1,65 @@
+Common_CFlags = ["-Wall"]
+Common_CFlags += ["-Werror"]
+
+cc_library_shared {
+    name: "libawinicvibratoreffect",
+    vendor: true,
+    cflags: Common_CFlags,
+    srcs: [
+        "effect.cpp",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libutils",
+    ],
+    export_include_dirs: ["include"]
+}
+
+cc_library_shared {
+    name: "android.hardware.vibrator-impl-awinic",
+    vendor: true,
+    relative_install_path: "hw",
+    cflags: Common_CFlags,
+    srcs: [
+        "Vibrator.cpp",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "liblog",
+        "libawinicvibratoreffect",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V2-ndk",
+    ],
+    export_include_dirs: ["include"]
+}
+
+cc_binary {
+    name: "android.hardware.vibrator-service-awinic",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["android.hardware.vibrator-service-awinic.rc"],
+    vintf_fragments: [
+        "android.hardware.vibrator-service-awinic.xml",
+    ],
+    cflags: Common_CFlags,
+    srcs: [
+        "service.cpp",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V2-ndk",
+        "android.hardware.vibrator-impl-awinic",
+    ],
+    required: ["excluded-input-devices-awinic.xml"]
+}
+
+prebuilt_etc {
+    name: "excluded-input-devices-awinic.xml",
+    filename: "excluded-input-devices.xml",
+    src: "excluded-input-devices.xml",
+    vendor: true
+}

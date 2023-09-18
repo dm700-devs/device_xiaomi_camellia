@@ -1,0 +1,7 @@
+service vendor.vibrator-awinic /vendor/bin/hw/android.hardware.vibrator-service-awinic
+    class hal
+    user system
+    group system input
+
+on late-init
+    write /sys/class/leds/vibrator/trigger "transient"
