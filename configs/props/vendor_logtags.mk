@@ -229,5 +229,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.log.tag.libPowerHal=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.mtkpower@impl=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.mtkpower_client=$(VENDOR_LOG_LEVEL) \
-    persist.log.tag.wpfa_iptable_android=$(VENDOR_LOG_LEVEL)
+    persist.log.tag.wpfa_iptable_android=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.OpenGLRenderer=$(VENDOR_LOG_LEVEL)
+
 
