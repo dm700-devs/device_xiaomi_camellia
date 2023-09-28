@@ -497,6 +497,15 @@ vendor/lib64/libnvram_sec.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 
+# Tether Offload
+vendor/bin/hw/tetheroffloadservice
+vendor/bin/netdagent
+vendor/etc/init/netdagent.rc
+vendor/etc/init/tetheroffloadservice.rc
+vendor/lib64/libforkexecwrap.so
+vendor/lib64/libifcutils_mtk.so
+vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
+
 # Trusted Execution Environment (TEE)
 vendor/bin/teei_daemon
 vendor/etc/init/microtrust.rc
@@ -541,3 +550,13 @@ vendor/thh/ta/isee_model.json
 vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
 vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
 vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
+
+# Wi-Fi
+vendor/bin/wlan_assistant
+vendor/etc/init/wlan_assistant.rc
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1a_1.bin
+vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin
+vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin
+vendor/firmware/wifi.cfg
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
