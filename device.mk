@@ -128,6 +128,10 @@ PRODUCT_PACKAGES += \
     libpuresoftkeymasterdevice.vendor \
     libsoft_attestation_cert.vendor
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.xiaomi
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail_vendor \
@@ -248,7 +252,8 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/mediatek
+    hardware/mediatek \
+    hardware/xiaomi
 
 # Thermal
 PRODUCT_PACKAGES += \
