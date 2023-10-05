@@ -77,6 +77,11 @@ function blob_fixup {
 	vendor/lib*/libmtkcam_stdutils.so)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "$2"
             ;;
+	vendor/bin/mnld | \
+	vendor/lib*/libaalservice.so | \
+	vendor/lib64/libcam.utils.sensorprovider.so)
+            "${PATCHELF}" --replace-needed "libsensorndkbridge.so" "libsensorndkbridge-hidl.so" "$2"
+            ;;
     esac
 }
 
