@@ -10,6 +10,7 @@ cc_library_shared {
     compile_multilib: "64",
     shared_libs: [
         "libaudioclient",
+        "libutils",
     ],
     header_libs: [
         "libaudioclient_headers",
