@@ -31,6 +31,18 @@ PRODUCT_PACKAGES += \
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.mt6833 \
+    fstab.mt6833.ramdisk \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6833.rc \
+    init.mt6833.usb.rc \
+    init.project.rc \
+    init.sensor_2_0.rc \
+    ueventd.mtk.rc
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
 

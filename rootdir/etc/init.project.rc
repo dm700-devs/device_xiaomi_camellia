@@ -1,0 +1,78 @@
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+    write /sys/module/musb_hdrc/parameters/mu3d_force_on 1
+
+on post-fs-data
+    #MiBokeh
+    mkdir /vendor/etc/camera 0777 system camera
+    mkdir /data/vendor/camera/mibokeh 0776 system camera
+
+    #XIAOMI_AI_ASD
+    mkdir /data/misc/camera 0777 system camera
+    mkdir /data/vendor/camera 0777 system camera
+
+    #Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/LC898212AF
+    chown system camera /dev/LC898212AF
+
+    chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+
+    #SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+    #dual calib
+    mkdir /mnt/vendor/persist 0777 system camera
+    mkdir /mnt/vendor/persist/camera 0777 system camera
+    mkdir /data/vendor/camera 0777 system camera
+    chmod 0777 /vendor/etc/camera/golden_ov48b_i_gc02m1b_i.bin
+    chmod 0777 /vendor/etc/camera/golden_ov48b_ii_gc02m1b_ii.bin
+    chmod 0777 /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
+    chmod 0777 /data/vendor/camera/golden_rear_dc_cal_wd.bin
+
+    #finggerprint
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+    chown system system /sys/bus/platform/devices/fingerprint/clk_enable
+    chmod 0660 /sys/bus/platform/devices/fingerprint/clk_enable
+    chown system /sys/bus/platform/devices/fingerprint/irq
+    chmod 0660 /sys/bus/platform/devices/fingerprint/irq
+    chown system system /sys/bus/platform/devices/fingerprint/hw_reset
+    chmod 0660 /sys/bus/platform/devices/fingerprint/hw_reset
+    chown system system /sys/bus/platform/devices/fingerprint/wakeup_enable
+    chmod 0660 /sys/bus/platform/devices/fingerprint/wakeup_enable
+    chown system system /sys/bus/platform/devices/fingerprint/fingerdown_wait
+    chmod 0660 /sys/bus/platform/devices/fingerprint/fingerdown_wait
+
+    #TP
+    mkdir /data/vendor/focaltech
+    copy /vendor/firmware/focaltech_mp_fw_tianma.ini /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
+    chown system system /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
+    chmod 0660 /data/vendor/focaltech/focaltech_mp_fw_tianma.ini
+
+    #NFC
+    chmod 0666 /dev/st21nfc
+    chown nfc nfc /dev/st21nfc
+
+on property:sys.boot_completed=1
+    write /proc/sys/vm/watermark_scale_factor 100
