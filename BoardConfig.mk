@@ -48,6 +48,10 @@ TARGET_SCREEN_DENSITY := 440
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_camellia
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_camellia
+
 # Kernel
 BOARD_DTB_OFFSET := 0x07c0800
 BOARD_KERNEL_BASE := 0x40078000
@@ -70,6 +74,9 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
 TARGET_KERNEL_CONFIG := camellia_user_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/camellia
+
+# OTA assert
+TARGET_OTA_ASSERT_DEVICE := camellia,camellian
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
