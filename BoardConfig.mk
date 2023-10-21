@@ -75,6 +75,10 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 TARGET_KERNEL_CONFIG := camellia_user_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/camellia
 
+# NFC
+ODM_MANIFEST_SKUS += nfc
+ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/manifest_nfc.xml
+
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := camellia,camellian
 
