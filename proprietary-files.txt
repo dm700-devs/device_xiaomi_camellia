@@ -1024,6 +1024,13 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 
+# Display Firmware
+vendor/firmware/focaltech_mp_fw_tianma.ini
+vendor/firmware/focaltech_ts_fw_tianma.bin
+vendor/firmware/nt36672c_tm_01_ts_fw.bin
+vendor/firmware/nt36672c_tr_02_ts_fw.bin
+vendor/firmware/nt36672d_tm_03_ts_fw.bin
+
 # DRM
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
