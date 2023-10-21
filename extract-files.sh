@@ -70,6 +70,10 @@ function blob_fixup {
             ;;
 	vendor/bin/hw/android.hardware.memtrack-service.mediatek)
             "$PATCHELF" --replace-needed "android.hardware.memtrack-V1-ndk_platform.so" "android.hardware.memtrack-V1-ndk.so" "$2"
+            ;;
+        vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc)
+            echo "$(cat ${2}) input" > "${2}"
+            ;;
     esac
 }
 
