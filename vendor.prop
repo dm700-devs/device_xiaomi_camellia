@@ -147,6 +147,7 @@ ro.vendor.smvr.p2batch.vga=16
 ro.hardware.gatekeeper=beanpod
 
 # GNSS
+ro.vendor.gps.chrdev=gps_drv
 ro.vendor.mtk_log_hide_gps=1
 
 # Keymaster

@@ -269,6 +269,7 @@ vendor/etc/audio_param_global/Volume_ParamUnitDesc.xml
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
+vendor/etc/init/init.bt_drv.rc
 vendor/firmware/BT_FW.cfg
 vendor/firmware/soc2_2_ram_bt_1_1_hdr.bin
 vendor/firmware/soc2_2_ram_bt_1a_1_hdr.bin
@@ -896,6 +897,8 @@ vendor/lib64/hw/consumerir.common.so
 # Connectivity
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
+vendor/etc/init/init.connfem.rc
+vendor/etc/init/init.wmt_drv.rc
 vendor/firmware/WMT_SOC.cfg
 vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin
 vendor/firmware/soc2_2_ram_mcu_1a_1_hdr.bin
@@ -1051,6 +1054,9 @@ vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 
+# FM
+vendor/etc/init/init.fmradio_drv.rc
+
 # Fuelgauge
 vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
@@ -1087,6 +1093,7 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 vendor/etc/init/android.hardware.gnss-service.mediatek.rc
+vendor/etc/init/init.gps_drv.rc
 vendor/etc/init/mtk_agpsd_p.rc
 vendor/etc/slp_conf
 vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/gnss-mtk.xml
@@ -1409,6 +1416,7 @@ vendor/firmware/awinic_params.bin
 
 # Wi-Fi
 vendor/bin/wlan_assistant
+vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1a_1.bin
