@@ -277,6 +277,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.recovery.mt6877.rc
 
+# Runtime Resource (RRO) Overlays
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlayCamellia \
+    FrameworksResOverlayCamellia \
+    SystemUIOverlayCamellia \
+    TelephonyOverlayCamellia \
+    TetheringConfigOverlayCamellia \
+    WifiOverlayCamellia
+
 # Secure Element
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.2.vendor
