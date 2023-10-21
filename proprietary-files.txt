@@ -1041,6 +1041,16 @@ vendor/lib64/liburee_meta_drmkeyinstall.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
+# Fingerprint
+vendor/lib64/com.fingerprints.extension@1.0.so
+vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.mt6833.so
+vendor/lib64/hw/gf_fingerprint.default.so
+vendor/lib64/libfingerprint.default.so
+vendor/lib64/libgf_ca.so
+vendor/lib64/libgf_hal.so
+vendor/lib64/libgoodixhwfingerprint.so
+vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
+
 # Fuelgauge
 vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
