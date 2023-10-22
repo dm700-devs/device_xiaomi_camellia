@@ -1203,7 +1203,7 @@ vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
 
 # NFC
-vendor/etc/st21nfc_conf.txt
+vendor/etc/st21nfc_conf.txt:vendor/firmware/st21nfc_conf.txt
 vendor/firmware/st21nfc_fw7.bin
 
 # NVRAM
