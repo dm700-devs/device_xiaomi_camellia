@@ -11,8 +11,10 @@ vendor/firmware/aw87559_pid_5a_off_0.bin
 vendor/firmware/aw87559_pid_5a_rcv_0.bin
 vendor/firmware/aw87559_pid_5a_voice_0.bin
 vendor/firmware/aw87xxx_vmax_0.bin
+vendor/firmware/fs1815.fsm
 vendor/lib/hw/audio.primary.mt6833.so
 vendor/lib/hw/audio.r_submix.mt6833.so
+vendor/lib/hw/awinic.audio.effect.so
 vendor/lib/hw/sound_trigger.primary.default.so
 vendor/lib/libMtkSpeechEnh.so
 vendor/lib/lib_iir.so
