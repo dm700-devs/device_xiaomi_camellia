@@ -137,6 +137,9 @@ include device/mediatek/sepolicy_vndr/SEPolicy.mk
 # Security patch level
 VENDOR_SECURITY_PATCH := 2023-09-01
 
+# Vibrator
+VIBRATOR_SUPPORTS_EFFECTS := true
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
