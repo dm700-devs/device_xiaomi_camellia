@@ -295,9 +295,11 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Camera
+vendor/bin/hw/camerahalserver
 vendor/bin/lib3a.ccu.ddr
 vendor/bin/lib3a.ccu.dm
 vendor/bin/lib3a.ccu.pm
+vendor/etc/init/camerahalserver.rc
 vendor/firmware/lib3a.ccu
 vendor/lib64/gc02m1b_aac_depth_mipi_mono_IdxMgr.so
 vendor/lib64/gc02m1b_aac_depth_mipi_mono_tuning.so
@@ -309,6 +311,7 @@ vendor/lib64/hi259h_aac_macro_mipi_raw_tuning.so
 vendor/lib64/hi259h_qtech_macro_mipi_raw_IdxMgr.so
 vendor/lib64/hi259h_qtech_macro_mipi_raw_india_tuning.so
 vendor/lib64/hi259h_qtech_macro_mipi_raw_tuning.so
+vendor/lib64/hq_asd.so
 vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
@@ -677,7 +680,16 @@ vendor/lib64/libCamera_ov8856ofilmfrontmipirawindia_Wechat_Call.so
 vendor/lib64/libCamera_ov8856ofilmfrontmipirawindia_Wechat_Capture.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libSQLiteModule_VER_ALL.so
+vendor/lib64/libSonyIMX230PdafLibrary.so
+vendor/lib64/libSonyIMX230PdafLibraryWrapper.so
+vendor/lib64/libSonyIMX338PdafLibrary.so
+vendor/lib64/libSonyIMX338PdafLibraryWrapper.so
+vendor/lib64/libSonyIMX386PdafLibrary.so
+vendor/lib64/libSonyIMX386PdafLibraryWrapper.so
+vendor/lib64/libSonyIMX519PdafLibrary.so
+vendor/lib64/libSonyIMX519PdafLibraryWrapper.so
 vendor/lib64/lib_bsscore.so
+vendor/lib64/lib_sr_models.so
 vendor/lib64/libaaa_ltm.so
 vendor/lib64/libaaa_ltmx.so
 vendor/lib64/libaiawb_moon.so
@@ -773,6 +785,7 @@ vendor/lib64/libfeature_lmv.so
 vendor/lib64/libfeature_rss.so
 vendor/lib64/libfeatureiodrv_mem.so
 vendor/lib64/libheichal.so
+vendor/lib64/libhq_videofilter.so
 vendor/lib64/libimagebuffer_wrapper.so
 vendor/lib64/libimageio.so
 vendor/lib64/libimageio_plat_drv.so
@@ -784,6 +797,7 @@ vendor/lib64/libjpeg-alpha_vendor.so
 vendor/lib64/liblpcnr.so
 vendor/lib64/libm4u.so
 vendor/lib64/libmfllcore.so
+vendor/lib64/libmi_bokehpre.so
 vendor/lib64/libmialgoengine.so
 vendor/lib64/libmibokeh_mt6873.so
 vendor/lib64/libmpbase.so
@@ -853,9 +867,12 @@ vendor/lib64/libmtkcam_sysutils.so
 vendor/lib64/libmtkcam_tuning_utils.so
 vendor/lib64/libmtkcam_ulog.so
 vendor/lib64/libmtkcam_vsync_util.so
+vendor/lib64/libmtkisp_metadata.so
+vendor/lib64/libsdk_sr.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/libvideofilter_only.so
 vendor/lib64/libvidhance.so
+vendor/lib64/libxmi_high_dynamic_range.so
 vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
 vendor/lib64/ov02b10_aac_macro_mipi_raw_IdxMgr.so
 vendor/lib64/ov02b10_aac_macro_mipi_raw_tuning.so
@@ -878,6 +895,7 @@ vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
+vendor/lib64/vendor.mediatek.hardware.power@1.1.so
 
 # Camera Configs
 vendor/etc/camera/CFR_para_Macro_i.bin
