@@ -7,3 +7,5 @@
 # Light
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.xiaomi                              u:object_r:hal_light_default_exec:s0
 
+# Sensors
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@2\.1-service\.camellia-multihal            u:object_r:mtk_hal_sensors_exec:s0
