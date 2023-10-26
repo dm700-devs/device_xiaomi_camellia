@@ -1,2 +1,5 @@
+# Camera
+/mnt/vendor/persist/camera(/.*)?                                                                     u:object_r:camera_persist_file:s0
+
 # Fingerprint
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.camellia                     u:object_r:hal_fingerprint_default_exec:s0

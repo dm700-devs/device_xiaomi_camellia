@@ -1,2 +1,5 @@
+# Camera
+type camera_persist_file, file_type;
+
 # Fingerprint
 type vendor_fingerprint_data_file, fs_type, sysfs_type;
