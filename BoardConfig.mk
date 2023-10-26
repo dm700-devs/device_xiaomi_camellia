@@ -130,6 +130,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2023-09-01
