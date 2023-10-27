@@ -146,6 +146,10 @@ ro.vendor.smvr.p2batch.vga=16
 # DRM
 ro.netflix.bsp_rev=MTK6833-32817-1
 
+# FM
+persist.vendor.connsys.fm_chipid=mt6631_6635
+ro.vendor.fm.platform=mt6631_6635
+
 # Gatekeeper
 ro.hardware.gatekeeper=beanpod
 

@@ -1082,6 +1082,11 @@ vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 
 # FM
 vendor/etc/init/init.fmradio_drv.rc
+vendor/firmware/fm_cust.cfg
+vendor/firmware/mt6631_fm_v1_coeff.bin
+vendor/firmware/mt6631_fm_v1_patch.bin
+vendor/firmware/mt6635_fm_v1_coeff.bin
+vendor/firmware/mt6635_fm_v1_patch.bin
 
 # Fuelgauge
 vendor/bin/fuelgauged
