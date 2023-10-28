@@ -305,7 +305,7 @@ PRODUCT_PACKAGES += \
     ueventd.mtk.rc
 
 PRODUCT_PACKAGES += \
-    init.recovery.mt6877.rc
+    init.recovery.mt6833.rc
 
 # Runtime Resource (RRO) Overlays
 PRODUCT_PACKAGES += \
