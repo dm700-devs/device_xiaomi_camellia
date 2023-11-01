@@ -1,3 +1,6 @@
+# Audio
+genfscon sysfs /devices/platform/11f00000.i2c6/i2c-6/6-0058                              u:object_r:sys_audio_awinic:s0
+
 # Fingerprint
 genfscon sysfs /devices/platform/fingerprint                                             u:object_r:vendor_fingerprint_data_file:s0
 

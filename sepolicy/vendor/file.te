@@ -1,3 +1,6 @@
+# Audio
+type sys_audio_awinic, fs_type, sysfs_type;
+
 # Camera
 type camera_persist_file, file_type;
 
