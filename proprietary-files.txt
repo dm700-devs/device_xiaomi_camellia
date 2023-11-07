@@ -1334,7 +1334,7 @@ system/framework/mediatek-ims-base.jar
 system/framework/mediatek-ims-common.jar
 system/framework/mediatek-ims-extension-plugin.jar
 system/framework/mediatek-telecom-common.jar
-system/framework/mediatek-telephony-base.jar
+system/framework/mediatek-telephony-base.jar|aaef5058905c0f6f10c03ecd785869d463c1716e
 system/framework/mediatek-telephony-common.jar
 system/framework/mediatek-wfo-legacy.jar
 system/lib64/libcomutils.so
@@ -1352,7 +1352,7 @@ system/lib64/libvcodec_cap.so
 system/lib64/libvcodec_capenc.so
 system/lib64/libvsim-adaptor-client.so
 system/lib64/libvt_avsync.so
-system/priv-app/ImsService/ImsService.apk
+system/priv-app/ImsService/ImsService.apk|ff2fe5a2afae7b94b4f6c02145ff5a1d2ef99335
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
