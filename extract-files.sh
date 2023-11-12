@@ -85,6 +85,9 @@ function blob_fixup {
 	vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml)
             sed -i 's/1.1/1.2/' "$2"
             ;;
+	vendor/bin/hw/android.hardware.media.c2@1.2-mediatek)
+            "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
+            ;;
     esac
 }
 
