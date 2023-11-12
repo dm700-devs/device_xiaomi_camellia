@@ -36,7 +36,7 @@ constexpr int PULL_UP_DELAY = 500000;
 #define BUILD_TYPE "ro.build.type"
 #define GADGET_PATH "/config/usb_gadget/g1/"
 #define PULLUP_PATH GADGET_PATH "UDC"
-#define GADGET_NAME "a600000.dwc3"
+#define GADGET_NAME GetProperty(kGadgetProp, "")
 #define PERSISTENT_BOOT_MODE "ro.bootmode"
 #define VENDOR_ID_PATH GADGET_PATH "idVendor"
 #define PRODUCT_ID_PATH GADGET_PATH "idProduct"
@@ -49,7 +49,7 @@ constexpr int PULL_UP_DELAY = 500000;
 #define FUNCTIONS_PATH GADGET_PATH "functions/"
 #define FUNCTION_NAME "function"
 #define FUNCTION_PATH CONFIG_PATH FUNCTION_NAME
-#define RNDIS_PATH FUNCTIONS_PATH "gsi.rndis"
+#define RNDIS_PATH FUNCTIONS_PATH "rndis.gs4"
 
 #define PERSISTENT_VENDOR_CONFIG "persist.vendor.usb.usbradio.config"
 #define VENDOR_CONFIG "vendor.usb.config"
@@ -542,7 +542,7 @@ V1_0::Status UsbGadget::setupFunctions(
 
   if ((functions & GadgetFunction::RNDIS) != 0) {
     ALOGI("setCurrentUsbFunctions rndis");
-    if (linkFunction("gsi.rndis", i++)) return Status::ERROR;
+    if (linkFunction("rndis.gs4", i++)) return Status::ERROR;
   }
 
   std::string vendorFunctions = getVendorFunctions();

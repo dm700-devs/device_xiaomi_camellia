@@ -46,6 +46,8 @@ namespace implementation {
 
 Return<bool> Usb::enableUsbDataSignal(bool enable) {
     bool result = true;
+    std::string kGadgetName = GetProperty(kGadgetProp, "");
+    std::string USB_DATA_PATH = UDC_PATH + kGadgetName + "/device/" + USB_DATA_FILE;
 
     ALOGI("Userspace turn %s USB data signaling", enable ? "on" : "off");
 
@@ -60,16 +62,6 @@ Return<bool> Usb::enableUsbDataSignal(bool enable) {
             result = false;
         }
     } else {
-        if (!WriteStringToFile("1", ID_PATH)) {
-            ALOGE("Not able to turn off host mode");
-            result = false;
-        }
-
-        if (!WriteStringToFile("0", VBUS_PATH)) {
-            ALOGE("Not able to set Vbus state");
-            result = false;
-        }
-
         if (!WriteStringToFile("0", USB_DATA_PATH)) {
             ALOGE("Not able to turn on usb connection notification");
             result = false;
