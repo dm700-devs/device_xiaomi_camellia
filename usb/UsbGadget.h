@@ -38,6 +38,8 @@ namespace gadget {
 namespace V1_1 {
 namespace implementation {
 
+constexpr char kGadgetProp[] = "sys.usb.controller";
+
 using ::android::sp;
 using ::android::base::GetProperty;
 using ::android::base::SetProperty;
