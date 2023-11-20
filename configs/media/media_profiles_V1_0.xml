@@ -82,7 +82,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -93,7 +93,7 @@
                    height="1080"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -104,7 +104,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -115,7 +115,7 @@
                    height="240"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -126,7 +126,7 @@
                    height="288"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -137,7 +137,7 @@
                    height="480"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -148,7 +148,7 @@
                    height="720"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -159,22 +159,10 @@
                    height="1080"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!--
-        <EncoderProfile quality="qhd" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="50000000"
-                   width="2560"
-                   height="1440"
-                   frameRate="30" />
-            <Audio codec="aac"
-                   bitRate="256000"
-                   sampleRate="48000"
-                   channels="2" />
-        </EncoderProfile>-->
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
             <Video codec="h263"
                    bitRate="1000000"
@@ -263,18 +251,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!--
-        <EncoderProfile quality="timelapseqhd" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="50000000"
-                   width="2560"
-                   height="1440"
-                   frameRate="30" />
-            <Audio codec="aac"
-                   bitRate="256000"
-                   sampleRate="48000"
-                   channels="2" />
-        </EncoderProfile>
         <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="50000000"
@@ -285,7 +261,7 @@
                    bitRate="256000"
                    sampleRate="48000"
                    channels="2" />
-        </EncoderProfile>-->
+        </EncoderProfile>
         <EncoderProfile quality="highspeedlow" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="9000000"
@@ -332,7 +308,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -343,7 +319,7 @@
                    height="1080"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -354,29 +330,29 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="qvga" fileFormat="mp4" duration="30">
-            <Video codec="m4v"
+            <Video codec="h264"
                    bitRate="1000000"
                    width="320"
                    height="240"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="cif" fileFormat="mp4" duration="30">
-            <Video codec="m4v"
+            <Video codec="h264"
                    bitRate="1250000"
                    width="352"
                    height="288"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -387,7 +363,7 @@
                    height="480"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -398,7 +374,7 @@
                    height="720"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -409,13 +385,13 @@
                    height="1080"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -437,7 +413,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-            <Video codec="h263"
+            <Video codec="h264"
                    bitRate="1000000"
                    width="176"
                    height="144"
@@ -448,7 +424,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
-            <Video codec="m4v"
+            <Video codec="h264"
                    bitRate="1000000"
                    width="320"
                    height="240"
@@ -459,7 +435,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="timelapsecif" fileFormat="mp4" duration="30">
-            <Video codec="m4v"
+            <Video codec="h264"
                    bitRate="1250000"
                    width="352"
                    height="288"
@@ -515,18 +491,18 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="high" fileFormat="mp4" duration="30">
             <Video codec="h264"
-                   bitRate="9000000"
-                   width="1280"
-                   height="720"
+                   bitRate="20000000"
+                   width="1920"
+                   height="1080"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -537,7 +513,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -548,7 +524,7 @@
                    height="240"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -559,7 +535,7 @@
                    height="288"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -570,7 +546,7 @@
                    height="480"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -581,11 +557,10 @@
                    height="720"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!--
         <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="20000000"
@@ -593,10 +568,10 @@
                    height="1080"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
-        </EncoderProfile>-->
+        </EncoderProfile>
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
             <Video codec="h263"
                    bitRate="1000000"
@@ -610,9 +585,9 @@
         </EncoderProfile>
         <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
             <Video codec="h264"
-                   bitRate="9000000"
-                   width="1280"
-                   height="720"
+                   bitRate="50000000"
+                   width="2560"
+                   height="1440"
                    frameRate="30" />
             <Audio codec="aac"
                    bitRate="256000"
@@ -674,7 +649,6 @@
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
-<!--
         <EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="20000000"
@@ -707,7 +681,7 @@
                    bitRate="256000"
                    sampleRate="48000"
                    channels="2" />
-        </EncoderProfile>-->
+        </EncoderProfile>
         <EncoderProfile quality="highspeedlow" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="3000000"
@@ -765,7 +739,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -776,7 +750,7 @@
                    height="720"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -787,7 +761,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -798,7 +772,7 @@
                    height="240"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -809,7 +783,7 @@
                    height="288"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -820,7 +794,7 @@
                    height="480"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -831,7 +805,29 @@
                    height="720"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+        <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="20000000"
+                   width="1920"
+                   height="1080"
+                   frameRate="30" />
+            <Audio codec="aac"
+                   bitRate="192000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+        <EncoderProfile quality="qhd" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="50000000"
+                   width="2560"
+                   height="1440"
+                   frameRate="30" />
+            <Audio codec="aac"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -925,7 +921,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -936,7 +932,7 @@
                    height="720"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -947,7 +943,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -958,7 +954,7 @@
                    height="240"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -969,7 +965,7 @@
                    height="288"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -980,7 +976,7 @@
                    height="480"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -991,7 +987,29 @@
                    height="720"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+        <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="20000000"
+                   width="1920"
+                   height="1080"
+                   frameRate="30" />
+            <Audio codec="aac"
+                   bitRate="192000"
+                   sampleRate="48000"
+                   channels="2" />
+        </EncoderProfile>
+        <EncoderProfile quality="qhd" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+                   bitRate="50000000"
+                   width="2560"
+                   height="1440"
+                   frameRate="30" />
+            <Audio codec="aac"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -1085,7 +1103,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -1096,7 +1114,7 @@
                    height="1080"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -1107,7 +1125,7 @@
                    height="144"
                    frameRate="20" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -1118,7 +1136,7 @@
                    height="240"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -1129,7 +1147,7 @@
                    height="288"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -1140,7 +1158,7 @@
                    height="480"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -1151,7 +1169,7 @@
                    height="720"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -1162,7 +1180,7 @@
                    height="1080"
                    frameRate="30" />
             <Audio codec="aac"
-                   bitRate="256000"
+                   bitRate="192000"
                    sampleRate="48000"
                    channels="2" />
         </EncoderProfile>
@@ -1631,7 +1649,7 @@
          or query the capabilities of the codec at all if it is disabled
     -->
     <VideoEncoderCap name="h264" enabled="true"
-        minBitRate="64000" maxBitRate="20000000"
+        minBitRate="64000" maxBitRate="17000000"
         minFrameWidth="176" maxFrameWidth="1920"
         minFrameHeight="144" maxFrameHeight="1080"
         minFrameRate="15" maxFrameRate="30" />
@@ -1646,9 +1664,9 @@
         minFrameHeight="144" maxFrameHeight="480"
         minFrameRate="15" maxFrameRate="30" />
     <VideoEncoderCap name="hevc" enabled="true"
-        minBitRate="64000" maxBitRate="60000000"
-        minFrameWidth="176" maxFrameWidth="2560"
-        minFrameHeight="144" maxFrameHeight="1440"
+        minBitRate="64000" maxBitRate="256000"
+        minFrameWidth="176" maxFrameWidth="1920"
+        minFrameHeight="144" maxFrameHeight="1080"
         minFrameRate="15" maxFrameRate="30" />
     <AudioEncoderCap name="aac" enabled="true"
         minBitRate="758" maxBitRate="288000"

@@ -1156,14 +1156,14 @@ vendor/lib/libvcodecdrv_header_stub.so
 vendor/lib/libvpu5.so
 vendor/lib/libvpud_vcodec.so
 
-# Media (Configs)
-vendor/etc/mtk_omx_core.cfg
-vendor/etc/mtk_platform_codecs_config.xml
-vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
-vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
-vendor/etc/seccomp_policy/mediacodec.policy
-vendor/etc/seccomp_policy/mediaextractor.policy
-vendor/etc/seccomp_policy/mediaswcodec.policy
+# Media (Configs) - from Redmi/vnd_gold/gold:12/TP1A.220624.014/V14.0.5.0.TNQCNXM:user/release-keys
+vendor/etc/mtk_omx_core.cfg|686aad3302adf1f81f1291441b8335b0fb3f40cd
+vendor/etc/mtk_platform_codecs_config.xml|4e62976f03c0b9bd4517bef817d5ad855cfeb835
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy|2f5377909dbdab645c9e4fe0b52c4c5c823256a1
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy|7e75df111158f52a57e53afed252bd21ac1468d6
+vendor/etc/seccomp_policy/mediacodec.policy|732e01c6c88d125ca8778a3d88e51ef8511979ea
+vendor/etc/seccomp_policy/mediaextractor.policy|6eecbd7a2c589059d4df9b6035033461b85e8784
+vendor/etc/seccomp_policy/mediaswcodec.policy|ad691ac1a44c6f8cf48f9a7422f02104d56a0fa3
 
 # Media (C2)
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
