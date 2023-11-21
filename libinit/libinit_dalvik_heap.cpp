@@ -58,6 +58,9 @@ void set_dalvik_heap() {
     else
         dhi = &dalvik_heap_info_4096;
 
+    if (sys.totalram < GB(5))
+	property_override("ro.config.avoid_gfx_accel", "true");
+
     property_override(HEAPSTARTSIZE_PROP, dhi->heapstartsize);
     property_override(HEAPGROWTHLIMIT_PROP, dhi->heapgrowthlimit);
     property_override(HEAPSIZE_PROP, dhi->heapsize);
