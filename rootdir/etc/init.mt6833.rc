@@ -29,6 +29,12 @@ on init
     write /dev/cpuset/system-background/cpus 0-5
     write /dev/cpuset/top-app/cpus 0-7
 
+    # boot time fs tune
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/nr_requests 256
+    write /sys/block/sdc/queue/iostats 0
+    write /sys/block/sdc/queue/nr_requests 256
+
 on late-init
     # enable rcu_expedited
     write /sys/kernel/rcu_expedited 1
@@ -883,6 +889,12 @@ on property:sys.boot_completed=1
     # Back to default VM settings
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
+
+    # We should adjust the setting upon boot_complete
+    write /sys/block/mmcblk0/queue/iostats 1
+    write /sys/block/mmcblk0/queue/nr_requests 128
+    write /sys/block/sdc/queue/iostats 1
+    write /sys/block/sdc/queue/nr_requests 128
 
     write /sys/devices/system/cpu/eas/enable 2
     write /proc/cpufreq/cpufreq_sched_disable 0
