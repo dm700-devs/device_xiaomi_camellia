@@ -36,6 +36,7 @@ cc_binary {
     vendor: true,
     init_rc: ["android.hardware.health-service.mt6833.rc"],
     overrides: ["charger"],
+    required: ["charger_res_images_vendor"],
 }
 
 cc_binary {
