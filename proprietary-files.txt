@@ -11,6 +11,7 @@ vendor/firmware/aw87559_pid_5a_off_0.bin
 vendor/firmware/aw87559_pid_5a_rcv_0.bin
 vendor/firmware/aw87559_pid_5a_voice_0.bin
 vendor/firmware/aw87xxx_vmax_0.bin
+vendor/firmware/awinic_params.bin
 vendor/firmware/fs1815.fsm
 vendor/lib/hw/audio.primary.mt6833.so
 vendor/lib/hw/audio.r_submix.mt6833.so
@@ -35,7 +36,6 @@ vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libblisrc32_vendor.so
 vendor/lib/libbwc.so
 vendor/lib/libcvsd_mtk.so
-vendor/lib/libladder.so
 vendor/lib/libmsbc_mtk.so
 vendor/lib/libmtklimiter_vendor.so
 vendor/lib/libmtkshifter_vendor.so
@@ -1148,7 +1148,6 @@ vendor/etc/init/vpud.rc
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
-vendor/lib/libAVCSecureVencCA.so
 vendor/lib/libvcodec_oal.so
 vendor/lib/libvcodec_utility.so
 vendor/lib/libvcodecdrv.so
@@ -1439,9 +1438,6 @@ vendor/thh/ta/d91f322ad5a441d5955110eda3272fc0.ta
 vendor/thh/ta/e5140b3376fa4c63ab18062caab2fb5c.ta
 vendor/thh/ta/e97c270ea5c44c58bcd3384a2fa2539e.ta
 vendor/thh/ta/isee_model.json
-
-# Vibrator
-vendor/firmware/awinic_params.bin
 
 # Wi-Fi
 vendor/bin/wlan_assistant
