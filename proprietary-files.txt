@@ -1207,6 +1207,25 @@ vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
 
+# Neural Network - from Redmi/vnd_gold/gold:12/TP1A.220624.014/V14.0.5.0.TNQCNXM:user/release-keys
+vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron|8f238dd027b0f99e151775796f99798e3b7dea81
+vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc|a2f8c33caa45448e74342f8cf89907cceea51eb6
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-gpu.xml|931e81cc7471e68f410b6813fba24175ea397731
+vendor/lib64/APUWareUtilsServer.so|8ae6a43eeede3c511f21e15cb25b352a821b92b8
+vendor/lib64/libapu_mdw.so|68112aed5d71f4c4af45bdad1b753394b46d04d7
+vendor/lib64/libapusys.so|884763084dac39e64a10c5b685a3ae4db46a0033
+vendor/lib64/libapusys_edma.so|2c808887875652b7814e450045e9d65d9cd12711
+vendor/lib64/libarmnn.so|2247afcd4833011d402897e1bacce1a3b40e2f88
+vendor/lib64/libarmnn_ndk.mtk.vndk.so|ea68a225d32d2ef36fe826ee5be2c2a21f1838e5
+vendor/lib64/libcmdl.so|ea842e7957d9be37a65dd02a7047ba00eb1b69e7
+vendor/lib64/libcmdl_ndk.mtk.vndk.so|d13ec4dafad1ca241250e987084856848d4784ef
+vendor/lib64/libneuron_adapter.so|050ae242296b9715a62ab72d8f5679ae69a7ef92
+vendor/lib64/libneuron_platform.so|3da796723fd5928d9108dc91c1c3214dc5ed3420
+vendor/lib64/libneuropilot_hal_utils.so|f540511b617af682c40c35e6730eb59d1a91b641
+vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so|007ed21bc4be7227aaec84544baae806c2eda5d5
+vendor/lib64/mt6833/libnir_neon_driver.so|9573e58a45b49c66c6a8fab9a7156d2148db224c
+vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so|f5d26d278d3bb45d97587b1b8624e41b9eb8732d
+
 # NFC
 vendor/etc/st21nfc_conf.txt
 vendor/firmware/st21nfc_fw.bin
