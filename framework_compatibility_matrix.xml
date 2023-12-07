@@ -138,6 +138,15 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.apuware.utils</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IApuwareUtils</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.netdagent</name>
         <version>1.0</version>
         <interface>
