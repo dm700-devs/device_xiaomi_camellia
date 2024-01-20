@@ -1329,67 +1329,54 @@ vendor/lib64/libwpfa.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 
-# Radio (Engineer Mode) - from TECNO-CK9n UP1A.230519.001
-system_ext/app/EngineerMode/EngineerMode.apk|f51860e569c8488575b7e51abf2f4590e29202dd
-system_ext/lib/libem_support_jni.so|5552e755099bbb64d7df3a5b914300881f34b145
-system_ext/lib64/libem_support_jni.so|df62aa420c0676be9d19b9917f41e1ae8363735a
-vendor/bin/em_hidl|bf23d25f7bd6af4bfd9f34c64609e469b8b1d4b2
+# Radio (Engineer Mode) - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys
+system_ext/app/EngineerMode/EngineerMode.apk|e34588606d108ea5aa154f55460fd46c8bbd677c
+system_ext/lib/libem_support_jni.so|d7749442151059cd6136ca1ddb22c510e744bdc0
+system_ext/lib64/libem_support_jni.so|b7d3b3bfa079b6bca9acb0a7c054a7a234d92818
+vendor/bin/em_hidl|973b6f8728f4f6f74250fe83fbfde4f7bffc216f
 vendor/etc/init/em_hidl_user.rc|bdb5893df3e78d2d2adaf72bc7e56dfeee0be308
-vendor/lib64/libbluetooth_relayer.so|a41b3c46e9a78f04648f5f21299d818157139142
-vendor/lib64/libbluetoothem_mtk.so|724b5efec2af54e359a5d75b37029f01b1019ef6
-vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so|444376addf581bfc66409ad39a73ffe498e4142e
-vendor/lib64/vendor.mediatek.hardware.engineermode@1.1.so|a13d422113c5bde4dc8a36336a6436e09cb37b86
-vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so|6cdc256e6559cba5f47b4aa1382d13790e91773c
-vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so|1c170c8e48c5cd52fd0bc903758be03c16e90091
+vendor/lib64/libbluetooth_relayer.so|1614bf298f6c000baf84df5f6f1b53a6c8465a57
+vendor/lib64/libbluetoothem_mtk.so|37265565d04c0b52d126c803e09e2d7b67ca34bf
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so|238723b79a4e42e0d566a5cf1100e5e09dd20da9
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.1.so|6c3c4bf708a55dedaa7227f32411cf790967a3ca
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so|989aafe0e845a46c9efe9fd8260a829d476ea37d
+vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so|cdf35668f34df78a4e83a04c5d3575c476d4ab5d
 
 # Radio (IMS)
-vendor/bin/rcs_volte_stack
-vendor/bin/volte_clientapi_ua
-vendor/bin/volte_rcs_ua
-vendor/etc/init/volte_clientapi_ua.rc
-vendor/etc/init/volte_rcs_ua.rc
-vendor/lib/libipsec_ims_shr.so
-vendor/lib/librcs_volte_core.so
-vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
-vendor/lib64/libipsec_ims_shr.so
-vendor/lib64/vendor.mediatek.hardware.clientapi@1.0.so
+vendor/bin/hw/vtservice_hidl
+vendor/etc/init/init.vtservice_hidl.rc
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
+vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
-# Radio (IMS) - from TECNO-CK9n UP1A.230519.001
-vendor/bin/hw/vtservice_hidl|047b26f80b338b7d0869840d243eefebe82d56f5
-vendor/etc/init/init.vtservice_hidl.rc|f2e992214ed5bb99c2c2a135cf1f0996dba8a8a0
-vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so|bb9ff554802e7bffb72cf24604109dafcf0019fc
-vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|5e228669d2c575e38fc02a13404f31bc22494b87
-
-# Radio (MTK-IMS)
-system/framework/mediatek-common.jar
-system/framework/mediatek-framework.jar
-system/framework/mediatek-ims-base.jar
-system/framework/mediatek-ims-common.jar
-system/framework/mediatek-ims-extension-plugin.jar
-system/framework/mediatek-telecom-common.jar
-system/framework/mediatek-telephony-base.jar|aaef5058905c0f6f10c03ecd785869d463c1716e
-system/framework/mediatek-telephony-common.jar
-system/framework/mediatek-wfo-legacy.jar
-system/priv-app/ImsService/ImsService.apk|ff2fe5a2afae7b94b4f6c02145ff5a1d2ef99335
-
-# Radio (SYSTEM-IMS) - from TECNO-CK9n UP1A.230519.001
+# Radio (SYSTEM-IMS) - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys
 system_ext/bin/vtservice|59adc81ee1ad1f3fb4942cd6e8e7100325002eb2
 system_ext/etc/init/init.vtservice.rc|50a2249906edc06059b443513db47a2ddc0490dc
+system_ext/framework/mediatek-common.jar:system/framework/mediatek-common.jar|895c6819d00deb385675cc7b90f073d0b6fbd29d
+system_ext/framework/mediatek-framework.jar:system/framework/mediatek-framework.jar|a9789fd904f4b0643a3257e798318faabf342477
+system_ext/framework/mediatek-ims-base.jar:system/framework/mediatek-ims-base.jar|a6f7ae937de5b9c25e41af8c15db2717a31a6e97
+system_ext/framework/mediatek-ims-common.jar:system/framework/mediatek-ims-common.jar|8fc8f9dbbe56a309fa620222430cc854143672fb
+system_ext/framework/mediatek-ims-extension-plugin.jar:system/framework/mediatek-ims-extension-plugin.jar|4562720d65136b189d661f248fd3170a749cada3
+system_ext/framework/mediatek-telecom-common.jar:system/framework/mediatek-telecom-common.jar|686eaf0a472f44194116a0861944483cd9b09a38
+system_ext/framework/mediatek-telephony-base.jar:system/framework/mediatek-telephony-base.jar|f66b872e413d16fc29d22ead4e94984f84be94e9
+system_ext/framework/mediatek-telephony-common.jar:system/framework/mediatek-telephony-common.jar|869c6918a945ecb87d8b30ec5ca4056d6b863099
 system_ext/lib64/libcomutils.so|6d9cd979f33ef01cb26861a38a59e76e1c2a3acb
-system_ext/lib64/libimsma.so|932cbe88083fae23b159bf0e3fe17d7efb93495b
-system_ext/lib64/libimsma_adapt.so|754ad1c39fb4dba9d3eb69ac00112e7600d68580
-system_ext/lib64/libimsma_rtp.so|20ee91f090661fb26e6625ad2fef828441956b82
+system_ext/lib64/libimsma.so|547ffdd8a8d57d6624b69eb27ac0e1642aab09bc
+system_ext/lib64/libimsma_adapt.so|b95939f797ba52d87bb9fa6ebf356e0fb4fcfe56
+system_ext/lib64/libimsma_rtp.so|02b33fba68211362b439bb05a965ba6e01fa3ea0
 system_ext/lib64/libimsma_socketwrapper.so|1f9b83322c41e5b0a7b3130f74a38ddb14f578d8
-system_ext/lib64/libmtk_vt_service.so|302d3ab3c5b3fa0107520fe36098b32cd0a8dd96
-system_ext/lib64/libmtk_vt_wrapper.so|af4d486c516c920ea99c362aebbf04180e96035c
+system_ext/lib64/libmtk_vt_service.so|c46d43d49fb35e21cb34cdea1f33ad4b964e2f22
+system_ext/lib64/libmtk_vt_wrapper.so|b6f8737a084431cdd8d77c9188e176b7e9364876
 system_ext/lib64/libsignal.so|0f55bb64c660fe4cda2b695121580b054f026e73
-system_ext/lib64/libsink.so|6bd8c55847116a9a37e223ea2a6e5ce1379e53f7
-system_ext/lib64/libsource.so|66a481fd2e260a820899d60cf9190fb986d36768
-system_ext/lib64/libvcodec_cap.so|6973253cb2e4ddf365451ed2ac8db9d04085bc4a
-system_ext/lib64/libvcodec_capenc.so|5527525dfcd25169bc380ac53d8181ffa1429c6f
+system_ext/lib64/libsink.so|15cb9262fd9e52cd29086f602bc3dafb52ab40b5|94972e8c36b576cbe74ecefbe72526714c1e1e16
+system_ext/lib64/libsource.so|8e702370bfd7bce526f18e31e71ed8a9942b2c38
+system_ext/lib64/libvcodec_cap.so|0165b65cd33fd3905ef3f569ff36bf119b27c13d
+system_ext/lib64/libvcodec_capenc.so|3b5e76522a7331248c2864493fdade2bdf73c4c3
 system_ext/lib64/libvt_avsync.so|632cb05532ef2e022072d91bff3c1ae47c888b7e
-system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|fc3f645734d4e37fa50b77233d63c7b2eb166014
-system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|aee568e770a3835af2df2262c9dc8bb2911da324
+system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|b4733a99049d5162e41955bca80cc78b8ca76c53
+system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|1385634094de90c59b9f689d313b6b3ee8770efe
+
+# Radio (IMS-App) - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys (patched)
+system_ext/priv-app/ImsService/ImsService.apk:system/priv-app/ImsService/ImsService.apk|62e6a0c457812366623630dffef27b0bf5ca7fad
 
 # Secure Element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
