@@ -5,5 +5,8 @@ service nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.st
     group nfc
     disabled
 
-on init && property:ro.boot.product.hardware.sku=nfc
-    start nfc_hal_service
+on init && property:ro.boot.product.hardware.sku=camellian
+    enable nfc_hal_service
+
+on init && property:ro.boot.product.hardware.sku=camellianp
+    enable nfc_hal_service

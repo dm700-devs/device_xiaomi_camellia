@@ -1,4 +1,5 @@
 # All blobs from camellian_global-user 13 TP1A.220624.014 V14.0.6.0.TKSMIXM release-keys, unless pinned
+# gold: gold_global-user 13 TP1A.220624.014 V14.0.3.0.TNQMIXM release-keys
 
 # AEE
 vendor/lib/libaedv.so
@@ -15,11 +16,12 @@ vendor/firmware/awinic_params.bin
 vendor/firmware/fs1815.fsm
 vendor/lib/hw/audio.primary.mt6833.so
 vendor/lib/hw/audio.r_submix.mt6833.so
-vendor/lib/hw/awinic.audio.effect.so
+vendor/lib/hw/awinic.audio.effect.so;FIX_SONAME
 vendor/lib/hw/sound_trigger.primary.default.so
 vendor/lib/libMtkSpeechEnh.so
 vendor/lib/lib_iir.so
 vendor/lib/lib_speech_enh.so
+vendor/lib/libalsautils.so:vendor/lib/libalsautils-v31.so;FIX_SONAME
 vendor/lib/libaudio_param_parser-vnd.so
 vendor/lib/libaudiocompensationfilter_vendor.so
 vendor/lib/libaudiocompensationfilterc.so
@@ -41,7 +43,7 @@ vendor/lib/libmtklimiter_vendor.so
 vendor/lib/libmtkshifter_vendor.so
 vendor/lib/libnxp_extamp_intf.so
 vendor/lib/librt_extamp_intf.so
-vendor/lib/libspeech_enh_lib.so
+vendor/lib/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib/libspeechparser_vendor.so
 vendor/lib/libvow_ap_test_aa.so
 vendor/lib/libvow_ap_test_dd.so
@@ -268,24 +270,18 @@ vendor/etc/audio_param_global/Volume_AudioParam.xml
 vendor/etc/audio_param_global/Volume_ParamUnitDesc.xml
 
 # Bluetooth
-vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
-vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
 vendor/etc/init/init.bt_drv.rc
-vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
-vendor/lib/libbluetooth_mtk.so
-vendor/lib/libbluetooth_mtk_pure.so
-vendor/lib/libbt-vendor.so
-vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
+vendor/firmware/BT_FW.cfg
 vendor/lib64/libbluetooth_mtk.so
 vendor/lib64/libbluetooth_mtk_pure.so
 vendor/lib64/libbt-vendor.so
 
+# Bluetooth (firmware) - from gold
+vendor/firmware/soc2_2_ram_bt_1_1_hdr.bin|7c1f091e8afddaf6d8df19146c277a550ab5ebb9
+
 # Bluetooth (A2DP)
-vendor/lib/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
-vendor/lib/libbluetooth_audio_session_mediatek.so
 vendor/lib/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib/vendor.mediatek.hardware.bluetooth.audio@2.2.so
-vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
 vendor/lib64/libbluetooth_audio_session_mediatek.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
@@ -780,6 +776,7 @@ vendor/lib64/libfeature_fsc.so
 vendor/lib64/libfeature_lmv.so
 vendor/lib64/libfeature_rss.so
 vendor/lib64/libfeatureiodrv_mem.so
+vendor/lib64/libgz_uree.so
 vendor/lib64/libheichal.so
 vendor/lib64/libhq_videofilter.so
 vendor/lib64/libimagebuffer_wrapper.so
@@ -918,81 +915,14 @@ vendor/etc/init/init.wmt_drv.rc
 vendor/firmware/WMT_SOC.cfg
 vendor/firmware/txpowerctrl.cfg
 
-# Connectivity (Firmware) - from Redmi/vnd_gold/gold:12/TP1A.220624.014/V14.0.1.0.TNQCNXM:user/release-keys
-vendor/firmware/BT_FW.cfg|48ecc83e9d9c32fdf2e80b824d368234f724eae7
-vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin|e4d3097818eca0b722d3525efcbe96b462dea636
-vendor/firmware/WIFI_RAM_CODE_soc2_2_1a_1.bin|4b3b27b07e6b770a66b66cfe0be8a2ad5e113c11
-vendor/firmware/soc2_2_ram_bt_1_1_hdr.bin|7c1f091e8afddaf6d8df19146c277a550ab5ebb9
-vendor/firmware/soc2_2_ram_bt_1a_1_hdr.bin|adb55cb709ded3bf19b2dd26e19fbc369bd57f72
+# Connectivity (Firmware) - from gold
 vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin|2a13e989871b6d8e46131f7e058bc74081497e63
-vendor/firmware/soc2_2_ram_mcu_1a_1_hdr.bin|e3c72fe950c4e6a121f5a4522776678cda9b9c46
-vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin|d0be6f604ace05053743b0226ba96f3be4785035
-vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin|1b3d484e6ad23cd61047b31584b2e96a6ac8a328
-vendor/firmware/wifi.cfg|2d6d6c719c5d60d5836baffd2d6fd1fb3eb76ea6
 
 # Display
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
-vendor/bin/hw/android.hardware.memtrack-service.mediatek
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
-vendor/etc/init/memtrack-mediatek.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
-vendor/etc/vintf/manifest/memtrack-mediatek.xml
-vendor/lib/arm.graphics-V1-ndk_platform.so
-vendor/lib/egl/egl.cfg
-vendor/lib/egl/libGLES_mali.so
-vendor/lib/egl/libGLES_meow.so
-vendor/lib/egl/libMEOW_data.so
-vendor/lib/egl/libMEOW_gift.so
-vendor/lib/egl/libMEOW_qt.so
-vendor/lib/egl/libMEOW_trace.so
-vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
-vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so
-vendor/lib/hw/vulkan.mali.so
-vendor/lib/libDefaultFpsActor.so
-vendor/lib/libFrameRecord.so
-vendor/lib/libNoFpsActor.so
-vendor/lib/libOpenCL.so
-vendor/lib/libaal_cust.so
-vendor/lib/libaal_key.so
-vendor/lib/libaal_mtk.so
-vendor/lib/libaalservice.so
-vendor/lib/libdre.so
-vendor/lib/libgamehdr.so
-vendor/lib/libged.so
-vendor/lib/libgpu_aux.so
-vendor/lib/libgpud.so
-vendor/lib/libgralloc_extra.so
-vendor/lib/libgralloc_metadata.so
-vendor/lib/libgralloctypes_mtk.so
-vendor/lib/libhdrvideo.so
-vendor/lib/libion_mtk.so
-vendor/lib/libion_ulit.so
-vendor/lib/libladder.so
-vendor/lib/libmml.so
-vendor/lib/libpq_cust_base.so
-vendor/lib/libpqframework.so
-vendor/lib/libudf.so
-vendor/lib/mt6833/libaiselector.so
-vendor/lib/mt6833/libdpframework.so
-vendor/lib/mt6833/libmtk_drvb.so
-vendor/lib/mt6833/libpq_prot.so
-vendor/lib/vendor.mediatek.hardware.mmagent@1.0.so
-vendor/lib/vendor.mediatek.hardware.pq@2.0.so
-vendor/lib/vendor.mediatek.hardware.pq@2.1.so
-vendor/lib/vendor.mediatek.hardware.pq@2.10.so
-vendor/lib/vendor.mediatek.hardware.pq@2.11.so
-vendor/lib/vendor.mediatek.hardware.pq@2.12.so
-vendor/lib/vendor.mediatek.hardware.pq@2.13.so
-vendor/lib/vendor.mediatek.hardware.pq@2.2.so
-vendor/lib/vendor.mediatek.hardware.pq@2.3.so
-vendor/lib/vendor.mediatek.hardware.pq@2.4.so
-vendor/lib/vendor.mediatek.hardware.pq@2.5.so
-vendor/lib/vendor.mediatek.hardware.pq@2.6.so
-vendor/lib/vendor.mediatek.hardware.pq@2.7.so
-vendor/lib/vendor.mediatek.hardware.pq@2.8.so
-vendor/lib/vendor.mediatek.hardware.pq@2.9.so
 vendor/lib64/arm.graphics-V1-ndk_platform.so
 vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/egl/libGLES_meow.so
@@ -1013,6 +943,7 @@ vendor/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
 vendor/lib64/libaal_mtk.so
 vendor/lib64/libaalservice.so
+vendor/lib64/libappgamepq.so
 vendor/lib64/libcomposer_ext.so
 vendor/lib64/libdre.so
 vendor/lib64/libgamehdr.so
@@ -1025,16 +956,14 @@ vendor/lib64/libgralloctypes_mtk.so
 vendor/lib64/libhdrvideo.so
 vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
-vendor/lib64/libladder.so
 vendor/lib64/libmml.so
 vendor/lib64/libpq_cust_base.so
 vendor/lib64/libpqframework.so
 vendor/lib64/libpqparamparser.so
 vendor/lib64/libudf.so
-vendor/lib64/mt6833/libaiselector.so
-vendor/lib64/mt6833/libdpframework.so
-vendor/lib64/mt6833/libmtk_drvb.so
-vendor/lib64/mt6833/libpq_prot.so
+vendor/lib64/mt6833/libaiselector.so;SYMLINK=vendor/lib64/libaiselector.so
+vendor/lib64/mt6833/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
+vendor/lib64/mt6833/libpq_prot.so;SYMLINK=vendor/lib64/libpq_prot.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
@@ -1053,12 +982,21 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 
+# Display (Thread unwinding)
+vendor/lib/libladder.so
+vendor/lib64/libladder.so
+
 # Display Firmware
 vendor/firmware/focaltech_mp_fw_tianma.ini
 vendor/firmware/focaltech_ts_fw_tianma.bin
 vendor/firmware/nt36672c_tm_01_ts_fw.bin
+vendor/firmware/nt36672c_tm_01_ts_mp.bin
+vendor/firmware/nt36672c_tr_02_kn_ts_fw.bin
+vendor/firmware/nt36672c_tr_02_kn_ts_mp.bin
 vendor/firmware/nt36672c_tr_02_ts_fw.bin
+vendor/firmware/nt36672c_tr_02_ts_mp.bin
 vendor/firmware/nt36672d_tm_03_ts_fw.bin
+vendor/firmware/nt36672d_tm_03_ts_mp.bin
 
 # DRM
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
@@ -1070,24 +1008,23 @@ vendor/lib64/liburee_meta_drmkeyinstall.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
+# DRVB
+vendor/lib/mt6833/libmtk_drvb.so;SYMLINK=vendor/lib/libmtk_drvb.so
+vendor/lib64/mt6833/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
+
 # Fingerprint
-vendor/lib64/com.fingerprints.extension@1.0.so
-vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.mt6833.so
-vendor/lib64/hw/gf_fingerprint.default.so
+vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.fpc.default.so;FIX_SONAME
+vendor/lib64/hw/gf_fingerprint.default.so:vendor/lib64/hw/gf_fingerprint.goodix.default.so;FIX_SONAME
 vendor/lib64/libfingerprint.default.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 
 # FM
--system_ext/lib64/libfmjni.so:system/lib64/libfmjni.so
 vendor/etc/init/init.fmradio_drv.rc
 vendor/firmware/fm_cust.cfg
 vendor/firmware/mt6631_fm_v1_coeff.bin
 vendor/firmware/mt6631_fm_v1_patch.bin
-vendor/firmware/mt6635_fm_v1_coeff.bin
-vendor/firmware/mt6635_fm_v1_patch.bin
 
 # Fuelgauge
 vendor/bin/fuelgauged
@@ -1135,6 +1072,8 @@ vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
 vendor/lib64/hw/gps.default.so
 vendor/lib64/libDR.so
 vendor/lib64/libmnl.so
+vendor/lib64/librpc.so
+vendor/lib64/libviagpsrpc.so
 
 # Keymaster
 vendor/bin/bp_kmsetkey_ca
@@ -1148,6 +1087,10 @@ vendor/etc/init/vpud.rc
 vendor/lib/AVCSecureVdecCA.so
 vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
+vendor/lib/libgz_gp_client.so
+vendor/lib/libgz_uree.so
+vendor/lib/libion_mtk.so
+vendor/lib/libion_ulit.so
 vendor/lib/libvcodec_oal.so
 vendor/lib/libvcodec_utility.so
 vendor/lib/libvcodecdrv.so
@@ -1155,49 +1098,22 @@ vendor/lib/libvcodecdrv_header_stub.so
 vendor/lib/libvpu5.so
 vendor/lib/libvpud_vcodec.so
 
-# Media (Configs) - from Redmi/vnd_gold/gold:12/TP1A.220624.014/V14.0.5.0.TNQCNXM:user/release-keys
-vendor/etc/mtk_omx_core.cfg|686aad3302adf1f81f1291441b8335b0fb3f40cd
-vendor/etc/mtk_platform_codecs_config.xml|4e62976f03c0b9bd4517bef817d5ad855cfeb835
-vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy|2f5377909dbdab645c9e4fe0b52c4c5c823256a1
-vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy|7e75df111158f52a57e53afed252bd21ac1468d6
-vendor/etc/seccomp_policy/mediacodec.policy|732e01c6c88d125ca8778a3d88e51ef8511979ea
-vendor/etc/seccomp_policy/mediaextractor.policy|6eecbd7a2c589059d4df9b6035033461b85e8784
-vendor/etc/seccomp_policy/mediaswcodec.policy|ad691ac1a44c6f8cf48f9a7422f02104d56a0fa3
-
 # Media (C2)
-vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
-vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
+vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
+vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc:vendor/etc/init/android.hardware.media.c2@1.2-mediatek-64b.rc
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
 vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml:vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml
-vendor/lib/libcodec2_mtk_c2store.so
-vendor/lib/libcodec2_mtk_vdec.so
-vendor/lib/libcodec2_mtk_venc.so
-vendor/lib/libcodec2_vpp_qt_plugin.so
-vendor/lib/libcodec2_vpp_rs_plugin.so
-vendor/lib/libformatter.so
-
-# Media (OMX)
-vendor/lib/libMtkOmxAdpcmDec.so
-vendor/lib/libMtkOmxAlacDec.so
-vendor/lib/libMtkOmxApeDec.so
-vendor/lib/libMtkOmxCore.so
-vendor/lib/libMtkOmxGsmDec.so
-vendor/lib/libMtkOmxMp3Dec.so
-vendor/lib/libadpcmdec_mtk.so
-vendor/lib/libalacdec_mtk.so
-vendor/lib/libmp3dec_mtk.so
-vendor/lib/libstagefrighthw.so
-vendor/lib64/libstagefrighthw.so
+vendor/lib64/libcodec2_mtk_c2store.so
+vendor/lib64/libcodec2_mtk_vdec.so
+vendor/lib64/libcodec2_mtk_venc.so
+vendor/lib64/libcodec2_vpp_qt_plugin.so
+vendor/lib64/libcodec2_vpp_rs_plugin.so
+vendor/lib64/libformatter.so
 
 # MMS
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
 vendor/etc/init/vendor.mediatek.hardware.mms@1.6-service.rc
-vendor/lib/vendor.mediatek.hardware.mms@1.0.so
-vendor/lib/vendor.mediatek.hardware.mms@1.1.so
-vendor/lib/vendor.mediatek.hardware.mms@1.2.so
-vendor/lib/vendor.mediatek.hardware.mms@1.3.so
-vendor/lib/vendor.mediatek.hardware.mms@1.4.so
-vendor/lib/vendor.mediatek.hardware.mms@1.5.so
-vendor/lib/vendor.mediatek.hardware.mms@1.6.so
 vendor/lib64/hw/vendor.mediatek.hardware.mms@1.6-impl.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.1.so
@@ -1206,25 +1122,6 @@ vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
-
-# Neural Network - from Redmi/vnd_gold/gold:12/TP1A.220624.014/V14.0.5.0.TNQCNXM:user/release-keys
-vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron|8f238dd027b0f99e151775796f99798e3b7dea81
-vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc|6209da7f931efd1746cdb78c43924e283eff9a7c
-vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-gpu.xml|931e81cc7471e68f410b6813fba24175ea397731
-vendor/lib64/APUWareUtilsServer.so|8ae6a43eeede3c511f21e15cb25b352a821b92b8
-vendor/lib64/libapu_mdw.so|68112aed5d71f4c4af45bdad1b753394b46d04d7
-vendor/lib64/libapusys.so|884763084dac39e64a10c5b685a3ae4db46a0033
-vendor/lib64/libapusys_edma.so|2c808887875652b7814e450045e9d65d9cd12711
-vendor/lib64/libarmnn.so|2247afcd4833011d402897e1bacce1a3b40e2f88
-vendor/lib64/libarmnn_ndk.mtk.vndk.so|ea68a225d32d2ef36fe826ee5be2c2a21f1838e5
-vendor/lib64/libcmdl.so|ea842e7957d9be37a65dd02a7047ba00eb1b69e7
-vendor/lib64/libcmdl_ndk.mtk.vndk.so|d13ec4dafad1ca241250e987084856848d4784ef
-vendor/lib64/libneuron_adapter.so|050ae242296b9715a62ab72d8f5679ae69a7ef92
-vendor/lib64/libneuron_platform.so|3da796723fd5928d9108dc91c1c3214dc5ed3420
-vendor/lib64/libneuropilot_hal_utils.so|f540511b617af682c40c35e6730eb59d1a91b641
-vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so|007ed21bc4be7227aaec84544baae806c2eda5d5
-vendor/lib64/mt6833/libnir_neon_driver.so|9573e58a45b49c66c6a8fab9a7156d2148db224c
-vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so|f5d26d278d3bb45d97587b1b8624e41b9eb8732d
 
 # NFC
 vendor/etc/st21nfc_conf.txt
@@ -1235,12 +1132,9 @@ vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/nvram_daemon
 vendor/etc/init/nvram_daemon.rc
 vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
-vendor/lib/libcustom_nvram.so
 vendor/lib/libfile_op.so
 vendor/lib/libnvram.so
 vendor/lib/libnvram_sec.so
-vendor/lib/vendor.mediatek.hardware.nvram@1.0.so
-vendor/lib/vendor.mediatek.hardware.nvram@1.1.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib64/libconnfem.so
 vendor/lib64/libcustom_nvram.so
@@ -1329,61 +1223,17 @@ vendor/lib64/libwpfa.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 
-# Radio (Engineer Mode) - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys
-system_ext/app/EngineerMode/EngineerMode.apk|e34588606d108ea5aa154f55460fd46c8bbd677c
-system_ext/lib/libem_support_jni.so|d7749442151059cd6136ca1ddb22c510e744bdc0
-system_ext/lib64/libem_support_jni.so|b7d3b3bfa079b6bca9acb0a7c054a7a234d92818
-vendor/bin/em_hidl|973b6f8728f4f6f74250fe83fbfde4f7bffc216f
-vendor/etc/init/em_hidl_user.rc|bdb5893df3e78d2d2adaf72bc7e56dfeee0be308
-vendor/lib64/libbluetooth_relayer.so|1614bf298f6c000baf84df5f6f1b53a6c8465a57
-vendor/lib64/libbluetoothem_mtk.so|37265565d04c0b52d126c803e09e2d7b67ca34bf
-vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so|238723b79a4e42e0d566a5cf1100e5e09dd20da9
-vendor/lib64/vendor.mediatek.hardware.engineermode@1.1.so|6c3c4bf708a55dedaa7227f32411cf790967a3ca
-vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so|989aafe0e845a46c9efe9fd8260a829d476ea37d
-vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so|cdf35668f34df78a4e83a04c5d3575c476d4ab5d
-
 # Radio (IMS)
 vendor/bin/hw/vtservice_hidl
 vendor/etc/init/init.vtservice_hidl.rc
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
-# Radio (SYSTEM-IMS) - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys
-system_ext/bin/vtservice|59adc81ee1ad1f3fb4942cd6e8e7100325002eb2
-system_ext/etc/init/init.vtservice.rc|50a2249906edc06059b443513db47a2ddc0490dc
-system_ext/framework/mediatek-common.jar:system/framework/mediatek-common.jar|895c6819d00deb385675cc7b90f073d0b6fbd29d
-system_ext/framework/mediatek-framework.jar:system/framework/mediatek-framework.jar|a9789fd904f4b0643a3257e798318faabf342477
-system_ext/framework/mediatek-ims-base.jar:system/framework/mediatek-ims-base.jar|a6f7ae937de5b9c25e41af8c15db2717a31a6e97
-system_ext/framework/mediatek-ims-common.jar:system/framework/mediatek-ims-common.jar|8fc8f9dbbe56a309fa620222430cc854143672fb
-system_ext/framework/mediatek-ims-extension-plugin.jar:system/framework/mediatek-ims-extension-plugin.jar|4562720d65136b189d661f248fd3170a749cada3
-system_ext/framework/mediatek-telecom-common.jar:system/framework/mediatek-telecom-common.jar|686eaf0a472f44194116a0861944483cd9b09a38
-system_ext/framework/mediatek-telephony-base.jar:system/framework/mediatek-telephony-base.jar|f66b872e413d16fc29d22ead4e94984f84be94e9
-system_ext/framework/mediatek-telephony-common.jar:system/framework/mediatek-telephony-common.jar|869c6918a945ecb87d8b30ec5ca4056d6b863099
-system_ext/lib64/libcomutils.so|6d9cd979f33ef01cb26861a38a59e76e1c2a3acb
-system_ext/lib64/libimsma.so|547ffdd8a8d57d6624b69eb27ac0e1642aab09bc
-system_ext/lib64/libimsma_adapt.so|b95939f797ba52d87bb9fa6ebf356e0fb4fcfe56
-system_ext/lib64/libimsma_rtp.so|02b33fba68211362b439bb05a965ba6e01fa3ea0
-system_ext/lib64/libimsma_socketwrapper.so|1f9b83322c41e5b0a7b3130f74a38ddb14f578d8
-system_ext/lib64/libmtk_vt_service.so|c46d43d49fb35e21cb34cdea1f33ad4b964e2f22
-system_ext/lib64/libmtk_vt_wrapper.so|b6f8737a084431cdd8d77c9188e176b7e9364876
-system_ext/lib64/libsignal.so|0f55bb64c660fe4cda2b695121580b054f026e73
-system_ext/lib64/libsink.so|15cb9262fd9e52cd29086f602bc3dafb52ab40b5|94972e8c36b576cbe74ecefbe72526714c1e1e16
-system_ext/lib64/libsource.so|8e702370bfd7bce526f18e31e71ed8a9942b2c38
-system_ext/lib64/libvcodec_cap.so|0165b65cd33fd3905ef3f569ff36bf119b27c13d
-system_ext/lib64/libvcodec_capenc.so|3b5e76522a7331248c2864493fdade2bdf73c4c3
-system_ext/lib64/libvt_avsync.so|632cb05532ef2e022072d91bff3c1ae47c888b7e
-system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|b4733a99049d5162e41955bca80cc78b8ca76c53
-system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|1385634094de90c59b9f689d313b6b3ee8770efe
-
-# Radio (IMS-App) - from plato-user 14 UP1A.230620.001 V14.0.7.0.ULQMIXM release-keys (patched)
-system_ext/priv-app/ImsService/ImsService.apk:system/priv-app/ImsService/ImsService.apk|62e6a0c457812366623630dffef27b0bf5ca7fad
-
 # Secure Element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 
 # Sensors
-vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mt6833.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhwm.so
@@ -1426,14 +1276,7 @@ vendor/lib/libthermalalgo.so
 # Trusted Execution Environment (TEE)
 vendor/bin/teei_daemon
 vendor/etc/init/microtrust.rc
-vendor/lib/libTEECommon.so
-vendor/lib/libgz_gp_client.so
-vendor/lib/libgz_uree.so
-vendor/lib/libimsg_log.so
-vendor/lib/libteei_daemon_vfs.so
 vendor/lib64/libTEECommon.so
-vendor/lib64/libgz_gp_client.so
-vendor/lib64/libgz_uree.so
 vendor/lib64/libimsg_log.so
 vendor/lib64/libteei_daemon_vfs.so
 vendor/lib64/libthha.so
@@ -1467,4 +1310,9 @@ vendor/thh/ta/isee_model.json
 vendor/bin/wlan_assistant
 vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/wlan_assistant.rc
-vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so
+vendor/firmware/wifi.cfg
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
+
+# Wi-Fi (firmware) - from gold
+vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin|e4d3097818eca0b722d3525efcbe96b462dea636
+vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin|d0be6f604ace05053743b0226ba96f3be4785035

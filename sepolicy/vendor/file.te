@@ -1,6 +1,12 @@
+# Audio
+type sysfs_audio_pa, fs_type, sysfs_type;
+
 # Camera
 type camera_persist_file, file_type;
 type vendor_camera_data_file, data_file_type, file_type;
 
 # Fingerprint
 type vendor_fingerprint_data_file, fs_type, sysfs_type;
+
+# Power
+type vendor_touchfeature_device, dev_type;

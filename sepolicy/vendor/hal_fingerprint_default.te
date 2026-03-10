@@ -7,5 +7,4 @@ allow hal_fingerprint_default sysfs_batteryinfo:file r_file_perms;
 allow hal_fingerprint_default sysfs_pmu:dir { search };
 allow hal_fingerprint_default sysfs_pmu:file r_file_perms;
 
-get_prop(hal_fingerprint_default, vendor_fingerprint_prop)
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)

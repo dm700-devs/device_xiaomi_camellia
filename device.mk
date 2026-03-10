@@ -5,10 +5,7 @@
 #
 
 # Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
-
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -17,7 +14,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 PRODUCT_PACKAGES += \
-    android.hardware.boot-service.default \
+    com.android.hardware.boot \
     android.hardware.boot-service.default_recovery
 
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -26,14 +23,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_vendor=true \
-    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
-    FILESYSTEM_TYPE_vendor=ext4 \
-    POSTINSTALL_OPTIONAL_vendor=true
-
 PRODUCT_PACKAGES += \
-    checkpoint_gc \
     otapreopt_script
 
 PRODUCT_PACKAGES += \
@@ -60,12 +50,6 @@ PRODUCT_PACKAGES += \
     audio_policy.stub
 
 PRODUCT_PACKAGES += \
-    libaudiofoundation.vendor \
-    libalsautils \
-    libdynproc \
-    libhapticgenerator
-
-PRODUCT_PACKAGES += \
     MtkInCallService
 
 PRODUCT_COPY_FILES += \
@@ -78,21 +62,16 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio-impl \
-    android.hardware.bluetooth@1.1.vendor \
-    libbluetooth_audio_session
-
-# Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.provider@2.6.vendor
+    android.hardware.bluetooth-service.mediatek \
+    android.hardware.bluetooth.audio-impl
 
 # ConsumerIr
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl \
-    android.hardware.ir@1.0-service
+    android.hardware.ir-service.example
 
 # Cgroup
 PRODUCT_COPY_FILES += \
@@ -101,18 +80,15 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@4.0.vendor \
-    android.hardware.graphics.composer@2.1-service
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.memtrack-service.mediatek-mali
 
-PRODUCT_PACKAGES += \
-    libdrm.vendor \
-    libutils-v32
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm-service.clearkey \
-    android.hardware.drm@1.4.vendor \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
+    android.hardware.drm-service.clearkey
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -120,7 +96,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.camellia
+    android.hardware.biometrics.fingerprint-service.xiaomi
 
 # FM
 PRODUCT_PACKAGES += \
@@ -131,25 +107,10 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
-# GNSS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss.measurement_corrections@1.1.vendor \
-    android.hardware.gnss.visibility_control@1.0.vendor \
-    android.hardware.gnss-V1-ndk.vendor \
-    android.hardware.gnss@2.1.vendor
-
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.allocator@1.0.vendor \
-    libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder.vendor \
+    android.hardware.health-service.mediatek \
+    android.hardware.health-service.mediatek-recovery
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
@@ -166,26 +127,13 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor \
-    android.hardware.hardware_keystore.km41.xml \
-    libkeymaster4_1support.vendor \
-    libkeymaster41.vendor \
-    libpuresoftkeymasterdevice.vendor \
-    libsoft_attestation_cert.vendor
+    android.hardware.hardware_keystore.km41.xml
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.xiaomi
+    android.hardware.light-service.lineage
 
 # Media
-PRODUCT_PACKAGES += \
-    libavservices_minijail_vendor \
-    libcodec2_hidl@1.2.vendor \
-    libcodec2_soft_common.vendor \
-    libsfplugin_ccodec_utils.vendor \
-    libstagefright_softomx_plugin.vendor \
-    libstagefright_foundation-v33
-
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
@@ -210,11 +158,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.hcef.xml \
     frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_nfc/android.hardware.nfc.uicc.xml
-
-# Neural Networks
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor \
-    libtextclassifier_hash.vendor
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -266,12 +209,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 # Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-mediatek \
-    android.hardware.power@1.3.vendor
+$(call soong_config_set,mediatek_power,powerhal_ext, //$(LOCAL_PATH):libperfmgr-ext-xiaomi)
 
 PRODUCT_PACKAGES += \
-    vendor.mediatek.hardware.mtkpower@1.2.vendor
+    android.hardware.power-service-mediatek
 
 # Power Off Alarm
 PRODUCT_PACKAGES += \
@@ -280,27 +221,6 @@ PRODUCT_PACKAGES += \
 # Properties
 include $(LOCAL_PATH)/vendor_logtag.mk
 
-# Radio
-PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio@1.6.vendor
-
-# Radio (IMS)
-PRODUCT_BOOT_JARS += \
-    mediatek-common \
-    mediatek-framework \
-    mediatek-ims-base \
-    mediatek-ims-common \
-    mediatek-telecom-common \
-    mediatek-telephony-base \
-    mediatek-telephony-common
-
-PRODUCT_PACKAGES += \
-    libshim_sink
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
-
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6833 \
@@ -308,6 +228,7 @@ PRODUCT_PACKAGES += \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6833.rc \
+    init.mt6833.power.rc \
     init.mt6833.usb.rc \
     init.project.rc \
     init.target.rc \
@@ -315,8 +236,8 @@ PRODUCT_PACKAGES += \
     init.stnfc.rc \
     ueventd.mtk.rc
 
-PRODUCT_PACKAGES += \
-    init.recovery.mt6833.rc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.recovery.mt6833.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6833.rc
 
 # Runtime Resource (RRO) Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
@@ -330,22 +251,20 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlayCamellia \
     WifiOverlayCamellia
 
-# Secure Element
-PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.2.vendor
-
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.camellia-multihal \
-    android.frameworks.sensorservice@1.0.vendor \
-    libsensorndkbridge \
-    libshim_sensors
+    android.hardware.sensors-service.xiaomi-multihal \
+    android.hardware.sensors@2.0-subhal-impl-1.0
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
+
+# SKU
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/sku/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -363,8 +282,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # USB
+$(call soong_config_set_bool,android_hardware_mediatek_usb,audio_accessory_supported,true)
+
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service.mt6833
+    android.hardware.usb-service.mediatek \
+    android.hardware.usb.gadget-service.mediatek
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -374,14 +296,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
+    libwifi-hal-wrapper \
     wpa_supplicant
-
-PRODUCT_PACKAGES += \
-    android.hardware.tetheroffload.config@1.0.vendor \
-    android.hardware.tetheroffload.control@1.1.vendor
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # Inherit the proprietary files
+$(call inherit-product, vendor/mediatek/ims/ims.mk)
 $(call inherit-product, vendor/xiaomi/camellia/camellia-vendor.mk)

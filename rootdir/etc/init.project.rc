@@ -74,5 +74,9 @@ on post-fs-data
     chmod 0666 /dev/st21nfc
     chown nfc nfc /dev/st21nfc
 
+on boot
+    chown system system /dev/xiaomi-touch
+    chmod 0664 /dev/xiaomi-touch
+
 on property:sys.boot_completed=1
     write /proc/sys/vm/watermark_scale_factor 100
