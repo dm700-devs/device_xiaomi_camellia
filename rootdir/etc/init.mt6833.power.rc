@@ -63,3 +63,6 @@ on property:sys.boot_completed=1
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 0"
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
+
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
