@@ -101,4 +101,4 @@ product                              /product                  ext4     ro      
 /dev/block/by-name/seccfg            /seccfg                   emmc     defaults             defaults
 
 # ZRAM
-/dev/block/zram0                     none                      swap     defaults             zramsize=55%
+/dev/block/zram0                     none                      swap     defaults             zramsize=50%,zram_backingdev_size=1G

@@ -7,6 +7,3 @@ type vendor_camera_data_file, data_file_type, file_type;
 
 # Fingerprint
 type vendor_fingerprint_data_file, fs_type, sysfs_type;
-
-# Power
-type vendor_touchfeature_device, dev_type;

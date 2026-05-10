@@ -1,3 +1,6 @@
+# Media
+media.stagefright.thumbnail.prefer_hw_codecs=true
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 

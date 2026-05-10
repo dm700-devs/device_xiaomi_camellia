@@ -1,4 +1,4 @@
-service nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.st
+service vendor.st_nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.st
     override
     class hal
     user nfc
@@ -6,7 +6,7 @@ service nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.st
     disabled
 
 on init && property:ro.boot.product.hardware.sku=camellian
-    enable nfc_hal_service
+    enable vendor.st_nfc_hal_service
 
 on init && property:ro.boot.product.hardware.sku=camellianp
-    enable nfc_hal_service
+    enable vendor.st_nfc_hal_service
